@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>showcase</title>
+	<meta charset="utf-8"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<style>
+		*{margin:0; padding:0;}
+		body{margin:0; padding:0;}
+		li{list-style-type:none;}
+		img{border:0;}
+		section{display:block;}
+		h1,h2{text-indent:-9999px; position:absolute; left:-9999px; width:1px; height:1px; line-height:0; font-size:1px; overflow:hidden;}
+		a:link, a:visited{text-decoration:none; color:#000;}
+
+		/*## wrap ##*/
+			#wrap{width:100%;}
+
+		/*## headerWrap##*/
+/
+			#headerWrap{width:100%;}
+
+		/*## header ## */
+			#header{width:100%;}
+
+		/*## topMenu ##*/
+			#topMenu{width:100%; background-color:rgba(156,1,255,1);}
+
+		/*## ul ##*/
+			#topMenu ul{width:1920px; height:40px; margin:0 auto; overflow:hidden; background-color:rgba(156,1,255,1);}
+			#topMenu li{width:100%; margin:0 auto; line-height:40px; text-align:center;}
+			#topMenu li span{font-weight:700;}
+			#topMenu li a{display:block; width:100%; font-size:14px; color:#fff;}
+
+		/*## nav ##*/
+			#nav{width:1920px; height:100px; margin:0 auto;}
+			#nav #btn0{display:none;}
+			#nav #btn1{display:none;}
+			
+		/*## logo ##*/
+			#logo{width:200px; height:100px; overflow:hidden; float:left;}
+
+			#logo a{display:block; width:119px; height:24px; margin:38px auto;}
+			#logo a img{width:100%;}
+
+		/*## mob_myPage ##*/
+			#mob_myPage{display:none;}
+		
+		/*## mobile_mypage ##*/
+			#mobile_mypage{display:none;}
+
+		/*## gnb ##*/
+			#gnb{width:1720px; height:100%; float:left;}
+			#gnb ul{width:1020px; height:100%; float:left;}
+			#gnb li{width:100px; height:100%; text-transform:uppercase; font-weight:700; float:left;}
+			
+			#gnb li a{display:block; width:80px; height:30px; margin:35px auto; line-height:30px; text-align:center;}
+			#gnb li a span{color:#9201ff;}
+
+		/*## gnb 기능 ##*/
+			#gnb li a:hover{color:#f00;}
+			#gnb li a span:hover{color:#f00;}
+
+		/*## form ##*/
+			#gnb form{width:300px; height:30px; margin:35px 0; float:left;}
+			#gnb fieldset{border:none;}
+			#gnb legend{display:none;}
+			#gnb .search{width:173px; height:30px; float:left;}
+			#gnb .search input{width:173px; height:29px; border:none; border-bottom:1px solid #9201ff; text-indent:10px;}
+			#gnb .btn{width:50px; height:30px; float:left;}
+			#gnb .btn input{width:50px; height:30px; border:1px solid #ccc; background-color:#9201ff; color:#fff;}
+	
+		/*## myPage ##*/
+			#gnb .myPage{width:400px; float:left;}
+			#gnb .myPage .icon a{width:25px;}
+			#gnb .myPage a img{width:100%;}
+
+		/*## container ##*/
+			#container{width:100%; position:relative;}
+
+		/*## showcase ##*/
+			#showcase{width:100%;}
+
+		/*## sc_inn ##*/
+			#sc_inn{width:1440px; margin:0 auto; overflow:hidden;}
+			#sc_inn h3{width:100%; text-align:center; font-size:30px; margin:20px 0; text-transform:uppercase; position:relative;}
+			#sc_inn h3 span{display:inline-block; padding-bottom:10px;  border-bottom:2px solid #ccc;}
+			#sc_inn h3 .bar_ani{animation:bar_ani 2s infinite alternate linear; width:20px; height:2px; background-color:rgba(156,1,255,1); position:absolute; left:530px; bottom:0; border:none; padding:0;}
+
+			@keyframes bar_ani{
+					0%{left:570px;}
+					100%{left:850px;}
+				}
+
+		/*## main ##*/
+			#sc_inn div{width:1440px; position:relative;}
+			#sc_inn .main{width:100%; height:800px;}
+			#sc_inn .main li{width:960px; margin:0 auto; display:none; position:relative; z-index:9999;}
+			#sc_inn .main .no0{display:block;}
+			#sc_inn .main li img{width:100%;}
+
+		/*## list ##*/
+			#sc_inn .list{width:100%;}
+			#sc_inn .list li{display:inline-block; width:200px; height:200px; background-color:#ff0; border-radius:200px; position:relative; background-position:center center; background-size:150%; background-repeat:no-repeat; transform:translate(0,0) rotate3d(0,0,0,0deg); transition:all 0.5s linear; cursor:pointer; z-index:1;}
+
+			
+		/*## list background-image 개별작업 ##*/
+			#sc_inn .list .no0{background-image:url("img/showcase/sc0.jpg");}
+			#sc_inn .list .no1{background-image:url("img/showcase/sc1.jpg");}
+			#sc_inn .list .no2{background-image:url("img/showcase/sc2.jpg");}
+			#sc_inn .list .no3{background-image:url("img/showcase/sc3.jpg");}
+			#sc_inn .list .no4{background-image:url("img/showcase/sc4.jpg");}
+			#sc_inn .list .no5{background-image:url("img/showcase/sc5.jpg");}
+			#sc_inn .list .no6{background-image:url("img/showcase/sc6.jpg");}
+			#sc_inn .list .no7{background-image:url("img/showcase/sc7.jpg");}
+			#sc_inn .list .no8{background-image:url("img/showcase/sc8.jpg");}
+			#sc_inn .list .no9{background-image:url("img/showcase/sc9.jpg");}
+			#sc_inn .list .no10{background-image:url("img/showcase/sc10.jpg");}
+			#sc_inn .list .no11{background-image:url("img/showcase/sc11.jpg");}
+			#sc_inn .list .no12{background-image:url("img/showcase/sc12.jpg");}
+			#sc_inn .list .no13{background-image:url("img/showcase/sc13.jpg");}
+
+		/*## mv_border ##*/
+			#sc_inn .list li span{animation:mv_border 2s infinite linear; display:block; width:200px; height:200px; border-radius:200px; background-color:rgba(0,0,0,0); position:absolute; left:0; top:0; transition:all 1s linear; transform:rotate3d(0,0,0,0deg);}
+
+			@keyframes mv_border{
+				0%{transform:rotate3d(0,0,0,0deg);}
+				100%{transform:rotate3d(0,0,1,360deg);}
+			}
+			
+			#sc_inn .list li span i{display:none; animation:mv_color 1s infinite linear alternate; text-indent:-9999px; width:10px; height:10px; border-radius:10px; background-color:rgba(255,255,255,1); position:absolute; left:98px; top:0;}
+
+			#sc_inn .list li:hover span i{display:block;}
+
+			
+			@keyframes mv_color{
+				0%{width:20px; height:20px; border-radius:20px;}
+				100%{width:10px; height:10px; border-radius:10px;}
+			}
+
+		/*## side ##*/
+			#side{width:350px; height:817px; background-color:rgba(255,255,255,0.3); position:absolute; left:0; top:0;}
+				
+			#side_inn{width:100%; height:100%;}
+
+			#side_inn ul{width:80%; height:80%; padding:10%;}
+
+			#side_inn li{width:70%; padding:5% 15%;}
+			#side_inn li a{color:#333; font-size:19px; font-weight:700; text-transform:uppercase;}
+
+			#side_inn .sub p{width:100%; padding:5px 0;}
+			#side_inn .sub p a{font-size:14px;}
+
+		/*## side 기능 ##*/
+			#side_inn li a:hover{color:rgba(156,1,255,1);}
+
+	
+		/*## footerWrap ##*/
+			#footerWrap{width:100%;}
+		
+		/*## footer ##*/
+			#footer{width:1920px; margin:0 auto; padding-top:50px; border-top:1px solid rgba(100,100,100,0.5);}
+
+		/*## footer_inn ##*/
+			#footer_inn{width:1440px; height:300px; margin:0 auto;}
+			#footer_inn h3{text-align:center; text-transform:uppercase;}
+
+		/*## left ##*/
+			#footer_inn .info{width:720px; height:250px; padding-bottom:50px; float:left;}
+			#footer_inn .info h3{width:150px; line-height:25px; font-size:18px; float:left;}
+			
+			#footer_inn .info div{width:720px; height:25px; padding-top:25px;}
+			#footer_inn .info div li:first-child{width:150px;}
+			
+
+		/*## ul / li ##*/
+			#footer_inn ul{width:550px; padding-left:20px; float:left;}
+			#footer_inn li{display:inline-block; padding:0 10px; line-height:25px; font-size:14px; color:#666;}
+			#footer_inn li a{font-size:14px; color:#666; text-transform:uppercase;}
+
+			#footer_inn li a:hover{text-decoration:underline; color:rgba(156,1,255,1);}
+
+		/*## onlin ##*/
+			#footer_inn .online li{text-transform:uppercase;}
+
+		/*## social ##*/
+			#footer_inn .info .social li:first-child{width:25px;}
+			#footer_inn .social li a{display:block; width:25px; height:25px;}
+			#footer_inn .social li a img{width:100%;}
+
+		/*## copyright ##*/
+			#footer_inn .copyright{width:720px; height:250px; font-size:15px; padding-bottom:50px; float:left;}
+
+			#footer_inn .copyright .footer_logo{width:100%; padding-top:25px;}
+			#footer_inn .copyright .logo{width:119px;}
+			#footer_inn .copyright .logo img{width:100%;}
+
+			#footer_inn .copyright .copy{width:100%; padding-top:25px; color:#666; font-size:14px;}
+			#footer_inn .copyright .copy p{padding-top:5px;}
+			#footer_inn .copyright .copy p a{color:#666; font-size:14px; font-weight:700;}
+			#footer_inn .copyright .copy i{font-style:normal;}
+			
+			#footer_inn .copyright .logo:after{content:""; display:block; clear:both;}
+		
+	</style>
+	<script>
+		$(document).ready(function(){
+			$(".list .no0").click(function(){
+				$(".list li").css({"transform":"translate(0px,0px) rotate3d(0,0,0,0deg)","opacity":"1"});
+				$(this).css({"transform":"translate(610px,-540px) rotate3d(0,0,1,360deg"});
+				$(this).delay(500).animate({"opacity":"0"},1,"linear");
+				$(".main li").hide();
+				$(".main .no0").delay(500).fadeIn(500);
+			});
+
+			$(".list .no1").click(function(){
+				$(".list li").css({"transform":"translate(0px,0px) rotate3d(0,0,0,0deg)","opacity":"1"});
+				$(this).css({"transform":"translate(410px,-540px) rotate3d(0,0,1,360deg"});
+				$(this).delay(500).animate({"opacity":"0"},1,"linear");
+				$(".main li").hide();
+				$(".main .no1").delay(500).fadeIn(500);
+			});
+
+			$(".list .no2").click(function(){
+				$(".list li").css({"transform":"translate(0px,0px) rotate3d(0,0,0,0deg)","opacity":"1"});
+				$(this).css({"transform":"translate(210px,-540px) rotate3d(0,0,1,360deg"});
+				$(this).delay(500).animate({"opacity":"0"},1,"linear");
+				$(".main li").hide();
+				$(".main .no2").delay(500).fadeIn(500);
+			});
+
+			$(".list .no3").click(function(){
+				$(".list li").css({"transform":"translate(0px,0px) rotate3d(0,0,0,0deg)","opacity":"1"});
+				$(this).css({"transform":"translate(10px,-540px) rotate3d(0,0,1,360deg"});
+				$(this).delay(500).animate({"opacity":"0"},1,"linear");
+				$(".main li").hide();
+				$(".main .no3").delay(500).fadeIn(500);
+			});
+
+			$(".list .no4").click(function(){
+				$(".list li").css({"transform":"translate(0px,0px) rotate3d(0,0,0,0deg)","opacity":"1"});
+				$(this).css({"transform":"translate(-210px,-540px) rotate3d(0,0,1,360deg"});
+				$(this).delay(500).animate({"opacity":"0"},1,"linear");
+				$(".main li").hide();
+				$(".main .no4").delay(500).fadeIn(500);
+			});
+
+			$(".list .no5").click(function(){
+				$(".list li").css({"transform":"translate(0px,0px) rotate3d(0,0,0,0deg)","opacity":"1"});
+				$(this).css({"transform":"translate(-410px,-540px) rotate3d(0,0,1,360deg"});
+				$(this).delay(500).animate({"opacity":"0"},1,"linear");
+				$(".main li").hide();
+				$(".main .no5").delay(500).fadeIn(500);
+			});
+
+			$(".list .no6").click(function(){
+				$(".list li").css({"transform":"translate(0px,0px) rotate3d(0,0,0,0deg)","opacity":"1"});
+				$(this).css({"transform":"translate(-610px,-540px) rotate3d(0,0,1,360deg"});
+				$(this).delay(500).animate({"opacity":"0"},1,"linear");
+				$(".main li").hide();
+				$(".main .no6").delay(500).fadeIn(500);
+			});
+
+			$(".list .no7").click(function(){
+				$(".list li").css({"transform":"translate(0px,0px) rotate3d(0,0,0,0deg)","opacity":"1"});
+				$(this).css({"transform":"translate(610px,-740px) rotate3d(0,0,1,360deg"});
+				$(this).delay(500).animate({"opacity":"0"},1,"linear");
+				$(".main li").hide();
+				$(".main .no7").delay(500).fadeIn(500);
+			});
+
+			$(".list .no8").click(function(){
+				$(".list li").css({"transform":"translate(0px,0px) rotate3d(0,0,0,0deg)","opacity":"1"});
+				$(this).css({"transform":"translate(410px,-740px) rotate3d(0,0,1,360deg"});
+				$(this).delay(500).animate({"opacity":"0"},1,"linear");
+				$(".main li").hide();
+				$(".main .no8").delay(500).fadeIn(500);
+			});
+
+			$(".list .no9").click(function(){
+				$(".list li").css({"transform":"translate(0px,0px) rotate3d(0,0,0,0deg)","opacity":"1"});
+				$(this).css({"transform":"translate(210px,-740px) rotate3d(0,0,1,360deg"});
+				$(this).delay(500).animate({"opacity":"0"},1,"linear");
+				$(".main li").hide();
+				$(".main .no9").delay(500).fadeIn(500);
+			});
+
+			$(".list .no10").click(function(){
+				$(".list li").css({"transform":"translate(0px,0px) rotate3d(0,0,0,0deg)","opacity":"1"});
+				$(this).css({"transform":"translate(10px,-740px) rotate3d(0,0,1,360deg"});
+				$(this).delay(500).animate({"opacity":"0"},1,"linear");
+				$(".main li").hide();
+				$(".main .no10").delay(500).fadeIn(500);
+			});
+
+			$(".list .no11").click(function(){
+				$(".list li").css({"transform":"translate(0px,0px) rotate3d(0,0,0,0deg)","opacity":"1"});
+				$(this).css({"transform":"translate(-210px,-740px) rotate3d(0,0,1,360deg"});
+				$(this).delay(500).animate({"opacity":"0"},1,"linear");
+				$(".main li").hide();
+				$(".main .no11").delay(500).fadeIn(500);
+			});
+
+			$(".list .no12").click(function(){
+				$(".list li").css({"transform":"translate(0px,0px) rotate3d(0,0,0,0deg)","opacity":"1"});
+				$(this).css({"transform":"translate(-410px,-740px) rotate3d(0,0,1,360deg"});
+				$(this).delay(500).animate({"opacity":"0"},1,"linear");
+				$(".main li").hide();
+				$(".main .no12").delay(500).fadeIn(500);
+			});
+
+			$(".list .no13").click(function(){
+				$(".list li").css({"transform":"translate(0px,0px) rotate3d(0,0,0,0deg)","opacity":"1"});
+				$(this).css({"transform":"translate(-610px,-740px) rotate3d(0,0,1,360deg"});
+				$(this).delay(500).animate({"opacity":"0"},1,"linear");
+				$(".main li").hide();
+				$(".main .no13").delay(500).fadeIn(500);
+			});
+		});
+	</script>
+ </head>
+
+ <body>
+	<div id="wrap">
+		<div id="headerWrap">
+			<div id="header">
+				<h1>널디</h1>
+				<div id="topMenu">
+					<h2>공지사항 및 이벤트</h2>
+					<ul>
+						<li class="color0">
+							<a href="#none" title="공지사항링크">
+								<span>3월</span> 이벤트 프로모션
+							</a>
+						</li>
+						<li class="color1">
+							<a href="#none" title="공지사항링크">
+								<span>널디회원</span>에게만 드리는 <span>무료 교환 혜택</span>
+							</a>
+						</li>
+						<li class="color2">
+							<a href="#none" title="공지사항링크">
+								@nerdy 카톡 채널 추가시 <span>플친전용 10% 할인 쿠폰</span> 발급!
+							</a>
+						</li>
+						<li class="color3">
+							<a href="#none" title="공지사항링크">
+								5/10/20/35 만원 이상 구매 시, 3월 구매금액 별 <span>사은품 증정!</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div id="nav">
+					<h2>네비게이션</h2>
+					<div id="logo">
+						<a href="https://whoisnerdy.com/" title="널디홈페이지">
+							<img src="img/logo/logo.png" alt="널디"/>
+						</a>
+					</div>
+					<div id="mob_myPage">
+						<ul>
+							<li class="menuBtn">
+								<a href="#none" title="메뉴버튼">
+									<span class="bar0">─</span>
+									<span class="bar1">─</span>
+									<span class="bar2">─</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none" title="마이페이지">
+									<img src="img/btn/mypage.png" alt="마이페이지이미지"/>
+								</a>
+							</li>
+							<li>
+								<a href="#none" title="검색">
+									<img src="img/icon/icon5.png" alt="돋보기이미지"/>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div id="gnb">
+						<ul class="gnb_inner">
+							<li id="btn0">
+								<a href="#none" title="direction0">▲</a>
+							</li>
+							<li>
+								<ul>
+									<li><a href="#none" title="all">all</a></li>
+									<li><a href="#none" title="best"><span>best</span></a></li>
+									<li><a href="#none" title="promo">promo</a></li>
+									<li><a href="#none" title="cloth">cloth</a></li>
+									<li><a href="#none" title="shoes">shoes</a></li>
+									<li><a href="#none" title="bag">bag</a></li>
+									<li id="btn1"><a href="#none" title="direction1">▼</a></li>
+								</ul>
+							</li>
+						</ul>
+						<form action="#" method="get">
+							<fieldset>
+								<legend>검색</legend>
+								<p class="search">
+									<input id="search" type="text" name="search" title="검색영역" value="search"/>
+								</p>
+								<p class="btn">
+									<input id="btn" type="submit" title="검색버튼" value="검색"/>
+								</p>
+							</fieldset>
+						</form>
+						<ul class="myPage">
+							<li>
+								<a href="#none" title="로그인">
+									login
+								</a>
+							</li>
+							<li>
+								<a href="#none" title="회원가입">
+									join
+								</a>
+							</li>
+							<li class="icon">
+								<a href="#none" title="마이페이지">
+									<img src="img/btn/mypage.png" alt="마이페이지이미지"/>
+								</a>
+							</li>
+							<li class="icon">
+								<a href="#none" title="장바구니">
+									<img src="img/btn/basket.png" alt="마이페이지이미지"/>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="container">
+			<section id="showcase">
+				<h2>쇼케이스</h2>
+				<div id="sc_inn">
+					<h3>
+						<span>nerdy's showcase</span>
+						<span class="bar_ani"></span>
+					</h3>
+					<div>
+						<ul class="main">
+							<li class="no0">
+								<img src="img/showcase/sc0.jpg" alt="메인이미지0"/>
+							</li>
+							<li class="no1">
+								<img src="img/showcase/sc1.jpg" alt="메인이미지1"/>
+							</li>
+							<li class="no2">
+								<img src="img/showcase/sc2.jpg" alt="메인이미지1"/>
+							</li>
+							<li class="no3">
+								<img src="img/showcase/sc3.jpg" alt="메인이미지1"/>
+							</li>
+							<li class="no4">
+								<img src="img/showcase/sc4.jpg" alt="메인이미지1"/>
+							</li>
+							<li class="no5">
+								<img src="img/showcase/sc5.jpg" alt="메인이미지1"/>
+							</li>
+							<li class="no6">
+								<img src="img/showcase/sc6.jpg" alt="메인이미지1"/>
+							</li>
+							<li class="no7">
+								<img src="img/showcase/sc7.jpg" alt="메인이미지1"/>
+							</li>
+							<li class="no8">
+								<img src="img/showcase/sc8.jpg" alt="메인이미지1"/>
+							</li>
+							<li class="no9">
+								<img src="img/showcase/sc9.jpg" alt="메인이미지1"/>
+							</li>
+							<li class="no10">
+								<img src="img/showcase/sc10.jpg" alt="메인이미지1"/>
+							</li>
+							<li class="no11">
+								<img src="img/showcase/sc11.jpg" alt="메인이미지1"/>
+							</li>
+							<li class="no12">
+								<img src="img/showcase/sc12.jpg" alt="메인이미지1"/>
+							</li>
+							<li class="no13">
+								<img src="img/showcase/sc13.jpg" alt="메인이미지1"/>
+							</li>
+						</ul>
+						<ul class="list">
+							<li class="no0">
+								<span class="mv_border">
+									<i>
+										쩜
+									</i>
+								</span>
+							</li>
+							<li class="no1">
+								<span class="mv_border">
+									<i>
+										쩜
+									</i>
+								</span>
+							</li>
+							<li class="no2">
+								<span class="mv_border">
+									<i>
+										쩜
+									</i>
+								</span>
+							</li>
+							<li class="no3">
+								<span class="mv_border">
+									<i>
+										쩜
+									</i>
+								</span>
+							</li>
+							<li class="no4">
+								<span class="mv_border">
+									<i>
+										쩜
+									</i>
+								</span>
+							</li>
+							<li class="no5">
+								<span class="mv_border">
+									<i>
+										쩜
+									</i>
+								</span>
+							</li>
+							<li class="no6">
+								<span class="mv_border">
+									<i>
+										쩜
+									</i>
+								</span>
+							</li>
+							<li class="no7">
+								<span class="mv_border">
+									<i>
+										쩜
+									</i>
+								</span>
+							</li>
+							<li class="no8">
+								<span class="mv_border">
+									<i>
+										쩜
+									</i>
+								</span>
+							</li>
+							<li class="no9">
+								<span class="mv_border">
+									<i>
+										쩜
+									</i>
+								</span>
+							</li>
+							<li class="no10">
+								<span class="mv_border">
+									<i>
+										쩜
+									</i>
+								</span>
+							</li>
+							<li class="no11">
+								<span class="mv_border">
+									<i>
+										쩜
+									</i>
+								</span>
+							</li>
+							<li class="no12">
+								<span class="mv_border">
+									<i>
+										쩜
+									</i>
+								</span>
+							</li>
+							<li class="no13">
+								<span class="mv_border">
+									<i>
+										쩜
+									</i>
+								</span>
+							</li>
+						</ul>
+						<div class="tap">
+						</div>
+					</div>
+				</div>
+			</section>
+			<div id="side"><!--실험용 언제든 폐기가능 후에 기능배워서 기존 널디 페이지처럼 스크롤따라가는 기능 만들기-->
+				<h2>sidemenu영역</h2>
+				<aside id="side_inn">
+					<ul class="menu">
+						<li>
+							<a href="#none" title="사이드">
+								about us
+							</a>
+						</li>
+						<li>
+							<a href="#none" title="showcase">
+								showcase
+							</a>
+						</li>
+						<li>
+							<a href="#none" title="nerdy fit">
+								nerdy fit
+							</a>
+						</li>
+						<li>
+							<a href="#none" title="nerdy">
+								nerdy
+							</a>
+						</li>
+						<li class="sub">
+							<div>
+								<p>
+									<a href="#none" title="신상품">
+										신상품
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="세트_1n1">
+										세트/1&amp;1
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="베스트100">
+										베스트100
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="의류">
+										의류
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="신발">
+										신발
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="액세사리">
+										액세사리
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="아울렛">
+										아울렛
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="맞춤 제품 찾기">
+										맞춤 제품 찾기
+									</a>
+								</p>
+							</div>
+						</li>
+						<li>
+							<a href="#none" title="lookbook">
+								lookbook
+							</a>
+						</li>
+						<li>
+							<a href="#none" title="store">
+								store
+							</a>
+						</li>
+						<li>
+							<a href="#none" title="community">
+								community
+							</a>
+						</li>
+					</ul>
+				</aside>
+			</div>
+		</div>
+		<div id="footerWrap">
+			<div id="footer">
+				<div id="footer_inn">
+					<div class="info">
+						<h2>꼬릿말</h2>
+						<div class="online">
+							<h3>online shop</h3>
+							<ul>
+								<li>
+									82+ 1544-2083
+								</li>
+								<li class="week">
+									mon-fri : 09:00-18:00 | lunch 12:00-13:00
+								</li>
+							</ul>
+						</div>
+						<div class="with">
+							<h3>with</h3>
+							<ul>
+								<li>
+									<a href="#none" title="파트너쉽">
+										partnership
+									</a>
+								</li>
+								<li>
+									<a href="#none" title="콜라보레이션">
+										collaboration
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="legal">
+							<h3>legal</h3>
+							<ul>
+								<li>
+									<a href="#none" title="agreement">
+										agreement
+									</a>
+								</li>
+								<li class="policy">
+									<a href="#none" title="privacy policy">
+										privacy policy
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="legal">
+							<h3>help</h3>
+							<ul>
+								<li>
+									<a href="#none" title="qna">
+										qna
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="social">
+							<h3>social</h3>
+							<ul>
+								<li>
+									<a href="#none" title="인스타그램">
+										<img src="img/btn/insta.png" alt="인스타그램이미지"/>
+									</a>
+								</li>
+								<li>
+									<a href="#none" title="페이스북">
+										<img src="img/btn/facebook.png" alt="페이스북이미지"/>
+									</a>
+								</li>
+								<li>
+									<a href="#none" title="유튜브">
+										<img src="img/btn/youtube.png" alt="유튜브이미지"/>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="copyright">
+						<div class="footer_logo">
+							<p class="logo">
+								<img src="img/logo/logo.png" alt="널디"/>
+							</p>
+						</div>
+						<div class="copy">
+							<p>
+								APR Co., Ltd. <i>|</i> CS CENTER : 1544-2083 (MON - FRI 09:00 - 18:00)
+							</p>
+							<p>
+								(05551) 94-12, 36th floor, 300, Olympic-ro, Songpa-gu, Seoul, Republic of Korea <i>|</i> CEO : Byunghoon Kim
+							</p>
+							<p>
+								Business Registration No : [220-88-89441] <a href="#none" title="사업자정보확인">[사업자정보확인]</a>
+							</p>
+							<p>
+								E-commerce Permit Registration No : 2020-SeoulSongpa-1274
+							</p>
+							<p>
+								Personal Information Manager : JEONG JAEHUN (whoisnerdy.kr@gmail.com)
+							</p>
+							<p>
+								COPYRIGHT &copy; 2022 YHR
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+ </body>
+</html>

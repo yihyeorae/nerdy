@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title> new document </title>
+	<meta charset="utf-8"/>
+	<style>
+		*{margin:0; padding:0;}
+		li{list-style-type:none;}
+		li{width:100px; height:200px; line-height:200px; background-color:#abcdef; color:#fff; float:left; font-size:40px; position:relative; text-align:center; transform:rotatey(0deg); transition:all 1s linear 0.2s; opacity:1;}
+		li p{width:100%; height:100%; position:absolute; left:0; top:0; transition:all 1s linear 0.2s; cursor:pointer; text-transform:uppercase;}
+		
+		p:first-child{color:#f00; opacity:1; transition:all 0.5s ease-out 0.2s;}
+		p:last-child{color:#ff0; opacity:0; transform:rotatey(180deg);}
+
+		li:hover{transform:rotatey(180deg);}
+		li:hover p:first-child{opacity:0;}
+		li:hover p:last-child{opacity:1;}
+		
+		
+		#no0{animation:no0 1s 1;}
+		#no0 .no0_0{animation:no0_0 1s 1;}
+
+		@keyframes no0{
+			0%{transform:rotatey(0deg);}
+
+			100%{transform:rotatey(180deg);}
+		}
+
+		@keyframes no0_0{
+			0%{opacity:1;}
+
+			100%{opacity:0;}
+		}
+		
+		#no1{animation:no1 1s 1 0.5s;}
+		#no1 .no1_0{animation:no1_0 1s 1 0.5s;}
+
+		@keyframes no1{
+			0%{transform:rotatey(0deg);}
+
+			100%{transform:rotatey(180deg);}
+		}
+
+		@keyframes no1_0{
+			0%{opacity:1;}
+
+			100%{opacity:0;}
+		}
+		
+		
+		#no2{animation:no2 1s 1 1s;}
+		#no2 .no2_0{animation:no2_0 1s 1 1s;}
+		#no2 .no2_1{animation:no2_1 1s 1 1s;}
+
+		@keyframes no2{
+			0%{transform:rotatey(0deg);}
+
+			100%{transform:rotatey(180deg);}
+		}
+
+		@keyframes no2_0{
+			0%{opacity:1;}
+
+			100%{opacity:0;}
+		}
+		@keyframes no2_1{
+			0%{opacity:0;}
+
+			100%{opacity:1;}
+		}
+
+		#no3{animation:no3 1s 1 1.5s;}
+		#no3 .no3_0{animation:no3_0 1s 1 1.5s;}
+		#no3 .no3_1{animation:no3_1 1s 1 1.5s;}
+
+		@keyframes no3{
+			0%{transform:rotatey(0deg);}
+
+			100%{transform:rotatey(180deg);}
+		}
+
+		@keyframes no3_0{
+			0%{opacity:1;}
+
+			100%{opacity:0;}
+		}
+		@keyframes no3_1{
+			0%{opacity:0;}
+
+			100%{opacity:1;}
+		}
+
+		#no4{animation:no4 1s 1 2s;}
+		#no4 .no4_0{animation:no4_0 1s 1 2s;}
+
+
+		@keyframes no4{
+			0%{transform:rotatey(0deg);}
+
+			100%{transform:rotatey(180deg);}
+		}
+
+		@keyframes no4_0{
+			0%{opacity:1;}
+
+			100%{opacity:0;}
+		}
+
+
+		#no5{animation:no5 1s 1 2.5s;}
+		#no5 .no5_0{animation:no5_0 1s 1 2.5s;}
+		#no5 .no5_1{animation:no5_1 1s 1 2.5s;}
+
+		@keyframes no5{
+			0%{transform:rotatey(0deg);}
+
+			100%{transform:rotatey(180deg);}
+		}
+
+		@keyframes no5_0{
+			0%{opacity:1;}
+
+			100%{opacity:0;}
+		}
+		@keyframes no5_1{
+			0%{opacity:0;}
+
+			100%{opacity:1;}
+		}
+
+		#no6{animation:no6 1s 1 3s;}
+		#no6 .no6_0{animation:no6_0 1s 1 3s;}
+		#no6 .no6_1{animation:no6_1 1s 1 3s;}
+
+		@keyframes no6{
+			0%{transform:rotatey(0deg);}
+
+			100%{transform:rotatey(180deg);}
+		}
+
+		@keyframes no6_0{
+			0%{opacity:1;}
+
+			100%{opacity:0;}
+		}
+		@keyframes no6_1{
+			0%{opacity:0;}
+
+			100%{opacity:1;}
+		}
+
+		#no7{animation:no7 1s 1 3.5s;}
+		#no7 .no7_0{animation:no7_0 1s 1 3.5s;}
+		#no7 .no7_1{animation:no7_1 1s 1 3.5s;}
+
+		@keyframes no7{
+			0%{transform:rotatey(0deg);}
+
+			100%{transform:rotatey(180deg);}
+		}
+
+		@keyframes no7_0{
+			0%{opacity:1;}
+
+			100%{opacity:0;}
+		}
+		@keyframes no7_1{
+			0%{opacity:0;}
+
+			100%{opacity:1;}
+		}
+
+		#no8{animation:no8 1s 1 4s;}
+		#no8 .no8_0{animation:no8_0 1s 1 4s;}
+		#no8 .no8_1{animation:no8_1 1s 1 4s;}
+
+		@keyframes no8{
+			0%{transform:rotatey(0deg);}
+
+			100%{transform:rotatey(180deg);}
+		}
+
+		@keyframes no8_0{
+			0%{opacity:1;}
+
+			100%{opacity:0;}
+		}
+		@keyframes no8_1{
+			0%{opacity:0;}
+
+			100%{opacity:1;}
+		}
+
+		#no9{animation:no9 1s 1 4.5s;}
+		#no9 .no9_0{animation:no9_0 1s 1 4.5s;}
+		#no9 .no9_1{animation:no9_1 1s 1 4.5s;}
+
+		@keyframes no9{
+			0%{transform:rotatey(0deg);}
+
+			100%{transform:rotatey(180deg);}
+		}
+
+		@keyframes no9_0{
+			0%{opacity:1;}
+
+			100%{opacity:0;}
+		}
+		@keyframes no9_1{
+			0%{opacity:0;}
+
+			100%{opacity:1;}
+		}
+
+	</style>
+ </head>
+
+ <body>
+	<ul>
+		<li id="no0">
+			<p class="no0_0">
+				w
+			</p>
+			<p>
+				
+			</p>
+		</li>
+		<li id="no1">
+			<p class="no1_0">
+				h
+			</p>
+			<p>
+				
+			</p>
+		</li>
+		<li id="no2">
+			<p class="no2_0">
+				o
+			</p>
+			<p class="no2_1">
+				i
+			</p>
+		</li>
+		<li id="no3">
+			<p class="no3_0">
+				i
+			</p>
+			<p class="no3_1">
+				s
+			</p>
+		</li>
+		<li id="no4">
+			<p class="no4_0">
+				s
+			</p>
+			<p>
+				
+			</p>
+		</li>		
+		<li id="no5">
+			<p class="no5_0">
+				n
+			</p>
+			<p class="no5_1">
+				y
+			</p>
+		</li>
+		<li id="no6">
+			<p class="no6_0">
+				e
+			</p>
+			<p class="no6_1">
+				o
+			</p>
+		</li>
+		<li id="no7">
+			<p class="no7_0">
+				r
+			</p>
+			<p class="no7_1">
+				u
+			</p>
+		</li>
+		<li id="no8">
+			<p class="no8_0">
+				d
+			</p>
+			<p>
+				
+			</p>
+		</li>
+		<li id="no9">
+			<p class="no9_0">
+				y
+			</p>
+			<p>
+				
+			</p>
+		</li>
+	</ul>
+ </body>
+</html>
