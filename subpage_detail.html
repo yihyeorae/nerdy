@@ -68,7 +68,7 @@
 
 	/*컨테이너정리선*/
 		/*## container ##*/
-			#container{width:100%;}
+			#container{width:100%; position:relative;}
 
 		/*## detail ##*/
 			#detail{width:100%;}
@@ -145,6 +145,7 @@
 
 
 			#buy .srq_inn table{width:438px; height:438px; margin-top:30px; border:1px solid #ccc; border-collapse:collapse; text-align:center; text-transform:uppercase; font-size:13px;}
+			#buy .srq_inn table caption{display:none;}
 			#buy .srq_inn table tr{width:100%;}
 			#buy .srq_inn table th{width:12%; height:16%; background-color:rgba(150,150,150,0.3); color:#333; border:1px solid #ccc; font-weight:700;}
 			#buy .srq_inn table td{border:1px solid #ccc;}
@@ -232,6 +233,23 @@
 
 		/*## detail_inn 가상객체 ##*/
 			#detail_inn:after{content:""; display:block; clear:both;}
+
+			/*## side ##*/
+			/*실험용 언제든 폐기가능 후에 기능배워서 기존 널디 페이지처럼 스크롤따라가는 기능 만들기*/
+				#side{width:350px; height:817px; background-color:rgba(255,255,255,0.3); position:absolute; left:0; top:0;}
+				
+				#side_inn{width:100%; height:100%;}
+
+				#side_inn ul{width:80%; height:80%; padding:10%;}
+
+				#side_inn li{width:70%; padding:5% 15%;}
+				#side_inn li a{color:#333; font-size:19px; font-weight:700; text-transform:uppercase;}
+
+				#side_inn .sub p{width:100%; padding:5px 0;}
+				#side_inn .sub p a{font-size:14px;}
+
+			/*## side 기능 ##*/
+				#side_inn li a:hover{color:rgba(156,1,255,1);}
 	</style>
 	<script>
 		$(document).ready(function(){
@@ -262,16 +280,34 @@
 				$(this).parent().siblings().slideDown(500,"swing")
 			});
 
+			$(".bk_title li:first").click(function(){
+				$(".cm_title li:first").siblings().hide();
+				$(".pp_title li:first").siblings().hide();
+				$(this).siblings().slideDown(500,"swing")
+			});
+
 			$("#cm").click(function(){
 				$(".bk_title li:first").siblings().hide();
 				$(".pp_title li:first").siblings().hide();
 				$(this).parent().siblings().slideDown(500,"swing")
 			});
 
+			$(".cm_title li:first").click(function(){
+				$(".cm_title li:first").siblings().hide();
+				$(".pp_title li:first").siblings().hide();
+				$(this).siblings().slideDown(500,"swing")
+			});
+
 			$("#pp").click(function(){
 				$(".bk_title li:first").siblings().hide();
 				$(".cm_title li:first").siblings().hide();
 				$(this).parent().siblings().slideDown(500,"swing")
+			});
+
+			$(".pp_title li:first").click(function(){
+				$(".cm_title li:first").siblings().hide();
+				$(".pp_title li:first").siblings().hide();
+				$(this).siblings().slideDown(500,"swing")
 			});
 
 		});
@@ -311,7 +347,7 @@
 				<div id="nav">
 					<h2>네비게이션</h2>
 					<div id="logo">
-						<a href="https://whoisnerdy.com/" title="널디홈페이지">
+						<a href="index.html" title="널디홈페이지">
 							<img src="img/logo/logo.png" alt="널디"/>
 						</a>
 					</div>
@@ -697,7 +733,8 @@
 									<p class="img">
 										<img src="img/size/size.png" alt="사이즈표이미지"/>
 									</p>
-									<table summary="수치표">
+									<table>
+										<caption>수치표</caption>
 										<tbody>
 											<tr>
 												<th>
@@ -940,6 +977,92 @@
 					</div>
 				</div>
 			</section>
+			<div id="side"><!--실험용 언제든 폐기가능 후에 기능배워서 기존 널디 페이지처럼 스크롤따라가는 기능 만들기-->
+				<h2>sidemenu영역</h2>
+				<div id="side_inn">
+					<ul class="menu">
+						<li>
+							<a href="#none" title="사이드">
+								about us
+							</a>
+						</li>
+						<li>
+							<a href="subpage_showcase.html" title="showcase">
+								showcase
+							</a>
+						</li>
+						<li>
+							<a href="#none" title="nerdy fit">
+								nerdy fit
+							</a>
+						</li>
+						<li>
+							<a href="#none" title="nerdy">
+								nerdy
+							</a>
+						</li>
+						<li class="sub">
+							<div>
+								<p>
+									<a href="#none" title="신상품">
+										신상품
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="세트_1n1">
+										세트/1&amp;1
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="베스트100">
+										베스트100
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="의류">
+										의류
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="신발">
+										신발
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="액세사리">
+										액세사리
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="아울렛">
+										아울렛
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="맞춤 제품 찾기">
+										맞춤 제품 찾기
+									</a>
+								</p>
+							</div>
+						</li>
+						<li>
+							<a href="#none" title="lookbook">
+								lookbook
+							</a>
+						</li>
+						<li>
+							<a href="subpage_store.html" title="store">
+								store
+							</a>
+						</li>
+						<li>
+							<a href="#none" title="community">
+								community
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
 	</div>
  </body>

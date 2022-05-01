@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ko">
  <head>
@@ -14,6 +15,7 @@
 				li{list-style-type:none;}
 				div,p,ul,li,a,span{margin:0; padding:0;}
 				a:link, a:visited{text-decoration:none; color:#000;}
+				a:focus{text-decoration:none;}
 				img{border:none;}
 				h1,h2{position:absolute; left:-9999px; width:1px; height:1px; line-height:0; overflow:hidden;}
 
@@ -111,9 +113,11 @@
 				#visual_inn .text a .title{font-size:40px;  padding-top:10px;}
 
 				#visual_inn .text a .label{width:70px; height:30px; line-height:30px; font-size:20px; text-align:center; background-color:#000; opacity:0; transition:opacity 0.5s linear 1s;}
-
+				
+				
 				#visual_inn:hover .text{opacity:1; left:650px; bottom:100px; overflow:hidden;}
 				#visual_inn:hover a .label{opacity:1;}
+				
 
 				
 
@@ -138,8 +142,10 @@
 
 			
 			/*## lookbook 기능 구현 ##*/
+				
 				#lookbook:hover ul{background-color:rgba(100,100,100,0.5); opacity:1;}
 				#main_inn .link li:hover{border:1px solid #9201ff;}
+				
 				
 
 			/*## md ##*/
@@ -150,9 +156,11 @@
 				#md h3{width:140px; margin:0 420px 20px 420px;}
 
 
-			/*## md 기능 구현 ##*/
+			/*## md 기능 구현  ##*/
+				
 				#md li:hover ul{background-color:rgba(100,100,100,0.5); opacity:1;}
 				#md .link li:hover{border:1px solid #9201ff;}
+				
 
 			/*## link ##*/
 				#main_inn .link{width:301px; height:420px; padding:81px 80px; position:absolute; left:0; top:0; opacity:0; transition:opacity 0.5s linear;}
@@ -183,10 +191,11 @@
 			/*## label ##*/
 				#event_inn .main .text .label{width:70px; height:30px; line-height:30px; padding:0; text-align:center; background-color:#000; opacity:0; transition:opacity 0.5s linear 0.7s}
 				
+				
 				#event_inn:hover .text{left:50px; opacity:1;}
 				#event_inn:hover .text .label{opacity:1;}
-				#event_inn .main .text a:hover{border:1px solid #000; color:#000;}
-
+				
+				
 			/*## sub ##*/
 				#event_inn .sub{width:700px; padding-left:20px; height:864px; float:left;}
 				#event_inn .sub ul{width:100%; height:100%;}
@@ -199,9 +208,10 @@
 				
 
 			/*## sub 기능 구현  ## */ 
+			/*
 				#event_inn .sub li:hover a{transform:scale(1.1);}
 				#event_inn .sub li a:hover .link{background-color:rgba(100,100,100,0.5); opacity:1;}
-
+			*/
 			/*## best ##*/
 				#best{width:100%; height:642px; padding-top:100px;}
 
@@ -244,7 +254,7 @@
 				#season{width:100%;}
 
 			/*## season_inn ##*/
-				#season_inn{width:100%; height:900px; padding-bottom:100px; position:relative;}
+				#season_inn{width:100%; height:900px; position:relative;}
 
 				#season_inn .inn_main{width:1920px; height:900px; margin:0 auto; overflow:hidden; position:relative;}
 				#season_inn .inn_main h3{width:370px; height:48px; line-height:48px; margin:20px auto 30px; border-bottom:2px solid #333; font-size:30px; text-align:center; text-transform:uppercase;}
@@ -264,7 +274,7 @@
 
 			/*## slogan ##*/
 				#slogan{width:100%;}
-				#slogan_inn{width:1280px; height:200px; overflow:hidden; margin:0 auto 50px; position:relative;}
+				#slogan_inn{width:1280px; height:200px; overflow:hidden; margin:0 auto; position:relative;}
 
 				#slogan_inn div{width:1280px; height:200px; position:absolute; opacity:1; transform:translatex(0px); transition:all 0.3s linear 0.2s;}
 				#slogan_inn div p{width:640px; height:200px; line-height:200px; font-size:80px; font-weight:700; text-transform:uppercase; opacity:1;}
@@ -306,21 +316,24 @@
 				display:none;}
 
 			/*## video_bg ##*/
-				#video_bg{width:100%;  height:450px; margin:0 auto; background-image:url("img/video/tvc2_vert.jpg"); background-attachment:fixed; background-position:center center; background-repeat:no-repeat;}
+				#video_bg{width:100%;  height:450px; margin:0 auto; background-image:url("img/video/tvc3_vert.jpg"); background-attachment:fixed; background-position:center center;}
 
 			/*## video_title 기능 ##*/
 				#video:hover h3{/*background-color:rgba(143,1,255,0.8);*/ color:rgba(143,1,255,0.8); /*color:rgba(255,255,255,1);*/ text-shadow:2px 2px 10px;}
 
 			/*## insta ##*/
-				#insta{width:100%;}
-				#insta_inn{width:1440px; height:1000px; padding-top:100px; margin:0 auto; position:relative;}
+				#insta{width:100%; 
+				
+				
+				}
+				#insta_inn{width:1440px; height:800px; padding:50px 0; margin:0 auto; position:relative;}
 				#insta_inn h3{width:100%; padding-bottom:50px; font-size:30px; text-align:center; text-transform:uppercase;}
 				#insta_inn h3 span{display:inline-block; padding-bottom:10px; border-bottom:2px solid #000;}
 
-				#insta_main{width:100%; height:640px;}
+				#insta_main{width:100%; height:660px;}
 				
-				#insta_main div{width:640px; height:640px; padding:0 40px; float:left; transform:rotate3d(0,0,0,0deg); transition:all 1s linear; border-radius:640px;}
-				#insta_main ul{width:100%; height:640px; position:relative;}
+				#insta_main div{width:640px; height:660px; padding:0 40px; float:left; transform:rotate3d(0,0,0,0deg); transition:all 1s linear; border-radius:640px;}
+				#insta_main ul{width:100%; height:660px; position:relative;}
 				#insta_main li{width:200px; height:200px; position:absolute; border-radius:200px;
 				transform:rotate3d(0,0,0,0deg); transition:all 1s linear;}
 				#insta_main li a{display:block; width:100%; text-align:center; position:relative; border-radius:200px;}
@@ -361,8 +374,15 @@
 				#insta:hover #insta_right li{transform:rotate3d(0,0,1,-90deg);}
 				*/
 
-				#direction{width:200px; height:50px; position:absolute; left:620px; bottom:400px;}
-				#direction button{width:100px; height:100%; float:left; background:none; font-size:30px; border:0; cursor:pointer;}
+				#direction{width:140px; height:32px; position:absolute; left:650px; bottom:155px;}
+				#direction p{width:32px; height:100%; margin:0 19px; float:left; background:none; font-size:30px; border:0;}
+				#direction p a{display:block; width:100%; height:100%;}
+				#direction p img{width:100%;}
+
+				#insta_inn .text{width:100%;}
+
+				#insta_inn .text p{text-align:center; font-size:18px;}
+				#insta_inn .text p span{display:inline-block; padding-bottom:10px; border-bottom:2px solid #000;}
 
 			/*## side ##*/
 			/*실험용 언제든 폐기가능 후에 기능배워서 기존 널디 페이지처럼 스크롤따라가는 기능 만들기*/
@@ -566,10 +586,13 @@
 				#md li .img{height:583px; overflow:hidden;}
 				#md h3{width:150px; height:30px; font-size:25px; margin:0 0 20px 0;}
 
+				
+
 				#md li:hover ul{background-color:rgba(0,0,0,0); opacity:1;}
 
 				#md li:first-child ul li{background-color:rgba(184,214,222,0);}
 				#md li:first-child ul li .title{color:#000;}
+				
 
 
 				/*## link ##*/
@@ -783,11 +806,13 @@
 				#md li{width:461px; height:1290px; padding:0; position:static;}
 				#md li .img{height:583px; overflow:hidden;}
 				#md h3{width:150px; height:30px; font-size:25px; margin:0 0 20px 0;}
-
+				
+				
 				#md li:hover ul{background-color:rgba(100,100,100,0); opacity:1;}
 
 				#md li:first-child ul li{background-color:rgba(184,214,222,0);}
 				#md li:first-child ul li .title{color:#000;}
+				
 
 
 				/*## link ##*/
@@ -984,11 +1009,13 @@
 				#md ul{width:300px; height:1880px; padding:0;}
 				#md li{width:300px; height:940px; padding:0; position:static;}			
 				#md h3{width:120px; height:25px; font-size:20px; margin:0 0 20px 0;}
-
+				
+				
 				#md li:hover ul{background-color:rgba(100,100,100,0); opacity:1;}
 
 				#md li:first-child ul li{background-color:rgba(184,214,222,0);}
 				#md li:first-child ul li .title{color:#000;}
+				
 
 
 				/*## link ##*/
@@ -1101,7 +1128,7 @@
 
 			*/
 
-
+			/*## 모바일 header ## */
 			/*
 				대상 : #btn0( li태그 )
 				이벤트 : 클릭
@@ -1133,8 +1160,81 @@
 				$(this).next().slideDown(1000,"easeOutBounce");
 				$(this).parent().siblings().find("ul").slideUp(500,"swing");
 			});
+			
+			/*## PC visual 영역 ( 접근성을 위해 기존 css hover 기능 주석처리후 jQuery 로 기능적용 ) ##*/
+			/*## (모바일 버전과 충돌로 문제 일으켜서 잠시 주석처리 후 css 로 기능유지) 조건문으로 해결 예정##*/
+			
+			/*
+			$("#visual_inn").bind("mouseenter focusin",function(){
+				$(this).find(".text").css({"left":"650px","bottom":"100px","opacity":"1"});
+				$(this).find(".text a .label").css({"opacity":"1"});
+			}).bind("mouseleave focusout",function(){
+				$(this).find(".text").css({"left":"0","bottom":"100px","opacity":"0"});
+				$(this).find(".text a .label").css({"opacity":"0"});
+			});	
+			*/
+			
 
-			$("#direction .left").click(function(){
+			/*## PC main 영역 ( 접근성을 위해 기존 css hover 기능 주석처리후 jQuery 로 기능적용 )## */
+			/*## (모바일 버전과 충돌로 문제 일으켜서 잠시 주석처리 후 css 로 기능유지) 조건문으로 해결 예정 ##*/
+
+			/*
+			$("#lookbook").bind("mouseenter focusin",function(){
+				$(this).find(".link").css({"backgroundColor":"rgba(100,100,100,0.5)","opacity":"1"});
+			}).bind("mouseleave focusout",function(){
+				$(this).find(".link").css({"backgroundColor":"rgba(0,0,0,0)","opacity":"0"});
+			});	
+
+			$("#lookbook .link li").bind("mouseenter focusin",function(){
+				$(this).css({"border":"1px solid rgba(156,1,255,1)"});
+			}).bind("mouseleave focusout",function(){
+				$(this).css({"border":"1px solid rgba(0,0,0,0)"});
+			});
+	
+
+			$("#md li").bind("mouseenter focusin",function(){
+				$(this).find(".link").css({"backgroundColor":"rgba(100,100,100,0.5)","opacity":"1"});
+			}).bind("mouseleave focusout",function(){
+				$(this).find(".link").css({"backgroundColor":"rgba(0,0,0,0)","opacity":"0"});
+			});
+			
+			$("#md .link li").bind("mouseenter focusin",function(){
+				$(this).css({"border":"1px solid rgba(156,1,255,1)"});
+			}).bind("mouseleave focusout",function(){
+				$(this).css({"border":"1px solid rgba(0,0,0,0)"});
+			});
+			*/
+
+			/*## PC event 영역 ( 접근성을 위해 기존 css hover 기능 주석처리후 jQuery 로 기능적용 ) ##*/
+			/*## (모바일 버전과 충돌로 문제 일으켜서 잠시 주석처리 후 css 로 기능유지) 조건문으로 해결 예정 ##*/
+			/*
+			$("#event_inn").bind("mouseenter focusin",function(){
+				$(this).find(".text").css({"left":"50px","opacity":"1"});
+				$(this).find(".text .label").css({"opacity":"1"});
+			}).bind("mouseleave focusout",function(){
+				$(this).find(".text").css({"left":"670px","opacity":"0"});
+				$(this).find(".text .label").css({"opacity":"0"});
+			});	
+			*/
+
+			$("#event_inn .sub li").bind("mouseenter focusin",function(){
+				$(this).find("a").css({"transform":"scale(1.1)"});
+				$(this).find(".link").css({"backgroundColor":"rgba(100,100,100,0.5)","opacity":"1"});
+			}).bind("mouseleave focusout",function(){
+				$(this).find("a").css({"transform":"scale(1)"});
+				$(this).find(".link").css({"backgroundColor":"rgba(0,0,0,0)","opacity":"0"});
+			});	
+
+
+
+			/*## PC insta 영역 ##*/
+			/*
+				[이슈]
+				현재 같은 클릭을 반복할 수 없기에, 좌측 클릭 / 우측 클릭 번갈아가면서는 작동하나 계속해서 한쪽방향 클릭이 어려움
+				클릭을 반복해서 받을 수 있도록 확인하여 해결 예정
+			*/
+
+			$("#direction .left").bind("click focusin",function(){
 				$("#insta_left").css({"transform":"rotate3d(0,0,1,-90deg)"});
 				$("#insta_left li").css({"transform":"rotate3d(0,0,1,90deg)"});
 				$("#insta_right").css({"transform":"rotate3d(0,0,1,90deg)"});
@@ -1143,7 +1243,7 @@
 				$("#insta_right .no1").css({"transform":"rotate3d(0,0,1,-90deg) scale(1.3)"});
 			});
 
-			$("#direction .right").click(function(){
+			$("#direction .right").bind("click focusin",function(){
 				$("#insta_left").css({"transform":"rotate3d(0,0,1,0deg)"});
 				$("#insta_left li").css({"transform":"rotate3d(0,0,1,0deg)"});
 				$("#insta_right").css({"transform":"rotate3d(0,0,1,0deg)"});
@@ -1559,7 +1659,7 @@
 							<p class="box3"></p>
 						</li>
 						<li>
-							<a href="#none" title="베스트상품링크1">
+							<a href="subpage_detail.html" title="베스트상품링크1">
 								<span class="img">
 									<img src="img/best/best1.png" alt="베스트상품이미지1"/>
 								</span>
@@ -1573,7 +1673,7 @@
 							<p class="box3"></p>
 						</li>
 						<li>
-							<a href="#none" title="베스트상품링크2">
+							<a href="subpage_detail.html" title="베스트상품링크2">
 								<span class="img">
 									<img src="img/best/best2.png" alt="베스트상품이미지2"/>
 								</span>
@@ -1587,7 +1687,7 @@
 							<p class="box3"></p>
 						</li>
 						<li>
-							<a href="#none" title="베스트상품링크3">
+							<a href="subpage_detail.html" title="베스트상품링크3">
 								<span class="img">
 									<img src="img/best/best3.png" alt="베스트상품이미지3"/>
 								</span>
@@ -1643,21 +1743,19 @@
 			</div>
 			<div id="video">
 				<h2>TVC영역</h2>
-				<div class="video_title">
-					<h3>be the</h3>
-				</div>
 				<div id="video_bg">
-				</div>
-				<div class="video_title">
-					<h3>nerdy</h3>
+					<!--
+					<div id="video_inn">
+						<video controls width="1920" height="1084" autoplay muted loop>
+							<source src="video/tvc0.mp4" type="video/mp4"/>
+						</video>
+					</div>
+					-->
 				</div>
 				<div id="video_inn">
 					<video controls width="1920" height="1084" autoplay muted loop>
 						<source src="video/tvc0.mp4" type="video/mp4"/>
 					</video>
-				</div>
-				<div class="video_title">
-					<h3>with taeyeon</h3>
 				</div>
 			</div>
 			<div id="side"><!--실험용 언제든 폐기가능 후에 기능배워서 기존 널디 페이지처럼 스크롤따라가는 기능 만들기-->
@@ -1670,7 +1768,7 @@
 							</a>
 						</li>
 						<li>
-							<a href="#none" title="showcase">
+							<a href="subpage_showcase.html" title="showcase">
 								showcase
 							</a>
 						</li>
@@ -1821,12 +1919,17 @@
 						</div>
 					</div>
 					<div id="direction">
-						<button class="left">
-							◀
-						</button>
-						<button class="right">
-							▶
-						</button>
+						<p class="left">
+							<a href="#none" title="왼쪽화살표"><img src="img/icon/small_left.png"/></a>
+						</p>
+						<p class="right">
+							<a href="#none" title="왼쪽화살표"><img src="img/icon/small_right.png"/></a>
+						</p>
+					</div>
+					<div class="text">
+						<p>
+							<span>널디와 함께 해준 SNS 인플루언서들의 아이템을 지금 바로 확인하세요!</span>
+						</p>
 					</div>
 				</div>
 			</div>
