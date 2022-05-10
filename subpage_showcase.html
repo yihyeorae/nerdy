@@ -101,9 +101,9 @@
 			#sc_inn .tap:after{content:""; display:block; clear:both;}
 
 		/*## main ##*/
-			#sc_inn .main{width:1920px; height:1014px; position:relative;  z-index:4;}
+			#sc_inn .main{width:1920px; height:1014px; position:relative;}
 			#sc_inn .main_inn{width:1280px; height:1014px; float:left;}
-			#sc_inn .main_inn li{width:1280px; margin:0 auto; display:none; position:relative;}
+			#sc_inn .main_inn li{width:1280px; margin:0 auto; display:none; position:relative; z-index:3;}
 			#sc_inn .main_inn .no0{display:block;}
 			#sc_inn .main_inn li img{width:100%;}
 
@@ -344,6 +344,8 @@
 				$(".main_inn li").hide();
 				$(".main_inn .no13").delay(500).fadeIn(500);
 			});
+
+			$(".top .ing span").css({"borderColor":"#000"});
 
 			$(".tap .ing").click(function(){
 				$(".list").hide();

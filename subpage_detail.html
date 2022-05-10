@@ -99,21 +99,21 @@
 
 		/*## select ##*/
 			#info .select{width:100%; padding-bottom:10px; border-bottom:1px solid #ccc;}
-			#info .select dl{padding:10px 20px;}
-			#info .select dt{padding-bottom:10px; font-size:18px; font-weight:700;}
-			#info .select dd{display:inline-block; height:28px; line-height:28px; border:1px solid #ccc;}
-			#info .select dd a{display:block; padding:0 15px; text-transform:uppercase; font-weight:700; background-color:#fff; transition:background-color 1s linear;}
+			#info .select div{padding:10px 20px;}
+			#info .select div .classify{padding-bottom:10px; font-size:18px; font-weight:700;}
+			#info .select div input{display:inline-block; width:60px; line-height:28px; border:1px solid #ccc; font-weight:700; cursor:pointer; text-transform:uppercase; text-align:center; transition:all 1s linear;}
+		
 
-		/*## select 기능 ##*/
-
-			#info .select dd:hover a{background-color:rgba(156,1,255,1); color:#fff;}
-			
 		/*## button ##*/
 			#info .button{width:100%;}
 			#info .button_inn{width:100%;}
-			#info .button ul{width:100%; height:100px;}
+			#info .button ul{width:100%;}
+			#info .button li{width:100%; padding:5px 0;}
+			#info .button li label{display:inline-block; width:185px; text-indent:20px; font-size:15px; font-weight:700; color:#000;}
+			#info .button li input{display:inline-block; text-align:center; border:0; cursor:default; font-size:13px; color:#666;}
+			#info .button li input[type="number"]{text-indent:13px;}
 
-			#info .btn_buy{width:100%; height:100px; overflow:hidden;}
+			#info .btn_buy{width:100%; padding:20px 0; overflow:hidden;}
 			#info .btn_buy ul{width:440px; height:100%;}
 			#info .btn_buy li{width:188px; height:48px; margin:0 10px; border:1px solid #333; text-align:center; float:left;}
 			#info .btn_buy li a{display:block; font-size:25px; color:#333; width:100%; height:100%; text-transform:uppercase; background-color:#fff; transition:background-color 0.2s linear; position:relative;}
@@ -183,8 +183,8 @@
 
 		/*## image ##*/
 			#image{width:800px; float:left; position:relative; text-transform:uppercase;}
-			#image ul li h3{width:100%; padding-bottom:20px; font-size:30px;}
-			#image ul li h3 span{display:inline-block; height:40px; border-bottom:2px solid #000;}
+			#image ul li h3{width:100%; padding-bottom:20px; font-size:13px; color:#666;}
+			#image ul li h3 span{display:inline-block; height:40px; font-size:30px; color:#000; border-bottom:2px solid #000;}
 			
 			#image ul{width:600px; margin-right:200px;}
 			#image ul li{width:100%; padding:20px 0; overflow:hidden;}
@@ -234,22 +234,70 @@
 		/*## detail_inn 가상객체 ##*/
 			#detail_inn:after{content:""; display:block; clear:both;}
 
-			/*## side ##*/
-			/*실험용 언제든 폐기가능 후에 기능배워서 기존 널디 페이지처럼 스크롤따라가는 기능 만들기*/
-				#side{width:350px; height:817px; background-color:rgba(255,255,255,0.3); position:absolute; left:0; top:0;}
-				
-				#side_inn{width:100%; height:100%;}
+		/*## side ##*/
+		/*실험용 언제든 폐기가능 후에 기능배워서 기존 널디 페이지처럼 스크롤따라가는 기능 만들기*/
+			#side{width:350px; height:817px; background-color:rgba(255,255,255,0.3); position:absolute; left:0; top:0;}
+			
+			#side_inn{width:100%; height:100%;}
 
-				#side_inn ul{width:80%; height:80%; padding:10%;}
+			#side_inn ul{width:80%; height:80%; padding:10%;}
 
-				#side_inn li{width:70%; padding:5% 15%;}
-				#side_inn li a{color:#333; font-size:19px; font-weight:700; text-transform:uppercase;}
+			#side_inn li{width:70%; padding:5% 15%;}
+			#side_inn li a{color:#333; font-size:19px; font-weight:700; text-transform:uppercase;}
 
-				#side_inn .sub p{width:100%; padding:5px 0;}
-				#side_inn .sub p a{font-size:14px;}
+			#side_inn .sub p{width:100%; padding:5px 0;}
+			#side_inn .sub p a{font-size:14px;}
 
-			/*## side 기능 ##*/
-				#side_inn li a:hover{color:rgba(156,1,255,1);}
+		/*## side 기능 ##*/
+			#side_inn li a:hover{color:rgba(156,1,255,1);}
+
+	/*푸터정리선*/
+		/*## footerWrap ##*/
+			#footerWrap{width:100%;}
+		
+		/*## footer ##*/
+			#footer{width:1920px; margin:0 auto; padding-top:50px; border-top:1px solid rgba(100,100,100,0.5);}
+
+		/*## footer_inn ##*/
+			#footer_inn{width:1440px; height:300px; margin:0 auto;}
+			#footer_inn h3{text-align:center; text-transform:uppercase;}
+
+		/*## left ##*/
+			#footer_inn .info{width:720px; height:250px; padding-bottom:50px; float:left;}
+			#footer_inn .info h3{width:150px; line-height:25px; font-size:18px; float:left;}
+			
+			#footer_inn .info div{width:720px; height:25px; padding-top:25px;}
+			#footer_inn .info div li:first-child{width:150px;}
+			
+
+		/*## ul / li ##*/
+			#footer_inn ul{width:550px; padding-left:20px; float:left;}
+			#footer_inn li{display:inline-block; padding:0 10px; line-height:25px; font-size:14px; color:#666;}
+			#footer_inn li a{font-size:14px; color:#666; text-transform:uppercase;}
+
+			#footer_inn li a:hover{text-decoration:underline; color:rgba(156,1,255,1);}
+
+		/*## onlin ##*/
+			#footer_inn .online li{text-transform:uppercase;}
+
+		/*## social ##*/
+			#footer_inn .info .social li:first-child{width:25px;}
+			#footer_inn .social li a{display:block; width:25px; height:25px;}
+			#footer_inn .social li a img{width:100%;}
+
+		/*## copyright ##*/
+			#footer_inn .copyright{width:720px; height:250px; font-size:15px; padding-bottom:50px; float:left;}
+
+			#footer_inn .copyright .footer_logo{width:100%; padding-top:25px;}
+			#footer_inn .copyright .logo{width:119px;}
+			#footer_inn .copyright .logo img{width:100%;}
+
+			#footer_inn .copyright .copy{width:100%; padding-top:25px; color:#666; font-size:14px;}
+			#footer_inn .copyright .copy p{padding-top:5px;}
+			#footer_inn .copyright .copy p a{color:#666; font-size:14px; font-weight:700;}
+			#footer_inn .copyright .copy i{font-style:normal;}
+			
+			#footer_inn .copyright .logo:after{content:""; display:block; clear:both;}
 	</style>
 	<script>
 		$(document).ready(function(){
@@ -293,7 +341,7 @@
 			});
 
 			$(".cm_title li:first").click(function(){
-				$(".cm_title li:first").siblings().hide();
+				$(".bk_title li:first").siblings().hide();
 				$(".pp_title li:first").siblings().hide();
 				$(this).siblings().slideDown(500,"swing")
 			});
@@ -305,12 +353,114 @@
 			});
 
 			$(".pp_title li:first").click(function(){
+				$(".bk_title li:first").siblings().hide();
 				$(".cm_title li:first").siblings().hide();
-				$(".pp_title li:first").siblings().hide();
 				$(this).siblings().slideDown(500,"swing")
 			});
+			
+			$(".select input").click(function(){
+				$(this).siblings().css({"backgroundColor":"rgba(0,0,0,0)","color":"#000"});
+				$(this).css({"backgroundColor":"rgba(156,1,255,0.8)","color":"#fff"});
+			});
+
+			var result0 = document.getElementById("result0");
+			var result1 = document.getElementById("result1");
+			var result2 = document.getElementById("result2");
+			var result3 = document.getElementById("result3");
+			var result4 = document.getElementById("result4");
+			var result5 = document.getElementById("result5");
 
 		});
+		
+	
+		function bk_click(){
+			result0.value = "BLACK";
+		}
+		function cm_click(){
+			result0.value = "CREAM";	
+		}
+		function pp_click(){
+			result0.value = "LIGHT PURPLE";	
+		}
+
+		function topXs_click(){
+			result1.value = "XS"
+		}
+		function topS_click(){
+			result1.value = "S"
+		}
+		function topM_click(){
+			result1.value = "M"
+		}
+		function topL_click(){
+			result1.value = "L"
+		}
+		function topXl_click(){
+			result1.value = "XL"
+		}
+
+		function pantsXs_click(){
+			result2.value = "XS"
+		}
+		function pantsS_click(){
+			result2.value = "S"
+		}
+		function pantsM_click(){
+			result2.value = "M"
+		}
+		function pantsL_click(){
+			result2.value = "L"
+		}
+		function pantsXl_click(){
+			result2.value = "XL"
+		}
+
+		function halfXs_click(){
+			result3.value = "XS"
+		}
+		function halfS_click(){
+			result3.value = "S"
+		}
+		function halfM_click(){
+			result3.value = "M"
+		}
+		function halfL_click(){
+			result3.value = "L"
+		}
+		function halfXl_click(){
+			result3.value = "XL"
+		}
+		
+		function total(){
+			var quantity = document.getElementById("quantity");
+			var total = document.getElementById("total");
+
+			total.value = 245000 * quantity.value;
+		}
+
+		function cartBtn(){
+			if(result0.value == "" || result1.value == "" || result2.value == "" || result3.value == ""){
+				alert("선택되지 않은 옵션이 있습니다. 체크해주세요.");
+			}
+			else{var cartCheck = confirm("장바구니 화면으로 이동하시겠습니까?");}
+			
+
+			if(cartCheck == true){
+				alert("화면이동했다고 가정하는 알람");
+			}
+			else if(cartCheck == false){alert("현재 화면을 유지합니다.");}
+		}
+
+		function buyBtn(){
+			if(result0.value == "" || result1.value == "" || result2.value == "" || result3.value == ""){
+				alert("선택되지 않은 옵션이 있습니다. 체크해주세요.");
+			}
+			else{var list = confirm("색상 : "+result0.value+"\n트랙 탑 : "+result1.value+"\n트랙 팬츠 : "+result2.value+"\n하프 팬츠 : "+result3.value+"\n사이즈 및 색상 확인 부탁드립니다.");}
+
+
+			
+			
+		}
 	</script>
  </head>
 
@@ -323,22 +473,22 @@
 					<h2>공지사항 및 이벤트</h2>
 					<ul>
 						<li class="color0">
-							<a href="#" title="공지사항링크">
+							<a href="#none" title="공지사항링크">
 								<span>3월</span> 이벤트 프로모션
 							</a>
 						</li>
 						<li class="color1">
-							<a href="#" title="공지사항링크">
+							<a href="#none" title="공지사항링크">
 								<span>널디회원</span>에게만 드리는 <span>무료 교환 혜택</span>
 							</a>
 						</li>
 						<li class="color2">
-							<a href="#" title="공지사항링크">
+							<a href="#none" title="공지사항링크">
 								@nerdy 카톡 채널 추가시 <span>플친전용 10% 할인 쿠폰</span> 발급!
 							</a>
 						</li>
 						<li class="color3">
-							<a href="#" title="공지사항링크">
+							<a href="#none" title="공지사항링크">
 								5/10/20/35 만원 이상 구매 시, 3월 구매금액 별 <span>사은품 증정!</span>
 							</a>
 						</li>
@@ -353,14 +503,14 @@
 					</div>
 					<div id="gnb">
 						<ul>
-							<li><a href="#" title="전체보기">all</a></li>
-							<li><a href="#" title="전체보기"><span>best</span></a></li>
-							<li><a href="#" title="전체보기">promo</a></li>
-							<li><a href="#" title="전체보기">cloth</a></li>
-							<li><a href="#" title="전체보기">shoes</a></li>
-							<li><a href="#" title="전체보기">bag</a></li>
+							<li><a href="#none" title="전체보기">all</a></li>
+							<li><a href="#none" title="전체보기"><span>best</span></a></li>
+							<li><a href="#none" title="전체보기">promo</a></li>
+							<li><a href="#none" title="전체보기">cloth</a></li>
+							<li><a href="#none" title="전체보기">shoes</a></li>
+							<li><a href="#none" title="전체보기">bag</a></li>
 						</ul>
-						<form action="#" method="get">
+						<form action="#none" method="get">
 							<fieldset>
 								<legend>검색</legend>
 								<p class="search">
@@ -373,22 +523,22 @@
 						</form>
 						<ul class="myPage">
 							<li>
-								<a href="#" title="로그인">
+								<a href="#none" title="로그인">
 									login
 								</a>
 							</li>
 							<li>
-								<a href="#" title="회원가입">
+								<a href="#none" title="회원가입">
 									join
 								</a>
 							</li>
 							<li class="icon">
-								<a href="#" title="마이페이지">
+								<a href="#none" title="마이페이지">
 									<img src="img/btn/mypage.png" alt="마이페이지이미지"/>
 								</a>
 							</li>
 							<li class="icon">
-								<a href="#" title="장바구니">
+								<a href="#none" title="장바구니">
 									<img src="img/btn/basket.png" alt="마이페이지이미지"/>
 								</a>
 							</li>
@@ -439,7 +589,7 @@
 								<img src="img/detail/detail_m0.jpg" alt="상품모델이미지0"/>
 							</li>
 							<li>
-								<h3><span>color</span></h3>
+								<h3><span>color</span> (클릭하시면 확장되어 더 보여집니다.)</h3>
 								<p>
 									<img src="img/detail/detail1.jpg" alt="상품상세이미지1"/>
 								</p>
@@ -452,7 +602,7 @@
 						</ul>
 						<ul class="imgDesc">
 							<li>
-								<h3><span>comfortable fit</span></h3>
+								<h3><span>comfortable fit</span> (클릭하시면 확장되어 더 보여집니다.)</h3>
 								<p>
 									<img src="img/detail/desc0.jpg" alt="상품설명이미지0"/>
 								</p>
@@ -462,7 +612,7 @@
 								</p>
 							</li>
 							<li>
-								<h3><span>fabric</span></h3>
+								<h3><span>fabric</span> (클릭하시면 확장되어 더 보여집니다.)</h3>
 								<p>
 									<img src="img/detail/desc1.jpg" alt="상품설명이미지1"/>
 								</p>
@@ -472,7 +622,7 @@
 								</p>
 							</li>
 							<li>
-								<h3><span>detail</span></h3>
+								<h3><span>detail</span> (클릭하시면 확장되어 더 보여집니다.)</h3>
 								<p>
 									<img src="img/detail/desc2.jpg" alt="상품설명이미지2"/>
 								</p>
@@ -491,7 +641,7 @@
 						</ul>
 						<ul class="bk_title">
 							<li>
-								<h3 id="bk"><span>black</span></h3>
+								<h3 id="bk"><span>black</span> (클릭하시면 확장되어 더 보여집니다.)</h3>
 								<p>
 									<img src="img/detail/bk0.jpg" alt="블랙상품이미지0"/>
 								</p>
@@ -508,7 +658,7 @@
 						</ul>
 						<ul class="cm_title">
 							<li>
-								<h3 id="cm"><span>cream</span></h3>
+								<h3 id="cm"><span>cream</span> (클릭하시면 확장되어 더 보여집니다.)</h3>
 								<p>
 									<img src="img/detail/cm0.jpg" alt="아이보리상품이미지0"/>
 								</p>
@@ -525,7 +675,7 @@
 						</ul>
 						<ul class="pp_title">
 							<li>
-								<h3 id="pp"><span>lightpurple</span></h3>
+								<h3 id="pp"><span>lightpurple</span> (클릭하시면 확장되어 더 보여집니다.)</h3>
 								<p>
 									<img src="img/detail/pp0.jpg" alt="퍼플상품이미지0"/>
 								</p>
@@ -576,129 +726,79 @@
 								</li>
 							</ul>
 							<div class="select">
-								<dl class="color">
-									<dt>
+								<div class="color">
+									<p class="classify">
 										색상
-									</dt>
-									<dd>
-										<a href="#" title="black">
-											black
-										</a>
-									</dd>
-									<dd>
-										<a href="#" title="cream">
-											cream
-										</a>
-									</dd>
-									<dd>
-										<a href="#" title="lightpurple">
-											lightpurple
-										</a>
-									</dd>
-								</dl>
-								<dl class="top">
-									<dt>
+									</p>
+									<p>
+										<input id="bkPick" type="text" value="black" title="black" onclick="bk_click();" readonly/>
+										<input id="cmPick" type="text" value="cream" title="cream" onclick="cm_click();" readonly/>
+										<input id="ppPick" type="text" value="purple" title="purple" onclick="pp_click();" readonly/>
+									</p>
+								</div>
+								<div class="top">
+									<p class="classify">
 										트랙 탑
-									</dt>
-									<dd>
-										<a href="#" title="size0">
-											xs
-										</a>
-									</dd>
-									<dd>
-										<a href="#" title="size1">
-											s
-										</a>
-									</dd>
-									<dd>
-										<a href="#" title="size2">
-											m
-										</a>
-									</dd>
-									<dd>
-										<a href="#" title="size3">
-											l
-										</a>
-									</dd>
-									<dd>
-										<a href="#" title="size4">
-											xl
-										</a>
-									</dd>
-								</dl>
-								<dl class="pants">
-									<dt>
+									</p>
+									<p>
+										<input id="topXs" type="text" value="xs" title="topXs" onclick="topXs_click();" readonly/>
+										<input id="topS" type="text" value="s" title="topS"onclick="topS_click();" readonly/>
+										<input id="topM" type="text" value="m" title="topM" onclick="topM_click();" readonly/>
+										<input id="topL" type="text" value="l" title="topL" onclick="topL_click();" readonly/>
+										<input id="topXl" type="text" value="xl" title="topXl" onclick="topXl_click();"readonly/>
+									</p>
+								</div>
+								<div class="pants">
+									<p class="classify">
 										트랙 팬츠
-									</dt>
-									<dd>
-										<a href="#" title="size0">
-											xs
-										</a>
-									</dd>
-									<dd>
-										<a href="#" title="size1">
-											s
-										</a>
-									</dd>
-									<dd>
-										<a href="#" title="size2">
-											m
-										</a>
-									</dd>
-									<dd>
-										<a href="#" title="size3">
-											l
-										</a>
-									</dd>
-									<dd>
-										<a href="#" title="size4">
-											xl
-										</a>
-									</dd>
-								</dl>
-								<dl class="half">
-									<dt>
+									</p>
+									<p>
+										<input id="pantsXs" type="text" value="xs" title="pantsXs" onclick="pantsXs_click();" readonly/>
+										<input id="pantsS" type="text" value="s" title="pantsS" onclick="pantsS_click();" readonly/>
+										<input id="pantsM" type="text" value="m" title="pantsM" onclick="pantsM_click();" readonly/>
+										<input id="pantsL" type="text" value="l" title="pantsL" onclick="pantsL_click();" readonly/>
+										<input id="pantsXL" type="text" value="xl" title="pantsXL" onclick="pantsXl_click();" readonly/>
+									</p>
+								</div>
+								<div class="half">
+									<p class="classify">
 										하프 팬츠
-									</dt>
-									<dd>
-										<a href="#" title="size0">
-											xs
-										</a>
-									</dd>
-									<dd>
-										<a href="#" title="size1">
-											s
-										</a>
-									</dd>
-									<dd>
-										<a href="#" title="size2">
-											m
-										</a>
-									</dd>
-									<dd>
-										<a href="#" title="size3">
-											l
-										</a>
-									</dd>
-									<dd>
-										<a href="#" title="size4">
-											xl
-										</a>
-									</dd>
-								</dl>
+									</p>
+									<p>
+										<input id="halfXs" type="text" value="xs" title="halfXs" onclick="halfS_click();" readonly/>
+										<input id="halfS" type="text" value="s" title="halfS" onclick="halfXs_click();" readonly/>
+										<input id="halfM" type="text" value="m" title="halfM" onclick="halfM_click();" readonly/>
+										<input id="halfL" type="text" value="l" title="halfL"  onclick="halfL_click();" readonly/>
+										<input id="halfXL" type="text" value="xl" title="halfXL"  onclick="halfXl_click();" readonly/>
+									</p>
+								</div>
 							</div>
 							<div class="button">
 								<div class="button_inn">
 									<ul>
 										<li>
-											옵션 모두 고를 시 이 영역에 1줄로 출력됩니다<br/>
-											ex) black / 트랙 탑 - s / 트랙 팬츠 - s / 하프 팬츠 - s
+											<label for="result0">색상</label><input id="result0" type="text"  readonly/>
+										</li>
+										<li>
+											<label for="result1">트랙 탑</label><input id="result1" type="text" readonly/>
+										</li>
+										<li>
+											<label for="result2">트랙 팬츠</label><input id="result2" type="text" readonly/>
+										</li>
+										<li>
+											<label for="result3">하프 팬츠</label><input id="result3" type="text" readonly/>
+										</li>
+										<li>
+											<label for="quantity">수량</label><input id="quantity" type="number" value="1" min="1" title="quantity" onclick="total();"/>
+										</li>
+										<li>
+											<label for="total">금액</label><input id="total" type="text" value="245000" title="total" readonly/>
 										</li>
 									</ul>
 									<div class="btn_buy">
 										<ul>
 											<li>
-												<a href="#" title="장바구니">
+												<a href="#none" title="장바구니" onclick="cartBtn();">
 													<span class="icon">
 														<img src="img/icon/icon4.png" alt="장바구니이미지"/>
 													</span>
@@ -708,7 +808,7 @@
 												</a>
 											</li>
 											<li>
-												<a href="#" title="구매하기">
+												<a href="#none" title="구매하기" onclick="buyBtn();">
 													<span class="icon">
 														<img src="img/icon/icon0.png" alt="구매하기이미지"/>
 													</span>
@@ -977,7 +1077,8 @@
 					</div>
 				</div>
 			</section>
-			<div id="side"><!--실험용 언제든 폐기가능 후에 기능배워서 기존 널디 페이지처럼 스크롤따라가는 기능 만들기-->
+			<div id="side">
+				<!--실험용 언제든 폐기가능 후에 기능배워서 기존 널디 페이지처럼 스크롤따라가는 기능 만들기-->
 				<h2>sidemenu영역</h2>
 				<div id="side_inn">
 					<ul class="menu">
@@ -1061,6 +1162,113 @@
 							</a>
 						</li>
 					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="footerWrap">
+			<div id="footer">
+				<div id="footer_inn">
+					<div class="info">
+						<h2>꼬릿말</h2>
+						<div class="online">
+							<h3>online shop</h3>
+							<ul>
+								<li>
+									82+ 1544-2083
+								</li>
+								<li class="week">
+									mon-fri : 09:00-18:00 | lunch 12:00-13:00
+								</li>
+							</ul>
+						</div>
+						<div class="with">
+							<h3>with</h3>
+							<ul>
+								<li>
+									<a href="#none" title="파트너쉽">
+										partnership
+									</a>
+								</li>
+								<li>
+									<a href="#none" title="콜라보레이션">
+										collaboration
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="legal">
+							<h3>legal</h3>
+							<ul>
+								<li>
+									<a href="#none" title="agreement">
+										agreement
+									</a>
+								</li>
+								<li class="policy">
+									<a href="#none" title="privacy policy">
+										privacy policy
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="legal">
+							<h3>help</h3>
+							<ul>
+								<li>
+									<a href="#none" title="qna">
+										qna
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="social">
+							<h3>social</h3>
+							<ul>
+								<li>
+									<a href="#none" title="인스타그램">
+										<img src="img/btn/insta.png" alt="인스타그램이미지"/>
+									</a>
+								</li>
+								<li>
+									<a href="#none" title="페이스북">
+										<img src="img/btn/facebook.png" alt="페이스북이미지"/>
+									</a>
+								</li>
+								<li>
+									<a href="#none" title="유튜브">
+										<img src="img/btn/youtube.png" alt="유튜브이미지"/>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="copyright">
+						<div class="footer_logo">
+							<p class="logo">
+								<img src="img/logo/logo.png" alt="널디"/>
+							</p>
+						</div>
+						<div class="copy">
+							<p>
+								APR Co., Ltd. <i>|</i> CS CENTER : 1544-2083 (MON - FRI 09:00 - 18:00)
+							</p>
+							<p>
+								(05551) 94-12, 36th floor, 300, Olympic-ro, Songpa-gu, Seoul, Republic of Korea <i>|</i> CEO : Byunghoon Kim
+							</p>
+							<p>
+								Business Registration No : [220-88-89441] <a href="#none" title="사업자정보확인">[사업자정보확인]</a>
+							</p>
+							<p>
+								E-commerce Permit Registration No : 2020-SeoulSongpa-1274
+							</p>
+							<p>
+								Personal Information Manager : JEONG JAEHUN (whoisnerdy.kr@gmail.com)
+							</p>
+							<p>
+								COPYRIGHT &copy; 2022 YHR
+							</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
