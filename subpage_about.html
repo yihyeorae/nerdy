@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>about</title>
+	<meta charset="utf-8"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<style>
+		*{margin:0; padding:0;}
+		body{margin:0; padding:0;
+		/*background-image:-webkit-linear-gradient(left, rgba(156,1,255,0.1) 0% , rgba(240,240,240,0.8) 25%, rgba(240,240,240,0.8) 75%, rgba(156,1,255,0.1) 100%);
+		*/}
+		li{list-style-type:none;}
+		img{border:none;}
+		a:link,a:visited{text-decoration:none; color:#000;}
+		h1,h2{position:absolute; left:-9999px; width:1px; height:1px; font-size:1px; line-height:0; overflow:hidden;}
+
+			#wrap{width:100%;}
+
+		/*헤더정리선*/
+			/*## headerWrap ##*/
+				#headerWrap{width:100%;}
+
+			/*## header ## */
+				#header{width:100%;}
+
+			/*## topMenu ##*/
+				#topMenu{width:100%; background-color:rgba(156,1,255,1);}
+
+			/*## ul ##*/
+				#topMenu ul{width:1920px; height:40px; margin:0 auto; overflow:hidden; background-color:rgba(156,1,255,1);}
+				#topMenu li{width:100%; margin:0 auto; line-height:40px; text-align:center;}
+				#topMenu li span{font-weight:700;}
+				#topMenu li a{display:block; width:100%; font-size:14px; color:#fff;}
+
+			/*## nav ##*/
+				#nav{width:1920px; height:100px; margin:0 auto;}
+				#nav #btn0{display:none;}
+				#nav #btn1{display:none;}
+				
+			/*## logo ##*/
+				#logo{width:200px; height:100px; overflow:hidden; float:left;}
+
+				#logo a{display:block; width:119px; height:24px; margin:38px auto;}
+				#logo a img{width:100%;}
+
+			/*## mob_myPage ##*/
+				#mob_myPage{display:none;}
+			
+			/*## mobile_mypage ##*/
+				#mobile_mypage{display:none;}
+
+			/*## gnb ##*/
+				#gnb{width:1720px; height:100%; float:left;}
+				#gnb ul{width:1020px; height:100%; float:left;}
+				#gnb li{width:100px; height:100%; text-transform:uppercase; font-weight:700; float:left;}
+				
+				#gnb li a{display:block; width:80px; height:30px; margin:35px auto; line-height:30px; text-align:center;}
+				#gnb li a span{color:#9201ff;}
+
+			/*## gnb 기능 ##*/
+				#gnb li a:hover{color:#f00;}
+				#gnb li a span:hover{color:#f00;}
+
+			/*## form ##*/
+				#gnb form{width:300px; height:30px; margin:35px 0; float:left;}
+				#gnb fieldset{border:none;}
+				#gnb legend{display:none;}
+				#gnb .search{width:173px; height:30px; float:left;}
+				#gnb .search input{width:173px; height:29px; border:none; border-bottom:1px solid #9201ff; text-indent:10px;}
+				#gnb .btn{width:50px; height:30px; float:left;}
+				#gnb .btn input{width:50px; height:30px; border:1px solid #ccc; background-color:rgba(156,1,255,1); color:#fff;}
+		
+			/*## myPage ##*/
+				#gnb .myPage{width:400px; float:left;}
+				#gnb .myPage .icon a{width:25px;}
+				#gnb .myPage a img{width:100%;}
+			
+		/*컨테이너 정리선*/
+			/*## container ##*/
+			#container{width:100%;
+			background-image:-webkit-linear-gradient(top, #efefef 0%, #fff 25%, #efefef 50%, #fff 75%, #efefef 100%);
+			background-image:-ms-linear-gradient(top, #efefef 0%, #fff 25%, #efefef 50%, #fff 75%, #efefef 100%);
+			background-image:-moz-linear-gradient(top, #efefef 0%, #fff 25%, #efefef 50%, #fff 75%, #efefef 100%);
+			background-image:-o-linear-gradient(top, #efefef 0%, #fff 25%, #efefef 50%, #fff 75%, #efefef 100%);
+
+			}
+			#about{width:100%;}
+			#about_inn{width:1920px; height:800px;margin:0 auto;}
+			
+			#way{width:100%; padding-top:100px; position:relative; overflow:hidden; 
+
+			}
+			#way .text{width:1000px; text-align:center; margin:0 auto; overflow:hidden;}
+			#way .text h3{text-align:center; padding:20px 0; font-size:50px; /*color:rgba(156,1,255,1);*/ transition:all 0.5s linear; transform:translatex(280px);text-shadow:-540px 0px 10px rgba(156,1,255,0.5);}
+			#way .text p{/*color:rgba(156,1,255,0.5);*/ padding:10px 0;}
+
+			#way .no1 h3{transition:all 0.5s linear 0.5s;}
+			#way .no2 h3{transition:all 0.5s linear 1s;}
+
+
+			/*#way .text h3:hover{transform:translatex(0px); text-shadow:5px 5px 5px rgba(0,0,0,0.5);}*/
+			
+			#way .road{width:100%; font-size:30px; font-weight:700; text-shadow:5px 5px 10px #fff; text-transform:uppercase;  position:absolute;  bottom:-200px; overflow:hidden;}
+			
+			#way .left{left:190px; transform:rotate3d(0,0,1,-70deg); transform-origin:left; cursor:default;}
+			#way .right{left:770px; transform:rotate3d(0,0,1,70deg); cursor:default;}
+
+			#way .road p{animation:mv_txt 10s linear infinite alternate-reverse;}
+			@keyframes mv_txt{
+				0%{transform:translatex(-900px); text-shadow:5px 5px 5px rgba(0,0,0,0.5);}
+				100%{transform:translatex(-400px); text-shadow:5px 5px 5px rgba(0,0,0,0.5);}
+			}
+
+			#identity{width:100%; }
+			#identity .img_desc{width:100%;}
+
+			#identity .img_desc:after{content:""; display:block; clear:both;}
+
+			#identity .title{width:100%; text-align:center; padding:100px 0;
+				background-image:-webkit-linear-gradient(left, #eee 0% , #fff 50%, #eee 100%); 
+			}
+			#identity .title h3{font-size:40px;}
+			#identity .title p{padding:20px 0;}
+
+			#identity .iden{width:1920px; margin:0 auto;}
+			#identity .iden_inn{width:960px; float:left; overflow:hidden;}
+			#identity .iden_inn .img{width:300px; height:400px; float:left;}
+			#identity .iden_inn p img{width:100%;}
+			#identity .iden_inn .text{width:660px; height:400px; float:left; perspective:1000px; overflow:hidden;}
+			#identity .iden_inn .text h4{width:100%; padding:100px 0; text-align:center; font-size:40px; text-transform:uppercase; }
+			#identity .iden_inn .text p{width:50%; margin:0 auto; text-align:center;}
+
+			#identity .no0 .img{transform:translatey(-400px);}
+			#identity .no1 .img{transform:translatey(400px);}
+
+			#identity .iden_inn .imgs0{transition:all 0.5s linear;}
+			#identity .iden_inn .imgs1{transition:all 0.5s linear 1.5s;}
+			#identity .iden_inn .imgs2{transition:all 0.5s linear 1s;}
+			#identity .iden_inn .imgs3{transition:all 0.5s linear 0.5s;}
+
+			#identity .right h4{transform-origin:right; transform:rotatey(180deg); transition:all 0.5s linear 0.5s;}
+			#identity .left h4{transform-origin:left; transform:rotatey(-180deg); transition:all 0.5s linear;}
+
+			/*#identity:hover .iden h4{transform:rotatey(0deg);}*/
+
+			#identity .iden:after{content:""; display:block; clear:both;}
+
+			#house{width:100%; height:1000px;}
+			#house_inn{width:1920px; margin:0 auto;}
+
+			#house .title{width:100%; text-align:center; padding:100px 0;
+				background-image:-webkit-linear-gradient(left, #eee 0% , #fff 50%, #eee 100%);
+			}
+			#house .title h3{font-size:40px;}
+			#house .title p{padding:20px 0;}
+
+			#house_inn ul{width:100%;}
+			
+			#house_inn li{width:200px; height:680px; float:left; overflow:hidden; transition:all 1s linear;}
+			#house_inn li:first-child{width:1320px;}
+
+			#house_inn li a{display:block; width:100%; position:relative;}
+			#house_inn li a span{display:block; width:100%;}
+			#house_inn li a .desc{position:absolute; height:100%; right:0; top:0; font-size:20px; background-color:rgba(0,0,0,0.5); color:#fff; text-transform:uppercase; transition:all 1s linear;}
+			#house_inn li:first-child .desc{width:200px; height:100px; background-color:rgba(0,0,0,0); color:#000;}
+
+			#house_inn li a .desc i{display:block; padding-top:10px; font-size:13px; font-style:normal;}
+
+		/*푸터정리선*/
+			/*## footerWrap ##*/
+			#footerWrap{width:100%;}
+		
+			/*## footer ##*/
+			#footer{width:1920px; margin:0 auto; padding-top:50px; border-top:1px solid rgba(100,100,100,0.5);}
+
+			/*## footer_inn ##*/
+			#footer_inn{width:1440px; height:300px; margin:0 auto;}
+			#footer_inn h3{text-align:center; text-transform:uppercase;}
+
+			/*## left ##*/
+			#footer_inn .info{width:720px; height:250px; padding-bottom:50px; float:left;}
+			#footer_inn .info h3{width:150px; line-height:25px; font-size:18px; float:left;}
+			
+			#footer_inn .info div{width:720px; height:25px; padding-top:25px;}
+			#footer_inn .info div li:first-child{width:150px;}
+			
+
+			/*## ul / li ##*/
+			#footer_inn ul{width:550px; padding-left:20px; float:left;}
+			#footer_inn li{display:inline-block; padding:0 10px; line-height:25px; font-size:14px; color:#666;}
+			#footer_inn li a{font-size:14px; color:#666; text-transform:uppercase;}
+
+			#footer_inn li a:hover{text-decoration:underline; color:rgba(156,1,255,1);}
+
+			/*## onlin ##*/
+			#footer_inn .online li{text-transform:uppercase;}
+
+			/*## social ##*/
+			#footer_inn .info .social li:first-child{width:25px;}
+			#footer_inn .social li a{display:block; width:25px; height:25px;}
+			#footer_inn .social li a img{width:100%;}
+
+			/*## copyright ##*/
+			#footer_inn .copyright{width:720px; height:250px; font-size:15px; padding-bottom:50px; float:left;}
+
+			#footer_inn .copyright .footer_logo{width:100%; padding-top:25px;}
+			#footer_inn .copyright .logo{width:119px;}
+			#footer_inn .copyright .logo img{width:100%;}
+
+			#footer_inn .copyright .copy{width:100%; padding-top:25px; color:#666; font-size:14px;}
+			#footer_inn .copyright .copy p{padding-top:5px;}
+			#footer_inn .copyright .copy p a{color:#666; font-size:14px; font-weight:700;}
+			#footer_inn .copyright .copy i{font-style:normal;}
+			
+			#footer_inn .copyright .logo:after{content:""; display:block; clear:both;}
+
+	</style>
+	<script>
+		$(document).ready(function(){
+
+			$("#house_inn li").click(function(){
+				$(this).siblings().css({"width":"200px"});
+				$(this).css({"width":"1320px"});
+				$(this).siblings().find(".desc").css({"width":"100%","height":"100%","backgroundColor":"rgba(0,0,0,0.5)","color":"#fff"});
+				$(this).find(".desc").css({"width":"200px","height":"100px","backgroundColor":"rgba(0,0,0,0)","color":"#000"});
+			});
+
+			$("#way").mouseenter(function(){
+				$(".no0 h3").css({"textShadow":"0px 0px 10px rgba(0,0,0,0.5)","transform":"translatex(0px)"});
+			});
+
+			$("#way").mouseenter(function(){
+				$(".no1 h3").css({"textShadow":"0px 0px 10px rgba(0,0,0,0.5)","transform":"translatex(0px)"});
+			});
+
+			$("#way").mouseenter(function(){
+				$(".no2 h3").css({"textShadow":"0px 0px 10px rgba(0,0,0,0.5)","transform":"translatex(0px)"});
+			});
+
+			$("#identity .title").mouseenter(function(){
+				$("#identity .img").css({"transform":"translatey(0px)"});
+			});
+
+			$("#identity .img_desc").mouseenter(function(){
+				$(".text h4").css({"transform":"rotatey(0deg)"});
+			});
+
+
+	
+			
+		});
+	</script>
+ </head>
+	
+ <body>
+	<div id="wrap">
+		<div id="headerWrap">
+			<div id="header">
+				<h1>널디</h1>
+				<div id="topMenu">
+					<h2>공지사항 및 이벤트</h2>
+					<ul>
+						<li class="color0">
+							<a href="#none" title="공지사항링크">
+								<span>3월</span> 이벤트 프로모션
+							</a>
+						</li>
+						<li class="color1">
+							<a href="#none" title="공지사항링크">
+								<span>널디회원</span>에게만 드리는 <span>무료 교환 혜택</span>
+							</a>
+						</li>
+						<li class="color2">
+							<a href="#none" title="공지사항링크">
+								@nerdy 카톡 채널 추가시 <span>플친전용 10% 할인 쿠폰</span> 발급!
+							</a>
+						</li>
+						<li class="color3">
+							<a href="#none" title="공지사항링크">
+								5/10/20/35 만원 이상 구매 시, 3월 구매금액 별 <span>사은품 증정!</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div id="nav">
+					<h2>네비게이션</h2>
+					<div id="logo">
+						<a href="index.html" title="널디홈페이지">
+							<img src="img/logo/logo.png" alt="널디"/>
+						</a>
+					</div>
+					<div id="mob_myPage">
+						<ul>
+							<li class="menuBtn">
+								<a href="#none" title="메뉴버튼">
+									<span class="bar0">─</span>
+									<span class="bar1">─</span>
+									<span class="bar2">─</span>
+								</a>
+							</li>
+							<li>
+								<a href="#none" title="마이페이지">
+									<img src="img/btn/mypage.png" alt="마이페이지이미지"/>
+								</a>
+							</li>
+							<li>
+								<a href="#none" title="검색">
+									<img src="img/icon/icon5.png" alt="돋보기이미지"/>
+								</a>
+							</li>
+						</ul>
+					</div>
+					<div id="gnb">
+						<ul class="gnb_inner">
+							<li id="btn0">
+								<a href="#none" title="direction0">▲</a>
+							</li>
+							<li>
+								<ul>
+									<li><a href="#none" title="all">all</a></li>
+									<li><a href="#none" title="best"><span>best</span></a></li>
+									<li><a href="#none" title="promo">promo</a></li>
+									<li><a href="#none" title="cloth">cloth</a></li>
+									<li><a href="#none" title="shoes">shoes</a></li>
+									<li><a href="#none" title="bag">bag</a></li>
+									<li id="btn1"><a href="#none" title="direction1">▼</a></li>
+								</ul>
+							</li>
+						</ul>
+						<form action="#" method="get">
+							<fieldset>
+								<legend>검색</legend>
+								<p class="search">
+									<input id="search" type="text" name="search" title="검색영역" value="search"/>
+								</p>
+								<p class="btn">
+									<input id="btn" type="submit" title="검색버튼" value="검색"/>
+								</p>
+							</fieldset>
+						</form>
+						<ul class="myPage">
+							<li>
+								<a href="#none" title="로그인">
+									login
+								</a>
+							</li>
+							<li>
+								<a href="#none" title="회원가입">
+									join
+								</a>
+							</li>
+							<li class="icon">
+								<a href="#none" title="마이페이지">
+									<img src="img/btn/mypage.png" alt="마이페이지이미지"/>
+								</a>
+							</li>
+							<li class="icon">
+								<a href="#none" title="장바구니">
+									<img src="img/btn/basket.png" alt="마이페이지이미지"/>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="container">
+			<section id="about">
+				<h2>about us</h2>
+				<div id="about_inn">
+					<div id="way">
+						<div class="no0 text">
+							<h3>NERDY</h3>
+							<p>
+								nerdy는 사회적 잣대에 물들지 않고 자신만의 개성을 당당히 표현하는 뉴욕 스트릿 문화에서 영감을 받은 스트릿 패션 브랜드 입니다.
+							</p>
+							<p>
+								브랜드가 지향하는 "nerdy" 함은 타인의 시선에 굴복하지 않고, 자신의 자아와 열정을 당당하게 지켜나가는 것 입니다.
+							</p>
+						</div>
+						<div class="no1 text">
+							<h3>MAKE YOUR WAY</h3>
+							<p>
+								make your way 는 널디의 브랜드 슬로건으로 , 자신만의 길을 스스로 개척해 나아가는 모든 이들을 지지하며,
+							</p>
+							<p>
+								그 길들의 다양성을 존중하는 의미입니다. 또한 그 각자의 길에 널디가 함께 하겠다는 이념이 담겨있습니다.
+							</p>
+						</div>
+						<div class="no2 text">
+							<h3>Who is NERDY?</h3>
+							<p>
+								널디(NERDY)는 '머리는 좋으나 세상 물정 모르는' NERD들에게서 영감받은 브랜드로 자아, 자유, 정체성을 추구합니다.<br/>
+								사회가 우리들의 삶에 심어 놓은 편견과 잣대로 우리들의 자아를 정의 해서는 안되며, 자신의 정체성과 개성을 자유롭게 표현하고,<br/>
+								오직 나에게만 몰입하는 'NERD'함은 더 이상 숨겨야 하는 치부가 아닌 당연하고 진화된 우리의 새로운 모습입니다.
+							</p>
+							<p>
+								21세기 우리 삶의 진정한 인플루언서들은 표현의 자유를 몸소 실현하며 살아가는 아티스트들이며,<br/>
+								널디는 그들에게 저마다의 영감을 주고 창의력을 이끌어내는 브랜드입니다.
+							</p>
+							<p>
+								세상의 가장 위대한 발견과 창조는 NERD들이 해낸 일입니다. 이제 NERDS의 시대입니다.
+							</p>
+						</div>
+						<div class="road left">
+							<p>
+								nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy
+							</p>
+						</div>
+						<div class="road right">
+							<p>
+								nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy nerdy
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="identity">
+				<h2>identity</h2>
+				<div class="title">
+					<h3>
+						Identity of NERDY
+					</h3>
+					<p>가장 나 답게, New Contemporary Streetwear</p>
+				</div>
+				<div class="img_desc no0">
+					<div class="iden">
+						<div class="iden_inn">
+							<div class="text left">
+								<h4>nerdy fit</h4>
+								<p>
+									널디만의 자유롭고 크리에이티브한 감성을 표현하는 독자적인 '1인치 차이나는' 오버핏
+								</p>
+							</div>
+							<p class="img imgs0">
+								<img src="img/about/about1.png" alt="아이덴티티 이미지1"/>
+							</p>
+						</div>
+						<div class="iden_inn">
+							<p class="img imgs1">
+								<img src="img/about/about0.png" alt="아이덴티티 이미지0"/>
+							</p>
+							<div class="text right">
+								<h4>2 streaks</h4>
+								<p>
+									'사회의 잣대와 나만의 자아가 달리는 평행선' 을 형상화한 브랜드 메인 모티프
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="img_desc no1">
+					<div class="iden">
+						<div class="iden_inn">
+							<div class="text left">
+								<h4>quality &amp; detail</h4>
+								<p>
+									최고의 퀄리티와 결과물을 위해 nerd처럼 사소한 디테일에 집착하고 널디만의 컬러를 입혀 새로운 트랜드를 창조
+								</p>
+							</div>
+							<p class="img imgs2">
+								<img src="img/about/about3.png" alt="아이덴티티 이미지3"/>
+							</p>
+						</div>
+						<div class="iden_inn">
+							<p class="img imgs3">
+								<img src="img/about/about2.png" alt="아이덴티티 이미지2"/>
+							</p>
+							<div class="text right">
+							<h4>color</h4>
+							<p>
+								고정관념을 깨뜨리는 널디만이 구현할 수 있는 과감하고도 스타일리쉬한 색감
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section id="house">
+				<h2>house</h2>
+				<div class="title">
+					<h3>
+						House of NERDY
+					</h3>
+					<p>NERDY는 가장 나 다울 수 있는 '집'이라는 공간을 모티브로 전국, 그리고 세계로 나아가고 있습니다.</p>
+				</div>
+				<div id="house_inn">
+					<ul>
+						<li>
+							<a href="#none" title="서울스토어">
+								<span class="img">
+									<img src="img/about/store0.png" alt="스토어이미지0"/>
+								</span>
+								<span class="desc">
+									seoul<br/>offlinestore<br/>
+									<i>서울 마포구 어울마당로 94-12<br/>(서교동 358-117)</i>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#none" title="부산스토어">
+								<span class="img">
+									<img src="img/about/store1.png" alt="스토어이미지1"/>
+								</span>
+								<span class="desc">
+									busan<br/>offlinestore<br/>
+									<i>부산 중구 광복로39번길 3<br/>(창선동2가 7-1)</i>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#none" title="광주스토어">
+								<span class="img">
+									<img src="img/about/store2.png" alt="스토어이미지2"/>
+								</span>
+								<span class="desc">
+									gwangju<br/>offlinestore<br/>
+									<i>광주 동구 서석로 22<br/>(불로동 122-2)</i>
+								</span>
+							</a>
+						</li>
+						<li>
+							<a href="#none" title="대구스토어">
+								<span class="img">
+									<img src="img/about/store3.png" alt="스토어이미지3"/>
+								</span>
+								<span class="desc">
+									daegu<br/>offlinestore<br/>
+									<i>대구 중구 동성로 15<br/>(동성로2가 130)</i>
+								</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</div>
+		<div id="footerWrap">
+			<div id="footer">
+				<div id="footer_inn">
+					<div class="info">
+						<h2>꼬릿말</h2>
+						<div class="online">
+							<h3>online shop</h3>
+							<ul>
+								<li>
+									82+ 1544-2083
+								</li>
+								<li class="week">
+									mon-fri : 09:00-18:00 | lunch 12:00-13:00
+								</li>
+							</ul>
+						</div>
+						<div class="with">
+							<h3>with</h3>
+							<ul>
+								<li>
+									<a href="#none" title="파트너쉽">
+										partnership
+									</a>
+								</li>
+								<li>
+									<a href="#none" title="콜라보레이션">
+										collaboration
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="legal">
+							<h3>legal</h3>
+							<ul>
+								<li>
+									<a href="#none" title="agreement">
+										agreement
+									</a>
+								</li>
+								<li class="policy">
+									<a href="#none" title="privacy policy">
+										privacy policy
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="legal">
+							<h3>help</h3>
+							<ul>
+								<li>
+									<a href="#none" title="qna">
+										qna
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="social">
+							<h3>social</h3>
+							<ul>
+								<li>
+									<a href="#none" title="인스타그램">
+										<img src="img/btn/insta.png" alt="인스타그램이미지"/>
+									</a>
+								</li>
+								<li>
+									<a href="#none" title="페이스북">
+										<img src="img/btn/facebook.png" alt="페이스북이미지"/>
+									</a>
+								</li>
+								<li>
+									<a href="#none" title="유튜브">
+										<img src="img/btn/youtube.png" alt="유튜브이미지"/>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="copyright">
+						<div class="footer_logo">
+							<p class="logo">
+								<img src="img/logo/logo.png" alt="널디"/>
+							</p>
+						</div>
+						<div class="copy">
+							<p>
+								APR Co., Ltd. <i>|</i> CS CENTER : 1544-2083 (MON - FRI 09:00 - 18:00)
+							</p>
+							<p>
+								(05551) 94-12, 36th floor, 300, Olympic-ro, Songpa-gu, Seoul, Republic of Korea <i>|</i> CEO : Byunghoon Kim
+							</p>
+							<p>
+								Business Registration No : [220-88-89441] <a href="#none" title="사업자정보확인">[사업자정보확인]</a>
+							</p>
+							<p>
+								E-commerce Permit Registration No : 2020-SeoulSongpa-1274
+							</p>
+							<p>
+								Personal Information Manager : JEONG JAEHUN (whoisnerdy.kr@gmail.com)
+							</p>
+							<p>
+								COPYRIGHT &copy; 2022 YHR
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+ </body>
+</html>
