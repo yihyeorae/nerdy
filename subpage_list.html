@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html lang="ko">
  <head>
-	<title>list</title>
+	<title>subpage</title>
 	<meta charset="utf-8"/>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<style>
 		/*초기화*/
 			/*## reset ##*/
@@ -76,35 +75,25 @@
 				#visual{width:100%;}
 
 			/*## visual_inn ##*/
-				#visual_inn{width:1920px; height:800px; margin:0 auto;}
-				#visual_inn .list{width:1200px; height:100%; margin:0 auto; overflow:hidden; position:relative;}
+				#visual_inn{width:1920px; height:804px; margin:0 auto; }
 
 			/*## ul ##*/
-				#visual_inn ul{width:8400px;}
-				#visual_inn li{width:1200px; float:left; position:relative;}
+				#visual_inn ul{width:100%; background-color:#eee9e3; overflow:hidden;}
+				#visual_inn li{width:1200px; margin:0 auto; border-left:1px solid #fff; border-right:1px solid #fff;}
 				#visual_inn li p{width:100%;}
-				#visual_inn p img{width:100%; /*transform:scale(1); animation:visual 60s infinite alternate ease; transform:scale(1); transition:transform 10s linear;*/}
-				/*
+				#visual_inn p img{width:100%; transform:scale(1); animation:visual 60s infinite alternate ease; /*transform:scale(1); transition:transform 10s linear;*/}
+				
 				@keyframes visual
 				{
 					0%{width:100%; transform:scale(1);}
 					100%{width:100%; transform:scale(1.2);}
 				}
-				*/
 				/*#visual:hover #visual_inn p img{transform:scale(1.1);}*/
-			/*## button ##*/
-				#visual_inn .leftBtn{position:absolute; left:0; top:400px;}
-				#visual_inn .rightBtn{position:absolute; right:0; top:400px;}
-				#visual_inn button{background-color:rgba(0,0,0,0); border:0; cursor:pointer;}
 
-			/*## text_box ##*/
-
-				#visual_inn li .text_box{width:100%; position:absolute; left:0; bottom:0;}
-				#visual_inn li .text_box .label{width:70px; height:40px; line-height:40px; text-align:center; margin:0 auto; color:rgba(255,255,255,1); background-color:rgba(0,0,0,1); font-size:20px; text-transform:uppercase;}
 			/*## cate ##*/
 				#cate{width:100%; text-align:center;}
 
-				#cate h3{width:1920px; line-height:100px; font-size:30px; text-transform:uppercase; margin:20px auto 0; color:rgba(0,0,0,1); box-shadow:1px 1px 5px #333; transition:all 0.5s linear 0.2s;}
+				#cate h3{width:100%; line-height:100px; font-size:30px; text-transform:uppercase; margin-top:20px; color:rgba(0,0,0,1); box-shadow:1px 1px 5px #333; transition:all 0.5s linear 0.2s;}
 				#cate_inn{width:1920px; margin:0 auto; border-bottom:1px solid #ccc;}
 
 				#cate:hover h3{color:rgba(146,1,255,1); text-shadow:0 0 2px;}
@@ -250,30 +239,6 @@
 				
 			
 	</style>
-	<script>
-		$(document).ready(function(){
-			$(".imgs").prepend($(".imgs li:last"));
-			$(".imgs").css({"marginLeft":"-1200px"});
-	
-			$(".leftBtn").click(function(){
-				$(".imgs").stop().animate({"marginLeft":"+=1200px"},500,"swing",function(){
-					$(".imgs").prepend($(".imgs li:last"));
-					$(".imgs").css({"marginLeft":"-1200px"});
-				});	
-			});
-
-
-			$(".rightBtn").click(function(){
-				$(".imgs").stop().animate({"marginLeft":"-=1200px"},500,"swing",function(){
-					$(".imgs").append($(".imgs li:eq(0)"));
-					$(".imgs").css({"marginLeft":"-1200px"});
-				});
-				
-			});
-				
-		
-		});
-	</script>
  </head>
 
  <body>
@@ -362,47 +327,13 @@
 		<div id="container">
 			<div id="visual">
 				<div id="visual_inn">
-					<div class="list">
-						<ul class="imgs">
-							<li>
-								<p>
-									<img src="img/list/list0.jpg" alt="비쥬얼이미지0"/>
-								</p>
-								<div class="text_box">
-									<p class="label">
-										new
-									</p>
-									<h4>
-										nerdy's signature collection
-									</h4>
-									<p class="desc">
-										더 업그레이드 되어 돌아온 널디 트랙세트
-									</p>
-								</div>
-							</li>
-							<li>
-								<img src="img/list/list1.jpg" alt="비쥬얼이미지1"/>
-							</li>
-							<li>
-								<img src="img/list/list2.jpg" alt="비쥬얼이미지2"/>
-							</li>
-							<li>
-								<img src="img/list/list3.jpg" alt="비쥬얼이미지3"/>
-							</li>
-							<li>
-								<img src="img/list/list4.jpg" alt="비쥬얼이미지4"/>
-							</li>
-							<li>
-								<img src="img/list/list5.jpg" alt="비쥬얼이미지5"/>
-							</li>
-						</ul>
-						<p class="leftBtn">
-							<button><img src="img/icon/small_left.png" alt="왼쪽화살표이미지"/></button>
-						</p>
-						<p class="rightBtn">
-							<button><img src="img/icon/small_right.png" alt="오른쪽화살표이미지"/></button>
-						</p>
-					</div>
+					<ul>
+						<li>
+							<p>
+								<img src="img/track/track1.jpg" alt="트랙모델이미지1"/>
+							</p>
+						<li>
+					</ul>
 				</div>
 			</div>
 			<section id="cate">
@@ -443,6 +374,11 @@
 						<li>
 							<a href="#" title="acc">
 								acc
+							</a>
+						</li>
+						<li>
+							<a href="#" title="beachwear">
+								beachwear
 							</a>
 						</li>
 					</ul>
