@@ -1,0 +1,1277 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+	<title>subpage_detail	</title>
+	<meta charset="utf-8"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+	<style>
+		*{margin:0; padding:0;}
+		li{list-style-type:none;}
+		a:link, a:visited{text-decoration:none; color:#333;}
+		img{border:none;}
+		h1,h2{position:absolute; left:-9999px; width:1px; height:1px; line-height:0; overflow:hidden;}
+		section{display:block;}
+
+		/*## wrap ##*/
+			#wrap{width:100%;}
+
+	/*헤더 정리선*/
+		/*## headerWrap ##*/
+				#headerWrap{width:100%;}
+
+			/*## header ## */
+				#header{width:100%;}
+
+			/*## topMenu ##*/
+				#topMenu{width:100%; background-color:rgba(156,1,255,1);}
+
+			/*## ul ##*/
+				#topMenu ul{width:1920px; height:40px; margin:0 auto; overflow:hidden; background-color:rgba(156,1,255,1);}
+				#topMenu li{width:100%; margin:0 auto; line-height:40px; text-align:center;}
+				#topMenu li span{font-weight:700;}
+				#topMenu li a{display:block; width:100%; font-size:14px; color:#fff;}
+
+			/*## nav ##*/
+				#nav{width:1920px; height:100px; margin:0 auto;}
+				
+			/*## logo ##*/
+				#logo{width:200px; height:100px; overflow:hidden; float:left;}
+
+				#logo a{display:block; width:119px; height:24px; margin:38px auto;}
+				#logo a img{width:100%;}
+		
+			/*## gnb ##*/
+				#gnb{width:1720px; height:100%; float:left;}
+				#gnb ul{width:1020px; height:100%; float:left;}
+				#gnb li{width:100px; height:100%; text-transform:uppercase; font-weight:700; float:left;}
+				
+				#gnb li a{display:block; width:80px; height:30px; margin:35px auto; line-height:30px; text-align:center;}
+				#gnb li a span{color:rgba(156,1,255,1);}
+
+			/*## gnb 기능 ##*/
+				#gnb li a:hover{color:#f00;}
+				#gnb li a span:hover{color:#f00;}
+
+			/*## form ##*/
+				#gnb form{width:300px; height:30px; margin:35px 0; float:left;}
+				#gnb fieldset{border:none;}
+				#gnb legend{display:none;}
+				#gnb .search{width:173px; height:30px; float:left;}
+				#gnb .search input{width:173px; height:29px; border:none; border-bottom:1px solid rgba(156,1,255,1); text-indent:10px;}
+				#gnb .btn{width:50px; height:30px; float:left;}
+				#gnb .btn input{width:50px; height:30px; border:1px solid #ccc; background-color:rgba(156,1,255,1); color:#fff;}
+		
+			/*## myPage ##*/
+				#gnb .myPage{width:400px; float:left;}
+				#gnb .myPage .icon a{width:25px;}
+				#gnb .myPage a img{width:100%;}
+
+	/*컨테이너정리선*/
+		/*## container ##*/
+			#container{width:100%; position:relative;}
+
+		/*## detail ##*/
+			#detail{width:100%;}
+		
+		/*## detail_inn ##*/
+			#detail_inn{width:1280px; margin:0 auto; position:relative;}
+		
+		/*## buy##*/
+			#buy{width:480px; padding-top:100px; float:left;}
+
+		/*## info ##*/
+			#info{width:440px; padding-left:40px;}
+			#info h3{font-size:28px; text-align:right;}
+
+		/*## title ##*/
+			#info .title{width:100%;}
+			#info .title p{width:100%; padding:20px 0; font-size:25px; border-bottom:1px solid #ccc; font-weight:100; text-align:right; color:#333;}
+
+		/*## ul / li ##*/
+			#info .desc{width:100%; border-bottom:1px solid #ccc; padding:20px 0;}
+			#info .desc li{width:140px; margin-left:5px; text-align:center; float:left;}
+			#info .desc li p{padding-top:10px; font-size:13px; color:#666;}
+			#info .desc li p span{font-weight:700; font-size:17px; color:rgba(156,1,255,1);}
+			#info .desc li .img{width:75px; margin:0 auto;}
+			#info .desc li img{width:100%;}
+
+			#info .desc:after{content:""; display:block; clear:both;}
+
+		/*## select ##*/
+			#info .select{width:100%; padding-bottom:10px; border-bottom:1px solid #ccc;}
+			#info .select div{padding:10px 20px;}
+			#info .select div .classify{padding-bottom:10px; font-size:18px; font-weight:700;}
+			#info .select div input{display:inline-block; width:60px; line-height:28px; border:1px solid #ccc; font-weight:700; cursor:pointer; text-transform:uppercase; text-align:center; transition:all 1s linear;}
+		
+
+		/*## button ##*/
+			#info .button{width:100%;}
+			#info .button_inn{width:100%;}
+			#info .button ul{width:100%;}
+			#info .button li{width:100%; padding:5px 0;}
+			#info .button li label{display:inline-block; width:185px; text-indent:20px; font-size:15px; font-weight:700; color:#000;}
+			#info .button li input{display:inline-block; text-align:center; border:0; cursor:default; font-size:13px; color:#666;}
+			#info .button li input[type="number"]{text-indent:13px;}
+
+			#info .btn_buy{width:100%; padding:20px 0; overflow:hidden;}
+			#info .btn_buy ul{width:440px; height:100%;}
+			#info .btn_buy li{width:188px; height:48px; margin:0 10px; border:1px solid #333; text-align:center; float:left;}
+			#info .btn_buy li a{display:block; font-size:25px; color:#333; width:100%; height:100%; text-transform:uppercase; background-color:#fff; transition:background-color 0.2s linear; position:relative;}
+			
+			#info .btn_buy li a span{display:block; position:absolute;}
+			#info .btn_buy li a .icon{width:40px; height:40px; margin:4px 0; left:75px; transform:rotatex(0deg); opacity:1; transition:all 0.2s linear 0.2s;}
+			#info .btn_buy li a span img{width:100%;}
+			#info .btn_buy li a .text{width:100%; height:48px; line-height:48px; transform:rotatex(-180deg); opacity:0; transition:all 0.2s linear 0.2s;}
+
+			#info .btn_buy li a:hover .icon{transform:rotatex(-180deg); opacity:0;}
+			#info .btn_buy li a:hover .text{transform:rotatex(0deg); opacity:1;}
+
+
+
+
+		/*## size ##*/
+			#buy .size{width:440px; padding-left:40px;}
+			#buy .srq_inn{width:100%; margin:0 auto;}
+			#buy .srq_inn .img{width:438px; border:1px solid #ccc;}
+			#buy .srq_inn img{width:100%;}
+			
+			#buy .srq_inn h3{border-bottom:1px solid #ccc; margin-bottom:20px; cursor:pointer; position:relative;}
+		
+			#buy .srq_inn h3 span{display:inline-block; text-transform:uppercase;}
+			#buy .srq_inn h3 span:first-child{padding:20px 0; font-size:30px;}
+			#buy .srq_inn h3 .sizeDesc{font-size:13px; color:#666;}
+
+			#buy .srq_inn h3 .underline{transition:all 0.3s linear; display:block; width:1px; height:2px; background-color:rgba(0,0,0,0); position:absolute; left:0; bottom:0;}
+
+
+			#buy .srq_inn table{width:438px; height:438px; margin-top:30px; border:1px solid #ccc; border-collapse:collapse; text-align:center; text-transform:uppercase; font-size:13px;}
+			#buy .srq_inn table caption{display:none;}
+			#buy .srq_inn table tr{width:100%;}
+			#buy .srq_inn table th{width:12%; height:16%; background-color:rgba(150,150,150,0.3); color:#333; border:1px solid #ccc; font-weight:700;}
+			#buy .srq_inn table td{border:1px solid #ccc;}
+			#buy .srq_inn table td:first-child{background-color:rgba(150,150,150,0.3); color:#333; font-weight:700;}
+
+			#buy:after{content:""; display:block; clear:both;}
+
+		/*## rv ##*/
+			#buy .rv_imgs{padding-bottom:20px; position:relative;}
+			#buy .rv_imgs .rv_left{position:absolute; left:0; top:300px;}
+			#buy .rv_imgs .rv_left a{display:block; width:30px; height:30px; line-height:30px; border-radius:30px; text-align:center; background-color:rgba(255,255,255,0.5);}
+			#buy .rv_imgs .rv_right{position:absolute; right:0; top:300px;}
+			#buy .rv_imgs .rv_right a{display:block; width:30px; height:30px; line-height:30px; border-radius:30px; text-align:center; background-color:rgba(255,255,255,0.5);}
+			#buy .rv_desc p:last-child{width:100%; padding:20px 0;}
+
+		/*## qa ##*/
+			#buy .qa dl{width:100%;}	
+			#buy .qa dl span{display:block; width:110px; text-align:center; float:left;}
+
+			#buy .qa dt{width:100%; padding-bottom:10px; border-bottom:1px solid #ccc;}
+			#buy .qa .qa_title{cursor:pointer;}
+			#buy .qa dt:after{content:""; display:block; clear:both;}
+		
+			#buy .qa dd{height:30px; line-height:30px; padding-top:10px; font-size:13px; text-align:center;}
+			
+			#buy .qa dd .question{display:block;}
+			/*## i태그를 icon 용도로 사용 ##*/
+
+			#buy .qa dd i{display:inline-block; width:40px; height:20px; line-height:20px; font-size:13px; border-radius:5px; font-style:normal; color:#fff; text-align:center; background-color:rgba(156,1,255,0.5);}
+
+			#buy .qa dd b{padding:0 10px; cursor:pointer;}
+			#buy .qa .answer{border-bottom:1px solid #ccc; padding-top:0; padding-bottom:10px;}
+
+			#buy .qa .question dt{border:0; padding-top:10px;}
+
+		/*## image ##*/
+			#image{width:800px; float:left; position:relative; text-transform:uppercase;}
+			#image ul li h3{width:100%; padding-bottom:20px; font-size:13px; color:#666;}
+			#image ul li h3 span{display:inline-block; height:40px; font-size:30px; color:#000; border-bottom:2px solid #000;}
+			
+			#image ul{width:600px; margin-right:200px;}
+			#image ul li{width:100%; padding:20px 0; overflow:hidden;}
+			#image ul li img{width:100%;}
+
+			#image ul li .desc{display:none;}
+
+		/*## i 태그를 아이콘용도로 사용 ##*/
+			#image ul li p{font-size:19px; line-height:30px; padding:10px 0; text-align:center;}
+			#image ul li p span{display:inline-block; padding:0 50px;}
+			#image ul li i{text-indent:-9999px; display:inline-block; width:18px; height:18px; border-radius:18px;}
+			#image ul li .color_set{font-size:16px; line-height:20px;}
+
+			#image p .bk{background-color:#000;}
+			#image p .cm{background-color:rgba(253,243,234,1);}
+			#image p .pp{background-color:rgba(218,198,225,1)}
+
+			#image .color_title{text-transform:uppercase; font-size:40px; padding-bottom:20px;}
+			#image .color_title span{display:inline-block; padding:10px 0; border-bottom:2px solid #333;}
+
+		/*## quick_menu ##*/
+			#image .quick_menu{width:100px; margin:0; position:absolute; right:0; top:230px;}
+
+			#image .quick_menu ul{width:100%;}
+
+			#image .quick_menu li{width:68px; height:68px; border:1px solid #ccc; font-size:13px; text-align:center; line-height:68px; border-radius:68px;  margin:10px auto; opacity:0.5; padding:0;}
+			#image .quick_menu li a{display:block; width:100%; border-radius:68px; text-transform:uppercase;}
+
+			#image .quick_menu li:hover{opacity:1;}
+	
+
+			#image .quick_menu .bk{background-color:#000;}
+			#image .quick_menu .bk a{background-color:#000; color:#fff;}
+
+			#image .quick_menu .cm{background-color:#fdf3ea;}
+			#image .quick_menu .cm a{background-color:#fdf3ea; color:#000;}
+
+			#image .quick_menu .pp{background-color:#dac6e1;}
+			#image .quick_menu .pp a{background-color:#dac6e1; color:#000;}
+
+			#image .quick_menu ul:after{content:""; display:block; clear:both;}
+
+		/*## top button ##*/
+			#top{width:80px; height:40px; line-height:40px; text-align:center; border-radius:80px; background-color:#000; position:absolute; right:0; bottom:55px;}
+			#top a{display:block; width:100%; height:100%; color:#fff;}
+
+		/*## detail_inn 가상객체 ##*/
+			#detail_inn:after{content:""; display:block; clear:both;}
+
+		/*## side ##*/
+		/*실험용 언제든 폐기가능 후에 기능배워서 기존 널디 페이지처럼 스크롤따라가는 기능 만들기*/
+			#side{width:350px; height:817px; background-color:rgba(255,255,255,0.3); position:absolute; left:0; top:0;}
+			
+			#side_inn{width:100%; height:100%;}
+
+			#side_inn ul{width:80%; height:80%; padding:10%;}
+
+			#side_inn li{width:70%; padding:5% 15%;}
+			#side_inn li a{color:#333; font-size:19px; font-weight:700; text-transform:uppercase;}
+
+			#side_inn .sub p{width:100%; padding:5px 0;}
+			#side_inn .sub p a{font-size:14px;}
+
+		/*## side 기능 ##*/
+			#side_inn li a:hover{color:rgba(156,1,255,1);}
+
+	/*푸터정리선*/
+		/*## footerWrap ##*/
+			#footerWrap{width:100%;}
+		
+		/*## footer ##*/
+			#footer{width:1920px; margin:0 auto; padding-top:50px; border-top:1px solid rgba(100,100,100,0.5);}
+
+		/*## footer_inn ##*/
+			#footer_inn{width:1440px; height:300px; margin:0 auto;}
+			#footer_inn h3{text-align:center; text-transform:uppercase;}
+
+		/*## left ##*/
+			#footer_inn .info{width:720px; height:250px; padding-bottom:50px; float:left;}
+			#footer_inn .info h3{width:150px; line-height:25px; font-size:18px; float:left;}
+			
+			#footer_inn .info div{width:720px; height:25px; padding-top:25px;}
+			#footer_inn .info div li:first-child{width:150px;}
+			
+
+		/*## ul / li ##*/
+			#footer_inn ul{width:550px; padding-left:20px; float:left;}
+			#footer_inn li{display:inline-block; padding:0 10px; line-height:25px; font-size:14px; color:#666;}
+			#footer_inn li a{font-size:14px; color:#666; text-transform:uppercase;}
+
+			#footer_inn li a:hover{text-decoration:underline; color:rgba(156,1,255,1);}
+
+		/*## onlin ##*/
+			#footer_inn .online li{text-transform:uppercase;}
+
+		/*## social ##*/
+			#footer_inn .info .social li:first-child{width:25px;}
+			#footer_inn .social li a{display:block; width:25px; height:25px;}
+			#footer_inn .social li a img{width:100%;}
+
+		/*## copyright ##*/
+			#footer_inn .copyright{width:720px; height:250px; font-size:15px; padding-bottom:50px; float:left;}
+
+			#footer_inn .copyright .footer_logo{width:100%; padding-top:25px;}
+			#footer_inn .copyright .logo{width:119px;}
+			#footer_inn .copyright .logo img{width:100%;}
+
+			#footer_inn .copyright .copy{width:100%; padding-top:25px; color:#666; font-size:14px;}
+			#footer_inn .copyright .copy p{padding-top:5px;}
+			#footer_inn .copyright .copy p a{color:#666; font-size:14px; font-weight:700;}
+			#footer_inn .copyright .copy i{font-style:normal;}
+			
+			#footer_inn .copyright .logo:after{content:""; display:block; clear:both;}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$(".srq_inn div").hide();
+			$(".rv_desc").show();
+			$(".srq_inn dl").hide();
+			$(".srq_inn .question").show();
+
+			$(".srq_inn h3").click(function(){
+				$(".underline").css({"width":"0%","backgroundColor":"rgba(0,0,0,0)"});
+				$(this).children(".underline").css({"width":"100%","backgroundColor":"rgba(156,1,255,1)"});
+				$(".srq_inn h3").next().slideUp(500,"swing");
+				$(this).next().slideDown(500,"swing");
+			});
+
+			$("#image li").click(function(){
+				$(this).children(".desc").slideDown(500,"swing")
+				$(this).children("h3").show(500,"swing")
+			});
+
+			$(".bk_title li:first").siblings().hide();
+			$(".cm_title li:first").siblings().hide();
+			$(".pp_title li:first").siblings().hide();
+
+			$("#bk").click(function(){
+				$(".cm_title li:first").siblings().hide();
+				$(".pp_title li:first").siblings().hide();
+				$(this).parent().siblings().slideDown(500,"swing")
+			});
+
+			$(".bk_title li:first").click(function(){
+				$(".cm_title li:first").siblings().hide();
+				$(".pp_title li:first").siblings().hide();
+				$(this).siblings().slideDown(500,"swing")
+			});
+
+			$("#cm").click(function(){
+				$(".bk_title li:first").siblings().hide();
+				$(".pp_title li:first").siblings().hide();
+				$(this).parent().siblings().slideDown(500,"swing")
+			});
+
+			$(".cm_title li:first").click(function(){
+				$(".bk_title li:first").siblings().hide();
+				$(".pp_title li:first").siblings().hide();
+				$(this).siblings().slideDown(500,"swing")
+			});
+
+			$("#pp").click(function(){
+				$(".bk_title li:first").siblings().hide();
+				$(".cm_title li:first").siblings().hide();
+				$(this).parent().siblings().slideDown(500,"swing")
+			});
+
+			$(".pp_title li:first").click(function(){
+				$(".bk_title li:first").siblings().hide();
+				$(".cm_title li:first").siblings().hide();
+				$(this).siblings().slideDown(500,"swing")
+			});
+			
+			$(".select input").click(function(){
+				$(this).siblings().css({"backgroundColor":"rgba(0,0,0,0)","color":"#000"});
+				$(this).css({"backgroundColor":"rgba(156,1,255,0.8)","color":"#fff"});
+			});
+
+			var result0 = document.getElementById("result0");
+			var result1 = document.getElementById("result1");
+			var result2 = document.getElementById("result2");
+			var result3 = document.getElementById("result3");
+			var result4 = document.getElementById("result4");
+			var result5 = document.getElementById("result5");
+
+		});
+		
+	
+		function bk_click(){
+			result0.value = "BLACK";
+		}
+		function cm_click(){
+			result0.value = "CREAM";	
+		}
+		function pp_click(){
+			result0.value = "LIGHT PURPLE";	
+		}
+
+		function topXs_click(){
+			result1.value = "XS"
+		}
+		function topS_click(){
+			result1.value = "S"
+		}
+		function topM_click(){
+			result1.value = "M"
+		}
+		function topL_click(){
+			result1.value = "L"
+		}
+		function topXl_click(){
+			result1.value = "XL"
+		}
+
+		function pantsXs_click(){
+			result2.value = "XS"
+		}
+		function pantsS_click(){
+			result2.value = "S"
+		}
+		function pantsM_click(){
+			result2.value = "M"
+		}
+		function pantsL_click(){
+			result2.value = "L"
+		}
+		function pantsXl_click(){
+			result2.value = "XL"
+		}
+
+		function halfXs_click(){
+			result3.value = "XS"
+		}
+		function halfS_click(){
+			result3.value = "S"
+		}
+		function halfM_click(){
+			result3.value = "M"
+		}
+		function halfL_click(){
+			result3.value = "L"
+		}
+		function halfXl_click(){
+			result3.value = "XL"
+		}
+		
+		function total(){
+			var quantity = document.getElementById("quantity");
+			var total = document.getElementById("total");
+
+			total.value = 245000 * quantity.value;
+		}
+
+		function cartBtn(){
+			if(result0.value == "" || result1.value == "" || result2.value == "" || result3.value == ""){
+				alert("선택되지 않은 옵션이 있습니다. 체크해주세요.");
+			}
+			else{var cartCheck = confirm("장바구니 화면으로 이동하시겠습니까?");}
+			
+
+			if(cartCheck == true){
+				alert("화면이동했다고 가정하는 알람");
+			}
+			else if(cartCheck == false){alert("현재 화면을 유지합니다.");}
+		}
+
+		function buyBtn(){
+			if(result0.value == "" || result1.value == "" || result2.value == "" || result3.value == ""){
+				alert("선택되지 않은 옵션이 있습니다. 체크해주세요.");
+			}
+			else{var list = confirm("색상 : "+result0.value+"\n트랙 탑 : "+result1.value+"\n트랙 팬츠 : "+result2.value+"\n하프 팬츠 : "+result3.value+"\n사이즈 및 색상 확인 부탁드립니다.");}
+
+
+			
+			
+		}
+	</script>
+ </head>
+
+ <body>
+	<div id="wrap">
+		<div id="headerWrap">
+			<div id="header">
+				<h1>널디</h1>
+				<div id="topMenu">
+					<h2>공지사항 및 이벤트</h2>
+					<ul>
+						<li class="color0">
+							<a href="#none" title="공지사항링크">
+								<span>3월</span> 이벤트 프로모션
+							</a>
+						</li>
+						<li class="color1">
+							<a href="#none" title="공지사항링크">
+								<span>널디회원</span>에게만 드리는 <span>무료 교환 혜택</span>
+							</a>
+						</li>
+						<li class="color2">
+							<a href="#none" title="공지사항링크">
+								@nerdy 카톡 채널 추가시 <span>플친전용 10% 할인 쿠폰</span> 발급!
+							</a>
+						</li>
+						<li class="color3">
+							<a href="#none" title="공지사항링크">
+								5/10/20/35 만원 이상 구매 시, 3월 구매금액 별 <span>사은품 증정!</span>
+							</a>
+						</li>
+					</ul>
+				</div>
+				<div id="nav">
+					<h2>네비게이션</h2>
+					<div id="logo">
+						<a href="index.html" title="널디홈페이지">
+							<img src="img/logo/logo.png" alt="널디"/>
+						</a>
+					</div>
+					<div id="gnb">
+						<ul>
+							<li><a href="#none" title="전체보기">all</a></li>
+							<li><a href="#none" title="전체보기"><span>best</span></a></li>
+							<li><a href="#none" title="전체보기">promo</a></li>
+							<li><a href="#none" title="전체보기">cloth</a></li>
+							<li><a href="#none" title="전체보기">shoes</a></li>
+							<li><a href="#none" title="전체보기">bag</a></li>
+						</ul>
+						<form action="#none" method="get">
+							<fieldset>
+								<legend>검색</legend>
+								<p class="search">
+									<input id="search" type="text" name="search" title="검색영역" value="search"/>
+								</p>
+								<p class="btn">
+									<input id="btn" type="submit" title="검색버튼" value="검색"/>
+								</p>
+							</fieldset>
+						</form>
+						<ul class="myPage">
+							<li>
+								<a href="#none" title="로그인">
+									login
+								</a>
+							</li>
+							<li>
+								<a href="#none" title="회원가입">
+									join
+								</a>
+							</li>
+							<li class="icon">
+								<a href="#none" title="마이페이지">
+									<img src="img/btn/mypage.png" alt="마이페이지이미지"/>
+								</a>
+							</li>
+							<li class="icon">
+								<a href="#none" title="장바구니">
+									<img src="img/btn/basket.png" alt="마이페이지이미지"/>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="container">
+			<section id="detail">
+				<h2>제품상세페이지</h2>
+				<div id="detail_inn">
+					<div id="image">
+						<ul class="quick_menu">
+							<li class="bk color">
+								<a href="#bk" title="bk">
+									black
+								</a>
+							</li>
+							<li class="cm color">
+								<a href="#cm" title="cm">
+									cream
+								</a>
+							</li>
+							<li class="pp color">
+								<a href="#pp" title="pp">
+									purple
+								</a>
+							</li>
+							<li class="quick">
+								<a href="#none" title="detail">
+									detail
+								</a>
+							</li>
+							<li class="quick">
+								<a href="#none" title="review">
+									review
+								</a>
+							</li>
+							<li class="quick">
+								<a href="#none" title="qa">
+									q&amp;a
+								</a>
+							</li>
+						</ul>
+						<ul>
+							<li>
+								<img src="img/detail/detail_m0.jpg" alt="상품모델이미지0"/>
+							</li>
+							<li>
+								<h3><span>color</span> (클릭하시면 확장되어 더 보여집니다.)</h3>
+								<p>
+									<img src="img/detail/detail1.jpg" alt="상품상세이미지1"/>
+								</p>
+								<p class="color_set desc">
+									<span><i class="bk">색상</i> black</span>
+									<span><i class="cm">색상</i> cream</span>
+									<span><i class="pp">색상</i> lightpurple</span>
+								</p>
+							</li>
+						</ul>
+						<ul class="imgDesc">
+							<li>
+								<h3><span>comfortable fit</span> (클릭하시면 확장되어 더 보여집니다.)</h3>
+								<p>
+									<img src="img/detail/desc0.jpg" alt="상품설명이미지0"/>
+								</p>
+								<p class="desc">
+									넉넉한 핏으로 <b>편안한 착용감</b>과<br/>
+									<b>내추럴한 스트릿 무드의 실루엣</b>을 제공합니다.
+								</p>
+							</li>
+							<li>
+								<h3><span>fabric</span> (클릭하시면 확장되어 더 보여집니다.)</h3>
+								<p>
+									<img src="img/detail/desc1.jpg" alt="상품설명이미지1"/>
+								</p>
+								<p class="desc">
+									<b>강한 내구성과 흡습속건성</b>을 지닌<br/>
+									널디 자체개발<b>프리미엄 폴리메모리 원단</b>입니다.
+								</p>
+							</li>
+							<li>
+								<h3><span>detail</span> (클릭하시면 확장되어 더 보여집니다.)</h3>
+								<p>
+									<img src="img/detail/desc2.jpg" alt="상품설명이미지2"/>
+								</p>
+								<p class="desc">
+									널디 그라데이션<b>2선 디테일</b><br/>
+									포켓에 <b>지퍼 디테일</b>이 있어 활동적인 움직임에도 <b>소지품 보관이 용이</b>
+								</p>
+								<p>
+									<img src="img/detail/desc3.jpg" alt="상품설명이미지3"/>
+								</p>
+								<p class="desc">
+									팬츠<b>밑단 지퍼 슬릿</b>이 있어 착용시 용이<br/>
+									허리 스트링으로 <b>사이즈 조절 가능</b>
+								</p>
+							</li>
+						</ul>
+						<ul class="bk_title">
+							<li>
+								<h3 id="bk"><span>black</span> (클릭하시면 확장되어 더 보여집니다.)</h3>
+								<p>
+									<img src="img/detail/bk0.jpg" alt="블랙상품이미지0"/>
+								</p>
+							</li>
+							<li>
+								<img src="img/detail/bk1.jpg" alt="블랙상품이미지1"/>
+							</li>
+							<li>
+								<img src="img/detail/bk2.jpg" alt="블랙상품이미지2"/>
+							</li>
+							<li>
+								<img src="img/detail/bk3.jpg" alt="블랙상품이미지3"/>
+							</li>
+						</ul>
+						<ul class="cm_title">
+							<li>
+								<h3 id="cm"><span>cream</span> (클릭하시면 확장되어 더 보여집니다.)</h3>
+								<p>
+									<img src="img/detail/cm0.jpg" alt="아이보리상품이미지0"/>
+								</p>
+							</li>
+							<li>
+								<img src="img/detail/cm1.jpg" alt="아이보리상품이미지1"/>
+							</li>
+							<li>
+								<img src="img/detail/cm2.jpg" alt="아이보리상품이미지2"/>
+							</li>
+							<li>
+								<img src="img/detail/cm3.jpg" alt="아이보리상품이미지3"/>
+							</li>
+						</ul>
+						<ul class="pp_title">
+							<li>
+								<h3 id="pp"><span>lightpurple</span> (클릭하시면 확장되어 더 보여집니다.)</h3>
+								<p>
+									<img src="img/detail/pp0.jpg" alt="퍼플상품이미지0"/>
+								</p>
+							</li>
+							<li>
+								<img src="img/detail/pp1.jpg" alt="퍼플상품이미지1"/>
+							</li>
+							<li>
+								<img src="img/detail/pp2.jpg" alt="퍼플상품이미지2"/>
+							</li>
+							<li>
+								<img src="img/detail/pp3.jpg" alt="퍼플상품이미지3"/>
+							</li>
+						</ul>
+					</div>
+					<div id="buy">
+						<div id="info">
+							<h3>그라데이션 엔와이 트랙 3종 세트</h3>
+							<div class="title">
+								<p>
+									245,000원
+								</p>
+							</div>
+							<ul class="desc">
+								<li>
+									<p class="img">
+										<img src="img/icon/icon1.png" alt="배송이미지"/>
+									</p>
+									<p>
+										<span>무료배송</span><br/>15시 이전 결제완료시<br/>당일 출고
+									</p>
+								</li>
+								<li>
+									<p class="img">
+										<img src="img/icon/icon2.png" alt="팁이미지"/>
+									</p>
+									<p>
+										<span>20만 쿠폰팩</span><br/>회원가입 시 증정
+									</p>
+								</li>
+								<li>
+									<p class="img">
+										<img src="img/icon/icon3.png" alt="무이자할부이미지"/>
+									</p>
+									<p>
+										<span>무이자</span><br/>카드 할부 혜택
+									</p>
+								</li>
+							</ul>
+							<div class="select">
+								<div class="color">
+									<p class="classify">
+										색상
+									</p>
+									<p>
+										<input id="bkPick" type="text" value="black" title="black" onclick="bk_click();" readonly/>
+										<input id="cmPick" type="text" value="cream" title="cream" onclick="cm_click();" readonly/>
+										<input id="ppPick" type="text" value="purple" title="purple" onclick="pp_click();" readonly/>
+									</p>
+								</div>
+								<div class="top">
+									<p class="classify">
+										트랙 탑
+									</p>
+									<p>
+										<input id="topXs" type="text" value="xs" title="topXs" onclick="topXs_click();" readonly/>
+										<input id="topS" type="text" value="s" title="topS"onclick="topS_click();" readonly/>
+										<input id="topM" type="text" value="m" title="topM" onclick="topM_click();" readonly/>
+										<input id="topL" type="text" value="l" title="topL" onclick="topL_click();" readonly/>
+										<input id="topXl" type="text" value="xl" title="topXl" onclick="topXl_click();"readonly/>
+									</p>
+								</div>
+								<div class="pants">
+									<p class="classify">
+										트랙 팬츠
+									</p>
+									<p>
+										<input id="pantsXs" type="text" value="xs" title="pantsXs" onclick="pantsXs_click();" readonly/>
+										<input id="pantsS" type="text" value="s" title="pantsS" onclick="pantsS_click();" readonly/>
+										<input id="pantsM" type="text" value="m" title="pantsM" onclick="pantsM_click();" readonly/>
+										<input id="pantsL" type="text" value="l" title="pantsL" onclick="pantsL_click();" readonly/>
+										<input id="pantsXL" type="text" value="xl" title="pantsXL" onclick="pantsXl_click();" readonly/>
+									</p>
+								</div>
+								<div class="half">
+									<p class="classify">
+										하프 팬츠
+									</p>
+									<p>
+										<input id="halfXs" type="text" value="xs" title="halfXs" onclick="halfS_click();" readonly/>
+										<input id="halfS" type="text" value="s" title="halfS" onclick="halfXs_click();" readonly/>
+										<input id="halfM" type="text" value="m" title="halfM" onclick="halfM_click();" readonly/>
+										<input id="halfL" type="text" value="l" title="halfL"  onclick="halfL_click();" readonly/>
+										<input id="halfXL" type="text" value="xl" title="halfXL"  onclick="halfXl_click();" readonly/>
+									</p>
+								</div>
+							</div>
+							<div class="button">
+								<div class="button_inn">
+									<ul>
+										<li>
+											<label for="result0">색상</label><input id="result0" type="text"  readonly/>
+										</li>
+										<li>
+											<label for="result1">트랙 탑</label><input id="result1" type="text" readonly/>
+										</li>
+										<li>
+											<label for="result2">트랙 팬츠</label><input id="result2" type="text" readonly/>
+										</li>
+										<li>
+											<label for="result3">하프 팬츠</label><input id="result3" type="text" readonly/>
+										</li>
+										<li>
+											<label for="quantity">수량</label><input id="quantity" type="number" value="1" min="1" title="quantity" onclick="total();"/>
+										</li>
+										<li>
+											<label for="total">금액</label><input id="total" type="text" value="245000" title="total" readonly/>
+										</li>
+									</ul>
+									<div class="btn_buy">
+										<ul>
+											<li>
+												<a href="#none" title="장바구니" onclick="cartBtn();">
+													<span class="icon">
+														<img src="img/icon/icon4.png" alt="장바구니이미지"/>
+													</span>
+													<span class="text">
+														cart
+													</span>
+												</a>
+											</li>
+											<li>
+												<a href="#none" title="구매하기" onclick="buyBtn();">
+													<span class="icon">
+														<img src="img/icon/icon0.png" alt="구매하기이미지"/>
+													</span>
+													<span class="text">
+														buy
+													</span>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="size review qa">
+							<div class="srq_inn">
+								<h3>
+									<span>size</span> 
+									<span class="sizeDesc">(클릭하시면 아래로 펼쳐집니다.)</span>
+									<span class="underline"></span>
+								</h3>
+								<div>
+									<p class="img">
+										<img src="img/size/size.png" alt="사이즈표이미지"/>
+									</p>
+									<table>
+										<caption>수치표</caption>
+										<tbody>
+											<tr>
+												<th>
+													size
+												</th>
+												<th>
+													총장
+												</th>
+												<th>
+													어깨
+												</th>
+												<th>
+													가슴
+												</th>
+												<th>
+													밑단
+												</th>
+												<th>
+													소매길이
+												</th>
+												<th>
+													소매통
+												</th>
+												<th>
+													소매단
+												</th>
+											</tr>
+											<tr>
+												<td>
+													XS
+												</td>
+												<td>
+													63
+												</td>
+												<td>
+													57
+												</td>
+												<td>
+													60.5
+												</td>
+												<td>
+													43.25
+												</td>
+												<td>
+													83.5
+												</td>
+												<td>
+													22.25
+												</td>
+												<td>
+													9
+												</td>
+											</tr>
+											<tr>
+												<td>
+													S
+												</td>
+												<td>
+													65
+												</td>
+												<td>
+													59
+												</td>
+												<td>
+													63
+												</td>
+												<td>
+													45.5
+												</td>
+												<td>
+													86.5
+												</td>
+												<td>
+													23
+												</td>
+												<td>
+													9.5
+												</td>
+											</tr>
+											<tr>
+												<td>
+													M
+												</td>
+												<td>
+													69
+												</td>
+												<td>
+													61
+												</td>
+												<td>
+													65.5
+												</td>
+												<td>
+													47.75
+												</td>
+												<td>
+													89.5
+												</td>
+												<td>
+													23.75
+												</td>
+												<td>
+													10
+												</td>
+											</tr>
+											<tr>
+												<td>
+													L
+												</td>
+												<td>
+													71
+												</td>
+												<td>
+													63
+												</td>
+												<td>
+													68
+												</td>
+												<td>
+													50
+												</td>
+												<td>
+													92.5
+												</td>
+												<td>
+													24.5
+												</td>
+												<td>
+													10.5
+												</td>
+											</tr>
+											<tr>
+												<td>
+													XL
+												</td>
+												<td>
+													73
+												</td>
+												<td>
+													65
+												</td>
+												<td>
+													95.5
+												</td>
+												<td>
+													52.25
+												</td>
+												<td>
+													95.5
+												</td>
+												<td>
+													25.25
+												</td>
+												<td>
+													11
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="size review qa">
+							<div class="srq_inn">
+								<h3>
+									<span>reveiw</span> 
+									<span class="sizeDesc">(클릭하시면 아래로 펼쳐집니다.)</span>
+									<span class="underline"></span>
+								</h3>
+								<div>
+									<ul class="rv_imgs">
+										<li>
+											<a href="#none" title="리뷰이미지0">
+												<img src="img/review/rv0.jpg" alt="리뷰이미지0"/>
+											</a>
+										</li>
+										<li class="rv_left">
+											<a href="#none" title="왼쪽">
+												◀
+											</a>
+										</li>
+										<li class="rv_right">
+											<a href="#none" title="오른쪽">
+												▶
+											</a>
+										</li>
+									</ul>
+									<div class="rv_desc">
+										<p>
+											이** 님
+										</p>
+										<p>
+											170~175cm <i>|</i> 55~60kg<br/>
+											트랙 탑 : S <i>|</i> 트랙 팬츠 : S <i>|</i> 하프 팬츠 : S	
+										</p>
+										<p>
+											사이즈보다 조금 오버핏인데 오버핏 좋아하시면 추천드려요!
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="size review qa">
+							<div class="srq_inn">
+								<h3>
+									<span>q&amp;a</span> 
+									<span class="sizeDesc">(클릭하시면 아래로 펼쳐집니다.)</span>
+									<span class="underline"></span>
+								</h3>
+								<dl>
+									<dt>
+										<span>번호</span><span>제목</span><span>작성자</span><span>날짜</span>
+									</dt>
+									<dd>
+										<dl class="question">
+											<dt>
+												<span>65</span><span class="qa_title">배송 문의</span><span>이**</span><span>2022.04.23</span>
+											</dt>
+											<dd class="answer">
+												<i>Re</i><b>널디에서 답변 드립니다.</b>
+											</dd>
+										</dl>
+										<dl class="question">
+										<dt>
+											<span>64</span><span class="qa_title">입고 문의</span><span>장**</span><span>2022.04.23</span>
+										</dt>
+										<dd class="answer">
+											<i>Re</i><b>널디에서 답변 드립니다.</b>
+										</dd>
+									</dl>
+									</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div id="top">
+						<a href="#headerWrap" title="top">
+							▲	top ▲
+						</a>
+					</div>
+				</div>
+			</section>
+			<div id="side">
+				<!--실험용 언제든 폐기가능 후에 기능배워서 기존 널디 페이지처럼 스크롤따라가는 기능 만들기-->
+				<h2>sidemenu영역</h2>
+				<div id="side_inn">
+					<ul class="menu">
+						<li>
+							<a href="#none" title="사이드">
+								about us
+							</a>
+						</li>
+						<li>
+							<a href="subpage_showcase.html" title="showcase">
+								showcase
+							</a>
+						</li>
+						<li>
+							<a href="#none" title="nerdy fit">
+								nerdy fit
+							</a>
+						</li>
+						<li>
+							<a href="#none" title="nerdy">
+								nerdy
+							</a>
+						</li>
+						<li class="sub">
+							<div>
+								<p>
+									<a href="#none" title="신상품">
+										신상품
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="세트_1n1">
+										세트/1&amp;1
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="베스트100">
+										베스트100
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="의류">
+										의류
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="신발">
+										신발
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="액세사리">
+										액세사리
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="아울렛">
+										아울렛
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="맞춤 제품 찾기">
+										맞춤 제품 찾기
+									</a>
+								</p>
+							</div>
+						</li>
+						<li>
+							<a href="#none" title="lookbook">
+								lookbook
+							</a>
+						</li>
+						<li>
+							<a href="subpage_store.html" title="store">
+								store
+							</a>
+						</li>
+						<li>
+							<a href="#none" title="community">
+								community
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="footerWrap">
+			<div id="footer">
+				<div id="footer_inn">
+					<div class="info">
+						<h2>꼬릿말</h2>
+						<div class="online">
+							<h3>online shop</h3>
+							<ul>
+								<li>
+									82+ 1544-2083
+								</li>
+								<li class="week">
+									mon-fri : 09:00-18:00 | lunch 12:00-13:00
+								</li>
+							</ul>
+						</div>
+						<div class="with">
+							<h3>with</h3>
+							<ul>
+								<li>
+									<a href="#none" title="파트너쉽">
+										partnership
+									</a>
+								</li>
+								<li>
+									<a href="#none" title="콜라보레이션">
+										collaboration
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="legal">
+							<h3>legal</h3>
+							<ul>
+								<li>
+									<a href="#none" title="agreement">
+										agreement
+									</a>
+								</li>
+								<li class="policy">
+									<a href="#none" title="privacy policy">
+										privacy policy
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="legal">
+							<h3>help</h3>
+							<ul>
+								<li>
+									<a href="#none" title="qna">
+										qna
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div class="social">
+							<h3>social</h3>
+							<ul>
+								<li>
+									<a href="#none" title="인스타그램">
+										<img src="img/btn/insta.png" alt="인스타그램이미지"/>
+									</a>
+								</li>
+								<li>
+									<a href="#none" title="페이스북">
+										<img src="img/btn/facebook.png" alt="페이스북이미지"/>
+									</a>
+								</li>
+								<li>
+									<a href="#none" title="유튜브">
+										<img src="img/btn/youtube.png" alt="유튜브이미지"/>
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="copyright">
+						<div class="footer_logo">
+							<p class="logo">
+								<img src="img/logo/logo.png" alt="널디"/>
+							</p>
+						</div>
+						<div class="copy">
+							<p>
+								APR Co., Ltd. <i>|</i> CS CENTER : 1544-2083 (MON - FRI 09:00 - 18:00)
+							</p>
+							<p>
+								(05551) 94-12, 36th floor, 300, Olympic-ro, Songpa-gu, Seoul, Republic of Korea <i>|</i> CEO : Byunghoon Kim
+							</p>
+							<p>
+								Business Registration No : [220-88-89441] <a href="#none" title="사업자정보확인">[사업자정보확인]</a>
+							</p>
+							<p>
+								E-commerce Permit Registration No : 2020-SeoulSongpa-1274
+							</p>
+							<p>
+								Personal Information Manager : JEONG JAEHUN (whoisnerdy.kr@gmail.com)
+							</p>
+							<p>
+								COPYRIGHT &copy; 2022 YHR
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+ </body>
+</html>
