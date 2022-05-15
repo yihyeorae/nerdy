@@ -78,7 +78,7 @@
 
 		/*컨테이너정리선*/
 			/*## container ##*/
-				#container{width:100%; }
+				#container{width:100%; position:relative; }
 
 			/*## visual ##*/
 				#visual{width:100%;}
@@ -205,6 +205,23 @@
 
 					#shop_inn li:hover .moving_box{opacity:1;}
 				*/
+
+			/*## side ##*/
+			/*실험용 언제든 폐기가능 후에 기능배워서 기존 널디 페이지처럼 스크롤따라가는 기능 만들기*/
+			#side{width:350px; height:817px; background-color:rgba(255,255,255,0.3); position:absolute; left:0; top:0; transition:all 1s linear;}
+				
+				#side_inn{width:100%; height:100%;}
+
+				#side_inn ul{width:80%; height:80%; padding:10%;}
+
+				#side_inn li{width:70%; padding:5% 15%;}
+				#side_inn li a{color:#333; font-size:19px; font-weight:700; text-transform:uppercase;}
+
+				#side_inn .sub p{width:100%; padding:5px 0;}
+				#side_inn .sub p a{font-size:14px;}
+
+			/*## side 기능 ##*/
+				#side_inn li a:hover{color:rgba(156,1,255,1);}
 
 		/*푸터정리선*/
 			/*## footerWrap ##*/
@@ -839,7 +856,94 @@
 					</ul>
 				</div>
 			</section>
+			<div id="side"><!--실험용 언제든 폐기가능 후에 기능배워서 기존 널디 페이지처럼 스크롤따라가는 기능 만들기-->
+				<h2>sidemenu영역</h2>
+				<div id="side_inn">
+					<ul class="menu">
+						<li>
+							<a href="#none" title="사이드">
+								about us
+							</a>
+						</li>
+						<li>
+							<a href="showcase.html" title="showcase">
+								showcase
+							</a>
+						</li>
+						<li>
+							<a href="#none" title="nerdy fit">
+								nerdy fit
+							</a>
+						</li>
+						<li>
+							<a href="#none" title="nerdy">
+								nerdy
+							</a>
+						</li>
+						<li class="sub">
+							<div>
+								<p>
+									<a href="#none" title="신상품">
+										신상품
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="세트_1n1">
+										세트/1&amp;1
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="베스트100">
+										베스트100
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="의류">
+										의류
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="신발">
+										신발
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="액세사리">
+										액세사리
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="아울렛">
+										아울렛
+									</a>
+								</p>
+								<p>
+									<a href="#none" title="맞춤 제품 찾기">
+										맞춤 제품 찾기
+									</a>
+								</p>
+							</div>
+						</li>
+						<li>
+							<a href="#none" title="lookbook">
+								lookbook
+							</a>
+						</li>
+						<li>
+							<a href="store.html" title="store">
+								store
+							</a>
+						</li>
+						<li>
+							<a href="#none" title="community">
+								community
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
 		</div>
+		
 		<div id="footerWrap">
 			<div id="footer">
 				<div id="footer_inn">
