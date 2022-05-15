@@ -4,17 +4,17 @@ feportfolio.dothome.co.kr/nerdy
 <ul>
   <li>index == 메인페이지 (모바일 브라우저[적응형] ~ PC)</li>
   <li>index_mobile == 반응형 페이지 (오직 모바일 브라우저 전용, %만 사용)</li>
-  <li>subpage_detail == 서브페이지 , 제품 상세 페이지</li>
-  <li>subpage_list == 서브페이지 , 제품 리스트 페이지</li>
-  <li>subpage_showcase == 서브페이지 , 쇼케이스 리스트 페이지</li>
-  <li>subpage_store == 서브페이지 , 오프라인 스토어 페이지</li>
+  <li>detail == 제품 상세 페이지</li>
+  <li>list == 제품 리스트 페이지</li>
+  <li>showcase == 쇼케이스 리스트 페이지</li>
+  <li>store == 오프라인 스토어 페이지</li>
 </ul>
 <hr/>
 <ul>
   <li>index 메인 페이지에서 각 서브페이지 바로 이동할 수 있도록 href 연결되어있습니다.</li>
-  <li> subpage_detail == index 메인 페이지의 best 영역 첫번째 상품 (엔와이 그라데이션 3종 세트)</li>
-  <li> subpage_showcase == index 메인 페이지의 좌측 사이드 영역 showcase</li>
-  <li> subpage_store == index 메인 페이지의 좌측 사이드 영역 store</li>
+  <li> detail == index 메인 페이지의 best 영역 첫번째 상품 (엔와이 그라데이션 3종 세트)</li>
+  <li> showcase == index 메인 페이지의 좌측 사이드 영역 showcase</li>
+  <li> store == index 메인 페이지의 좌측 사이드 영역 store</li>
 </ul>
 <hr/>
 <ul>
