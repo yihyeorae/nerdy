@@ -25,3 +25,25 @@ feportfolio.dothome.co.kr/nerdy
 <hr/>
 <p>모든 페이지 계속해서 디벨롭 중입니다.</p>
 <strong>방문해주셔서 감사합니다.</strong>
+
+<h2>0518 update</h2>
+<ul>
+  <li>nav 영역 form input , 기존 널디 페이지 검색경로 추가 및 클릭 시 간단한 이벤트 구현</li>
+</ul>
+<dl>
+  <dt>index.html</dt>
+  <dd>1.side 영역 hover,mouseover 가 아닌 scroll 으로 따라다니도록 구현</dd>
+  <dd>2.insta 영역 javascript, jQuery를 통해 반복해서 클릭해도 정상 작동하도록 구현</dd>
+</dl>
+
+<dl>
+  <dt>detail.html</dt>
+  <dd>1. side 영역 및 quick_menu 영역 hover,mouseover 가 아닌 scroll 으로 따라다니도록 구현</dd>
+  <dd>2. buy 영역 각 size 선택 시 input 입력 및 -,+ 를 이용한 계산식 구현</dd>
+</dl>
+<dl>
+  <dt>list.html</dt>
+  <dd>1. visual 슬라이딩 윈도우 배경색상 변경되도록 구현, 현재 정상 작동하나 , 더 효율적인 코드 구성 방법 고민 필요</dd>
+  <dd>2. cate 영역 탭 베이직이용한 상품 바뀌도록 구현</dd>
+  <dd>3. 상품의 색상 클릭 시 해당 색상 이미지로 변경</dd>
+</dl>
