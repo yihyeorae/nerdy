@@ -60,7 +60,7 @@
 
 			/*## gnb ##*/
 				#gnb{width:1720px; height:100%; float:left;}
-				#gnb ul{width:1020px; height:100%; float:left;}
+				#gnb ul{width:790px; height:100%; float:left;}
 				#gnb li{width:100px; height:100%; text-transform:uppercase; font-weight:700; float:left;}
 				
 				#gnb li a{display:block; width:80px; height:30px; margin:35px auto; line-height:30px; text-align:center;}
@@ -71,21 +71,21 @@
 				#gnb li a span:hover{color:#f00;}
 
 			/*## form ##*/
-				#gnb form{width:300px; height:30px; margin:35px 0; float:left;}
+				#gnb form{width:300px; height:30px; margin:35px 0 35px 230px; float:left;}
 				#gnb fieldset{border:none;}
 				#gnb legend{display:none;}
 				#gnb .search{width:173px; height:30px; float:left;}
 				#gnb .search input{width:173px; height:29px; border:none; border-bottom:1px solid #9201ff; text-indent:10px;}
 				#gnb .btn{width:50px; height:30px; float:left;}
 				#gnb .btn input{width:50px; height:30px; border:1px solid #ccc; background-color:rgba(156,1,255,1); color:#fff;}
-		
+
 			/*## myPage ##*/
 				#gnb .myPage{width:400px; float:left;}
 				#gnb .myPage .icon a{width:25px;}
 				#gnb .myPage a img{width:100%;}
 
 			/*## search ##*/
-				#search_add{width:700px; border-radius:20px; padding:20px; position:absolute; right:0; top:100px; z-index:1; background-color:rgba(255,255,255,0.5); }
+				#search_add{width:700px; border-radius:20px; padding:20px; position:absolute; right:200px; top:100px; z-index:1; background-color:rgba(255,255,255,0.5); }
 				#search_add h3{padding:20px 0; font-size:25px; position:relative;}
 				#search_add h3 span{padding-bottom:5px; border-bottom:2px solid #000;}
 				#search_add h3 i{position:absolute; right:5px; top:23px; font-style:normal; transform:rotate3d(0,0,1,0deg); transition:all 0.2s linear; cursor:pointer;}
@@ -94,10 +94,10 @@
 				#search_add fieldset div{height:40px; overflow:hidden;}
 				#search_add legend{display:none;}
 				#search_add fieldset p{display:inline-block; height:100%;}
-				#search_add .add_desc{width:595px;}
+				#search_add .add_desc{width:500px;}
 				#search_add .add_button{width:100px;}
 				#search_add p input{width:100%; height:100%; text-indent:10px; border:0; font-size:18px; text-transform:uppercase; vertical-align:middle;}
-				#search_add p input[type="button"]{text-indent:0; text-align:center;}
+				#search_add p input[type="submit"]{text-indent:0; text-align:center;}
 				#search_add:after{content:""; display:block; clear:both;}
 
 				#search_add .recommend{width:100%;}
@@ -106,9 +106,9 @@
 				#search_add .recommend .hash_tag{padding-top:10px;}
 				#search_add .recommend .hash_tag li{display:inline-block;  border-radius:20px; background-color:rgba(156,1,255,0.5);}
 				#search_add .recommend .hash_tag li a{display:inline-block; padding:5px 10px; color:#fff;}
-				#search_add .recommend .rec_inn li{display:inline-block; width:220px; margin-left:10px;}
+				#search_add .recommend .rec_inn li{display:inline-block; width:200px; margin-left:10px;}
 				#search_add .recommend .rec_inn li p{text-align:center; font-size:13px; line-height:17px;}
-				#search_add .recommend .rec_inn li p i{font-size:14px; font-style:normal; color:rgba(156,1,255,1);}
+				/*#search_add .recommend .rec_inn li p i{font-size:14px; font-style:normal; color:rgba(156,1,255,1);}*/
 				#search_add .recommend .rec_inn li a{display:inline-block; width:100%;}
 				#search_add .recommend .rec_inn li a img{width:100%;}	
 
@@ -143,9 +143,10 @@
 
 				#visual_inn .text a .label{width:70px; height:30px; line-height:30px; font-size:20px; text-align:center; background-color:#000; opacity:0; transition:opacity 0.5s linear 1s;}
 				
-				
-				#visual_inn:hover .text{opacity:1; left:650px; bottom:100px; overflow:hidden;}
-				#visual_inn:hover a .label{opacity:1;}
+				/*
+                    #visual_inn:hover .text{opacity:1; left:650px; bottom:100px; overflow:hidden;}
+                    #visual_inn:hover a .label{opacity:1;}
+                */
 				
 
 				
@@ -403,8 +404,8 @@
 				#insta:hover #insta_right li{transform:rotate3d(0,0,1,-90deg);}
 				*/
 
-				#direction{width:140px; height:32px; position:absolute; left:650px; bottom:155px;}
-				#direction p{width:32px; height:100%; margin:0 19px; float:left; background:none; font-size:30px; border:0;}
+				#direction{width:64px; height:64px; position:absolute; left:690px; bottom:155px;}
+				#direction p{width:64px; height:100%; font-size:30px; border:0;}
 				#direction p a{display:block; width:100%; height:100%;}
 				#direction p img{width:100%;}
 
@@ -554,6 +555,7 @@
 				#gnb #btn1:hover{transform:rotate(-180deg);}
 
 				#gnb:after{content:""; display:block; clear:both;}
+                #gnb ul:after{content:""; display:block; clear:both;}
 
 
 				/*## form ##*/
@@ -769,6 +771,8 @@
 				#gnb #btn1:hover{transform:rotate(-180deg);}
 
 				#gnb:after{content:""; display:block; clear:both;}
+                #gnb ul:after{content:""; display:block; clear:both;}
+
 
 				/*## form ##*/
 				#gnb form{display:none;}
@@ -980,6 +984,7 @@
 				#gnb #btn1:hover{transform:rotate(-180deg);}
 
 				#gnb:after{content:""; display:block; clear:both;}
+                #gnb ul:after{content:""; display:block; clear:both;}
 
 				
 				
@@ -1192,16 +1197,29 @@
 			
 			/*## PC visual 영역 ( 접근성을 위해 기존 css hover 기능 주석처리후 jQuery 로 기능적용 ) ##*/
 			/*## (모바일 버전과 충돌로 문제 일으켜서 잠시 주석처리 후 css 로 기능유지) 조건문으로 해결 예정##*/
+
+           
+
+                if($(window).width() > 1024)
+                {
+                    $("#visual_inn").bind("mouseenter focusin",function(){
+                        $(this).find(".text").css({"left":"650px","bottom":"100px","opacity":"1"});
+                        $(this).find(".text a .label").css({"opacity":"1"});
+                    }).bind("mouseleave focusout",function(){
+                        $(this).find(".text").css({"left":"0","bottom":"100px","opacity":"0"});
+                        $(this).find(".text a .label").css({"opacity":"0"});
+                    });	
+                }
+                
+            $(window).resize(function(){
+                if($(window).width() < 1025  && $(window).width() >320)
+                {
+                    $(".text").css({"opacity":"1"});
+                }
+           });
+
+
 			
-			/*
-			$("#visual_inn").bind("mouseenter focusin",function(){
-				$(this).find(".text").css({"left":"650px","bottom":"100px","opacity":"1"});
-				$(this).find(".text a .label").css({"opacity":"1"});
-			}).bind("mouseleave focusout",function(){
-				$(this).find(".text").css({"left":"0","bottom":"100px","opacity":"0"});
-				$(this).find(".text a .label").css({"opacity":"0"});
-			});	
-			*/
 			
 
 			/*## PC main 영역 ( 접근성을 위해 기존 css hover 기능 주석처리후 jQuery 로 기능적용 )## */
@@ -1262,7 +1280,7 @@
 				현재 같은 클릭을 반복할 수 없기에, 좌측 클릭 / 우측 클릭 번갈아가면서는 작동하나 계속해서 한쪽방향 클릭이 어려움
 				클릭을 반복해서 받을 수 있도록 확인하여 해결 예정
 			*/
-
+			/*
 			$("#direction .left").bind("click focusin",function(){
 				$("#insta_left").css({"transform":"rotate3d(0,0,1,-90deg)"});
 				$("#insta_left li").css({"transform":"rotate3d(0,0,1,90deg)"});
@@ -1281,55 +1299,174 @@
 				$("#insta_right .no0").css({"transform":"rotate3d(0,0,1,0deg) scale(1.3)"});
 			});
 
-			$("#visual").mouseenter(function(){
-				$("#side").css({"top":"0"});
-			});
+			*/
+           
 
-			$("#main").mouseenter(function(){
-				$("#side").css({"top":"900px"});
-			});
-			$("#event").mouseenter(function(){
-				$("#side").css({"top":"1830px"});
-			});
-			$("#best").mouseenter(function(){
-				$("#side").css({"top":"2700px"});
-			});
-			$("#season").mouseenter(function(){
-				$("#side").css({"top":"3500px"});
-			});
-			$("#video").mouseenter(function(){
-				$("#side").css({"top":"4600px"});
-			});
-			$("#insta").mouseenter(function(){
-				$("#side").css({"top":"6200px"});
-			});
+            //var left_deg = ["rotate3d(0,0,1,-90deg)","rotate3d(0,0,1,-180deg)","rotate3d(0,0,1,-270deg)","rotate3d(0,0,1,-360deg)"];
+            //var right_deg = ["rotate3d(0,0,1,90deg)","rotate3d(0,0,1,180deg)","rotate3d(0,0,1,270deg)","rotate3d(0,0,1,-360deg)"];
+            
+            /*증감문으로 활용할 선언*/
+            var rotate = 0;
+            var minus = 0;
+            var plus = 0;
+
+            /* 확대해줄 li 배열을 위한 id객체 불러오기*/
+            var insta_left = document.getElementById("insta_left");
+            var insta_right = document.getElementById("insta_right");
+            var left_lis = insta_left.getElementsByTagName("li");
+            var right_lis = insta_right.getElementsByTagName("li");
+
+            $("#direction").click(function(){
+                //alert();
+                //rotate++;
+                /*
+                    if(rotate == 5){
+                        rotate = 0;
+                    }
+                */
+                /*
+                    $("#insta_left").css({"transform":left_deg[rotate-1]});
+                    $("#insta_left li").css({"transform":right_deg[rotate-1]});
+                    $("#insta_right").css({"transform":right_deg[rotate-1]});
+                    $("#insta_right li").css({"transform":left_deg[rotate-1]});
+
+                    [이슈]
+                    배열을 모두 소모하면 0번으로 돌아가면서 -360deg -> -90deg로 되는 과정에서 고장나는 과하게 움직이는 이슈 발생
+
+                    [해결]
+                    배열을 사용하는것이 아닌 증감문을 사용하여 해결
+                    console.log(left_deg); 
+                    alert(rotate);
+                */
+                /* insta 영역 회전 기능 */
+                minus -=90;
+                plus += 90;
+
+                //console.log(minus);
+                $("#insta_left").css({"transform":"rotateZ("+minus+"deg)"});
+                $("#insta_left li").css({"transform":"rotateZ("+plus+"deg)"});
+                $("#insta_right").css({"transform":"rotateZ("+plus+"deg)"});
+                $("#insta_right li").css({"transform":"rotateZ("+minus+"deg)"});
+
+
+                /* insta 가운데 모이는 이미지 확대 기능*/
+                // rotate 재활용하기
+                rotate++;
+                if(rotate==4){
+                    rotate = 0;
+                }
+                //alert(rotate);
+                //console.log(left_lis[1]);
+                //console.log(right_lis[1]);
+                
+                $(left_lis[rotate]).css({"transform":"rotateZ("+plus+"deg) scale(1.3)"});
+                $(right_lis[rotate]).css({"transform":"rotateZ("+minus+"deg) scale(1.3)"});
+            }); 
+           
+
+                //$("#insta_left .no1").css({"transform":"rotate3d(0,0,1,90deg) scale(1.3)"});
+                //$("#insta_right .no1").css({"transform":"rotate3d(0,0,1,-90deg) scale(1.3)"});
+
+           
+			
+			/* 
+                ####### scroll 기능 배우기 전 side 영역 기능 ########
+
+				$("#visual").mouseenter(function(){
+					$("#side").css({"top":"0"});
+				});
+
+				$("#main").mouseenter(function(){
+					$("#side").css({"top":"900px"});
+				});
+				$("#event").mouseenter(function(){
+					$("#side").css({"top":"1830px"});
+				});
+				$("#best").mouseenter(function(){
+					$("#side").css({"top":"2700px"});
+				});
+				$("#season").mouseenter(function(){
+					$("#side").css({"top":"3500px"});
+				});
+				$("#video").mouseenter(function(){
+					$("#side").css({"top":"4600px"});
+				});
+				$("#insta").mouseenter(function(){
+					$("#side").css({"top":"6200px"});
+				});
+			*/
+            /* side 영역 scroll 기능으로 구현 */
+            
+            $(window).scroll(function(){
+                var nowScroll = $(document).scrollTop();
+                console.log(nowScroll);
+
+                if(nowScroll>0 && nowScroll <6200){
+                    $("#side").stop().animate({"top":nowScroll},1,"linear");
+                }
+
+                else if(nowScroll == 0){
+                    $("#side").stop().animate({"top":"0"},1,"linear");
+                }
+                else if(nowScroll == 6200){
+                    $("#side").stop().animate({"top":"6200px"},1,"linear");
+                }
+
+            });
+
+           /*
+                #gnb form:hover{width:530px; margin:65px 0 5px;}
+                #gnb form:hover .btn{opacity:0;}
+                #gnb form:hover .search{width:100%;}
+                #gnb form:hover .search input{width:100%;}
+
+                #gnb form{width:300px; height:30px; margin:35px 0 35px 230px; float:left;}
+				#gnb fieldset{border:none;}
+				#gnb legend{display:none;}
+				#gnb .search{width:173px; height:30px; float:left;}
+				#gnb .search input{width:173px; height:29px; border:none; border-bottom:1px solid #9201ff; text-indent:10px;}
+				#gnb .btn{width:50px; height:30px; float:left;}
+				#gnb .btn input{width:50px; height:30px; border:1px solid #ccc; background-color:rgba(156,1,255,1); color:#fff;}
+           
+           
+           */
+
+            /* 검색 추가 창 기능 */
 
 			$("#search_add").hide();
 
 			var now = true;
 
-			$("#btn").click(function(){
+			$("#search").click(function(){
+
 				if(now == true){
 					$("#search_add").slideDown(500, "easeOutBounce");
+                    $("#gnb form").animate({"width":"530px","margin":"65px 0 5px"});
+                    $("#gnb .btn").animate({"opacity":"0"});
+                    $("#gnb .search").animate({"width":"100%"});
+                    $("#gnb .search input").animate({"width":"100%"});
 					now = false;
 				}
 				else{
 					$("#search_add").slideUp(500, "swing");
+                    $("#gnb form").animate({"width":"300px","margin":"35px 0 35px 230px"});
+                    $("#gnb .btn").animate({"opacity":"1"});
+                    $("#gnb .search").animate({"width":"173px"});
+                    $("#gnb .search input").animate({"width":"173px"});
 					now = true;
 				}
 			});
 
 			$("#search_add h3 i").click(function(){
 				$("#search_add").slideUp(500, "swing");
+                $("#gnb form").animate({"width":"300px","margin":"35px 0 35px 230px"});
+                $("#gnb .btn").animate({"opacity":"1"});
+                $("#gnb .search").animate({"width":"173px"});
+                $("#gnb .search input").animate({"width":"173px"});
 					now = true;
 			});
 			
 		});
-
-		
-		
-		
-			
 
 	</script>
  </head>
@@ -1409,14 +1546,14 @@
 								</ul>
 							</li>
 						</ul>
-						<form action="#none" method="get">
+						<form action="https://whoisnerdy.com/product/search.html" method="get">
 							<fieldset>
 								<legend>검색</legend>
 								<p class="search">
-									<input id="search" type="text" name="search" title="검색영역" value="→ 검색을 클릭하세요 →" readonly/>
+									<input id="search" type="text" name="search" title="검색영역" placeholder="BE THE NERDY"/>
 								</p>
 								<p class="btn">
-									<input id="btn" type="button" title="검색" value="검색"/>
+									<input id="btn" type="submit" title="검색" value="검색"/>
 								</p>
 							</fieldset>
 						</form>
@@ -1445,7 +1582,7 @@
 					</div>
 					<div id="search_add">
 						<h3><span>검색</span><i>X</i></h3>
-						<form>
+						<form action="https://whoisnerdy.com/product/search.html" method="get">
 							<fieldset>
 								<legend>검색 추가페이지</legend>
 								<div>
@@ -1453,7 +1590,7 @@
 										<input id="add_desc" type="text" name="add_desc" title="add_desc" placeholder="make your way, 당신만의 상품을 찾으세요."/>
 									</p>
 									<p class="add_button">
-										<input id="add_button" type="button" name="add_button" title="add_button" value="search"/>
+										<input id="add_button" type="submit" name="add_button" title="add_button" value="search"/>
 									</p>
 								</div>
 							</fieldset>
@@ -1483,7 +1620,7 @@
 										<img src="img/insta/item1.png" alt="추천상품0"/>
 									</a>
 									<p>
-										우먼스 크롭 엔와이 트랙 세트	<i>new ↑</i>
+										우먼스 크롭 엔와이 트랙 세트
 									</p>
 								</li>
 								<li>
@@ -1491,7 +1628,7 @@
 										<img src="img/insta/item2.png" alt="추천상품1"/>
 									</a>
 									<p>
-										로고 테잎 벨티드 백팩	<i>new ↑</i>
+										로고 테잎 벨티드 백팩
 									</p>
 								</li>
 								<li>
@@ -1499,7 +1636,7 @@
 										<img src="img/insta/item3.png" alt="추천상품2"/>
 									</a>
 									<p>
-										에센셜 스웨터 베스트	<i>new ↑</i>
+										에센셜 스웨터 베스트
 									</p>
 								</li>
 							</ul>
@@ -2060,11 +2197,8 @@
 						</div>
 					</div>
 					<div id="direction">
-						<p class="left">
-							<a href="#none" title="왼쪽화살표"><img src="img/icon/small_left.png"/></a>
-						</p>
-						<p class="right">
-							<a href="#none" title="왼쪽화살표"><img src="img/icon/small_right.png"/></a>
+						<p class="circle">
+							<a href="#none" title="circle"><img src="img/icon/circle.png"/></a>
 						</p>
 					</div>
 					<div class="text">

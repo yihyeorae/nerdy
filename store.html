@@ -17,7 +17,6 @@
 			#wrap{width:100%;}
 
 		/*## headerWrap##*/
-/
 			#headerWrap{width:100%;}
 
 		/*## header ## */
@@ -33,7 +32,7 @@
 			#topMenu li a{display:block; width:100%; font-size:14px; color:#fff;}
 
 		/*## nav ##*/
-			#nav{width:1920px; height:100px; margin:0 auto;}
+			#nav{width:1920px; height:100px; margin:0 auto; position:relative;}
 			#nav #btn0{display:none;}
 			#nav #btn1{display:none;}
 			
@@ -51,7 +50,7 @@
 
 		/*## gnb ##*/
 			#gnb{width:1720px; height:100%; float:left;}
-			#gnb ul{width:1020px; height:100%; float:left;}
+			#gnb ul{width:790px; height:100%; float:left;}
 			#gnb li{width:100px; height:100%; text-transform:uppercase; font-weight:700; float:left;}
 			
 			#gnb li a{display:block; width:80px; height:30px; margin:35px auto; line-height:30px; text-align:center;}
@@ -61,19 +60,49 @@
 			#gnb li a:hover{color:#f00;}
 			#gnb li a span:hover{color:#f00;}
 
-		/*## form ##*/
-			#gnb form{width:300px; height:30px; margin:35px 0; float:left;}
-			#gnb fieldset{border:none;}
-			#gnb legend{display:none;}
-			#gnb .search{width:173px; height:30px; float:left;}
-			#gnb .search input{width:173px; height:29px; border:none; border-bottom:1px solid #9201ff; text-indent:10px;}
-			#gnb .btn{width:50px; height:30px; float:left;}
-			#gnb .btn input{width:50px; height:30px; border:1px solid #ccc; background-color:#9201ff; color:#fff;}
-	
-		/*## myPage ##*/
-			#gnb .myPage{width:400px; float:left;}
-			#gnb .myPage .icon a{width:25px;}
-			#gnb .myPage a img{width:100%;}
+			/*## form ##*/
+				#gnb form{width:300px; height:30px; margin:35px 0 35px 230px; float:left;}
+				#gnb fieldset{border:none;}
+				#gnb legend{display:none;}
+				#gnb .search{width:173px; height:30px; float:left;}
+				#gnb .search input{width:173px; height:29px; border:none; border-bottom:1px solid #9201ff; text-indent:10px;}
+				#gnb .btn{width:50px; height:30px; float:left;}
+				#gnb .btn input{width:50px; height:30px; border:1px solid #ccc; background-color:rgba(156,1,255,1); color:#fff;}
+
+			/*## myPage ##*/
+				#gnb .myPage{width:400px; float:left;}
+				#gnb .myPage .icon a{width:25px;}
+				#gnb .myPage a img{width:100%;}
+
+			/*## search ##*/
+				#search_add{width:700px; border-radius:20px; padding:20px; position:absolute; right:200px; top:100px; z-index:1; background-color:#efefef; z-index:5;}
+				#search_add h3{padding:20px 0; font-size:25px; position:relative;}
+				#search_add h3 span{padding-bottom:5px; border-bottom:2px solid #000;}
+				#search_add h3 i{position:absolute; right:5px; top:23px; font-style:normal; transform:rotate3d(0,0,1,0deg); transition:all 0.2s linear; cursor:pointer;}
+				#search_add h3 i:hover{transform:rotate3d(0,0,1,180deg);}
+				#search_add fieldset{border:0;}
+				#search_add fieldset div{height:40px; overflow:hidden;}
+				#search_add legend{display:none;}
+				#search_add fieldset p{display:inline-block; height:100%;}
+				#search_add .add_desc{width:500px;}
+				#search_add .add_button{width:100px;}
+				#search_add p input{width:100%; height:100%; text-indent:10px; border:0; font-size:18px; text-transform:uppercase; vertical-align:middle;}
+				#search_add p input[type="submit"]{text-indent:0; text-align:center; background-color:#000; color:#fff;}
+				#search_add:after{content:""; display:block; clear:both;}
+
+				#search_add .recommend{width:100%;}
+				#search_add .recommend h3{padding:20px 0; font-size:14px;}
+				#search_add .recommend ul{width:100%;}
+				#search_add .recommend .hash_tag{padding-top:10px;}
+				#search_add .recommend .hash_tag li{display:inline-block;  border-radius:20px; background-color:rgba(156,1,255,0.5);}
+				#search_add .recommend .hash_tag li a{display:inline-block; padding:5px 10px; color:#fff;}
+				#search_add .recommend .rec_inn li{display:inline-block; width:200px; margin-left:10px;}
+				#search_add .recommend .rec_inn li p{text-align:center; font-size:13px; line-height:17px;}
+				/*#search_add .recommend .rec_inn li p i{font-size:14px; font-style:normal; color:rgba(156,1,255,1);}*/
+				#search_add .recommend .rec_inn li a{display:inline-block; width:100%;}
+				#search_add .recommend .rec_inn li a img{width:100%;}
+
+	/*## 컨테이너 정리선 ##*/
 
 		/*## container ##*/
 			#container{width:100%; position:relative;}
@@ -133,7 +162,7 @@
 			#roulette .no3{left:140px; top:280px;}
 			
 			#roulette p{width:20px; height:20px; position:absolute;}
-			#roulette p a{display:block; width:100%:}
+			#roulette p a{display:block; width:100%;}
 			#roulette p a img{width:100%;}
 			#roulette .left{left:170px; top:200px;}
 			#roulette .right{left:240px; top:200px;}
@@ -262,6 +291,43 @@
 
 					조건문으로 해결해야할듯				
 			*/
+						/* 검색 추가 창 기능 */
+
+						$("#search_add").hide();
+
+						var now = true;
+
+						$("#search").click(function(){
+
+							if(now == true){
+								$("#search_add").slideDown(500, "easeOutBounce");
+								$("#gnb form").animate({"width":"530px","margin":"65px 0 5px"});
+								$("#gnb .btn").animate({"opacity":"0"});
+								$("#gnb .search").animate({"width":"100%"});
+								$("#gnb .search input").animate({"width":"100%"});
+								$(".quick_menu").animate({"top":"740px"});
+								now = false;
+							}
+							else{
+								$("#search_add").slideUp(500, "swing");
+								$("#gnb form").animate({"width":"300px","margin":"35px 0 35px 230px"});
+								$("#gnb .btn").animate({"opacity":"1"});
+								$("#gnb .search").animate({"width":"173px"});
+								$("#gnb .search input").animate({"width":"173px"});
+								$(".quick_menu").animate({"top":"0"});
+								now = true;
+							}
+						});
+
+						$("#search_add h3 i").click(function(){
+							$("#search_add").slideUp(500, "swing");
+							$("#gnb form").animate({"width":"300px","margin":"35px 0 35px 230px"});
+							$("#gnb .btn").animate({"opacity":"1"});
+							$("#gnb .search").animate({"width":"173px"});
+							$("#gnb .search input").animate({"width":"173px"});
+							$(".quick_menu").animate({"top":"0"});
+								now = true;
+						});
 			
 		
 		});
@@ -376,6 +442,68 @@
 								</a>
 							</li>
 						</ul>
+					</div>
+					<div id="search_add">
+						<h3><span>검색</span><i>X</i></h3>
+						<form action="https://whoisnerdy.com/product/search.html" method="get">
+							<fieldset>
+								<legend>검색 추가페이지</legend>
+								<div>
+									<p class="add_desc">
+										<input id="add_desc" type="text" name="add_desc" title="add_desc" placeholder="make your way, 당신만의 상품을 찾으세요."/>
+									</p>
+									<p class="add_button">
+										<input id="add_button" type="submit" name="add_button" title="add_button" value="search"/>
+									</p>
+								</div>
+							</fieldset>
+						</form>
+						<div class="recommend">
+							<ul class="hash_tag">
+								<li>
+									<a href="#none" title="해시태그0">#놀면뭐하니</a>
+								</li>
+								<li>
+									<a href="#none" title="해시태그0">#태연</a>
+								</li>
+								<li>
+									<a href="#none" title="해시태그0">#트랙 세트</a>
+								</li>
+								<li>
+									<a href="#none" title="해시태그0">#윈드브레이커</a>
+								</li>
+								<li>
+									<a href="#none" title="해시태그0">#젤리그</a>
+								</li>
+							</ul>
+							<h3><span>이런 상품은 어떠세요?</span></h3>							
+							<ul class="rec_inn">
+								<li>
+									<a href="#none" title="추천상품0">
+										<img src="img/insta/item1.png" alt="추천상품0"/>
+									</a>
+									<p>
+										우먼스 크롭 엔와이 트랙 세트
+									</p>
+								</li>
+								<li>
+									<a href="#none" title="추천상품1">
+										<img src="img/insta/item2.png" alt="추천상품1"/>
+									</a>
+									<p>
+										로고 테잎 벨티드 백팩
+									</p>
+								</li>
+								<li>
+									<a href="#none" title="추천상품2">
+										<img src="img/insta/item3.png" alt="추천상품2"/>
+									</a>
+									<p>
+										에센셜 스웨터 베스트
+									</p>
+								</li>
+							</ul>
+						</div>
 					</div>
 				</div>
 			</div>
