@@ -314,7 +314,7 @@
 			$(".imgs").css({"marginLeft":"-1200px"});
 			
 
-			var bg = ["rgba(160,220,220,1)", "rgba(50,30,30,1)","rgba(180,150,130,1)","rgba(70,70,70,1)","rgba(180,180,180,1)", "rgba(230,230,220,1)"];
+			var bg = ["rgba(230,230,220,1)","rgba(160,220,220,1)", "rgba(50,30,30,1)","rgba(180,150,130,1)","rgba(70,70,70,1)","rgba(180,180,180,1)"];
 			
 
 			var count=0;
@@ -328,11 +328,21 @@
 				// 슬라이딩 윈도우 배경 색 변경
 				
 				var imgs = $(".imgs li:eq(0) img").attr("src");
-				console.log(imgs);
 				imgs = imgs.substring(13,14);
-				console.log(imgs);	
-				
-				
+                //alert(imgs);
+
+                count = imgs;
+				//console.log(imgs);	
+                //count--;
+                //console.log(count);
+                /*
+                if(count == 0){
+                    count=5;
+                }
+                */
+                
+                $("#visual_inn").css({"backgroundColor":bg[count]});
+				/*
 				if(imgs == 1){
 					$("#visual_inn").css({"backgroundColor":bg[0]});
 				}
@@ -351,9 +361,8 @@
 				else{
 					$("#visual_inn").css({"backgroundColor":bg[5]});
 				}	
-				
-				
 				//count--;
+                */
 				/*
 				if(count==-6){
 					count=0;
@@ -366,32 +375,43 @@
 					[이슈]
 
 					아래에서 자동화르 만든 값을 위로 가져와서 count 를 세줘야 정상적인 visual_inn 배경색 변경이 적용되는데 현재는 방법을 찾는중
+
+                    [해결]
+                    배경화면 배열을 공간순서와 다르게해서 해결이 안되는거였고, 공간값에 따른 이미지번호를 substring으로 잘라내서 count에 넣는식으로 해서 해결완료
 				*/
-				
-				
-
 			});
-
 			$(".right_btn").click(function(){
 				$(".imgs").stop().animate({"marginLeft":"-=1200px"},500,"swing",function(){
 					$(".imgs").append($(".imgs li:eq(0)"));
 					$(".imgs").css({"marginLeft":"-1200px"});
 				});
-				/*
+				
 				// 슬라이딩 윈도우 배경 색 변경
 				var imgs = $(".imgs li:eq(2) img").attr("src");
-				//console.log(imgs);
+				
 				imgs = imgs.substring(13,14);
-				//console.log(imgs);	
-				*/
+				count = imgs;
+                //alert(imgs);	
+                /*
+				count = imgs-1;
+
+                count++;
                 
+                console.log(count);
+                
+                if(count == 0){
+                    count=6;
+                }
+                */
+                /*
 
 				count++;
 				if(count==7){
 					count=1;
 				}
+                */
 				
-				$("#visual_inn").css({"backgroundColor":bg[count-1]});
+				$("#visual_inn").css({"backgroundColor":bg[count]});
                 /*
                 if(imgs == 1){
 					$("#visual_inn").css({"backgroundColor":"rgba(160,220,220,1)"});
@@ -1106,8 +1126,7 @@
 					</ul>
 				</div>
 			</div>
-		</div>
-		
+		</div>	
 		<div id="footerWrap">
 			<div id="footer">
 				<div id="footer_inn">

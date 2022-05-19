@@ -28,6 +28,7 @@
 
 			/*## headerWrap ##*/
 				#headerWrap{width:100%;}
+				.fixed{position:fixed; top:0; z-index:5;}
 
 			/*## header ## */
 				#header{width:100%;}
@@ -97,7 +98,7 @@
 				#search_add .add_desc{width:500px;}
 				#search_add .add_button{width:100px;}
 				#search_add p input{width:100%; height:100%; text-indent:10px; border:0; font-size:18px; text-transform:uppercase; vertical-align:middle;}
-				#search_add p input[type="submit"]{text-indent:0; text-align:center;}
+				#search_add p input[type="submit"]{text-indent:0; text-align:center; background-color:#000; color:#fff;}
 				#search_add:after{content:""; display:block; clear:both;}
 
 				#search_add .recommend{width:100%;}
@@ -1200,27 +1201,16 @@
 
            
 
-                if($(window).width() > 1024)
-                {
-                    $("#visual_inn").bind("mouseenter focusin",function(){
-                        $(this).find(".text").css({"left":"650px","bottom":"100px","opacity":"1"});
-                        $(this).find(".text a .label").css({"opacity":"1"});
-                    }).bind("mouseleave focusout",function(){
-                        $(this).find(".text").css({"left":"0","bottom":"100px","opacity":"0"});
-                        $(this).find(".text a .label").css({"opacity":"0"});
-                    });	
-                }
-                
-            $(window).resize(function(){
-                if($(window).width() < 1025  && $(window).width() >320)
-                {
-                    $(".text").css({"opacity":"1"});
-                }
-           });
+		
+				$("#visual_inn").bind("mouseenter focusin",function(){
+					$(this).find(".text").css({"left":"650px","bottom":"100px","opacity":"1"});
+					$(this).find(".text a .label").css({"opacity":"1"});
+				}).bind("mouseleave focusout",function(){
+					$(this).find(".text").css({"left":"0","bottom":"100px","opacity":"0"});
+					$(this).find(".text a .label").css({"opacity":"0"});
+				});	
 
 
-			
-			
 
 			/*## PC main 영역 ( 접근성을 위해 기존 css hover 기능 주석처리후 jQuery 로 기능적용 )## */
 			/*## (모바일 버전과 충돌로 문제 일으켜서 잠시 주석처리 후 css 로 기능유지) 조건문으로 해결 예정 ##*/
@@ -1396,40 +1386,39 @@
 				});
 			*/
             /* side 영역 scroll 기능으로 구현 */
+			var headerH = $("#headerWrap").height();
+            var header = $("#headerWrap");
             
             $(window).scroll(function(){
                 var nowScroll = $(document).scrollTop();
                 console.log(nowScroll);
-
+				/*
                 if(nowScroll>0 && nowScroll <6200){
-                    $("#side").stop().animate({"top":nowScroll},1,"linear");
+                    $("#side").stop().animate({"top":nowScroll},0,"linear");
                 }
 
                 else if(nowScroll == 0){
-                    $("#side").stop().animate({"top":"0"},1,"linear");
+                    $("#side").stop().animate({"top":"0"},0,"linear");
                 }
                 else if(nowScroll == 6200){
-                    $("#side").stop().animate({"top":"6200px"},1,"linear");
+                    $("#side").stop().animate({"top":"6200px"},0,"linear");
+                }
+				*/
+
+				if(headerH <= nowScroll){
+                    header.addClass("fixed");
+                    $("#nav").css({"backgroundColor":"#fff"});
+                    $("#side").stop().animate({"top":nowScroll+headerH},1,"linear");
+                    $(".quick_menu").stop().animate({"top":nowScroll+headerH},1,"linear");
+                }
+
+                else{   
+                    header.removeClass("fixed");
+                    $(".quick_menu").stop().animate({"top":"0"},1,"linear");
+					$("#side").stop().animate({"top":"0"},1,"linear");
                 }
 
             });
-
-           /*
-                #gnb form:hover{width:530px; margin:65px 0 5px;}
-                #gnb form:hover .btn{opacity:0;}
-                #gnb form:hover .search{width:100%;}
-                #gnb form:hover .search input{width:100%;}
-
-                #gnb form{width:300px; height:30px; margin:35px 0 35px 230px; float:left;}
-				#gnb fieldset{border:none;}
-				#gnb legend{display:none;}
-				#gnb .search{width:173px; height:30px; float:left;}
-				#gnb .search input{width:173px; height:29px; border:none; border-bottom:1px solid #9201ff; text-indent:10px;}
-				#gnb .btn{width:50px; height:30px; float:left;}
-				#gnb .btn input{width:50px; height:30px; border:1px solid #ccc; background-color:rgba(156,1,255,1); color:#fff;}
-           
-           
-           */
 
             /* 검색 추가 창 기능 */
 

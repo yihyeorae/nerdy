@@ -20,6 +20,8 @@
 		/*## headerWrap ##*/
 				#headerWrap{width:100%;}
 
+                .fixed{position:fixed; top:0; z-index:5;}
+
 			/*## header ## */
 				#header{width:100%;}
 
@@ -404,13 +406,17 @@
 			var result5 = document.getElementById("result5");
 			
             // quick_menu 스크롤 따라다니기
+            var headerH = $("#headerWrap").height();
+            var header = $("#headerWrap");
+            //console.log(headerH);
+
 			$(window).scroll(function(){
 				var nowScroll = $(document).scrollTop();
- 
+                /*
                 if(nowScroll>0 && nowScroll <7700){
 
                     $(".quick_menu").stop().animate({"top":nowScroll},500,"linear");
-					$("#side").stop().animate({"top":nowScroll},500,"linear");
+					//$("#side").stop().animate({"top":nowScroll},500,"linear");
                 }
 
                 else if(nowScroll == 0){
@@ -422,6 +428,23 @@
                     $(".quick_menu").stop().animate({"top":"7700px"},500,"linear");
 					$("#side").stop().animate({"top":"7700px"},500,"linear");
                 }
+                */
+
+                if(headerH <= nowScroll){
+                    header.addClass("fixed");
+                    $("#nav").css({"backgroundColor":"#fff"});
+                    $("#side").stop().animate({"top":nowScroll+headerH},500,"linear");
+                    $(".quick_menu").stop().animate({"top":nowScroll+headerH},500,"linear");
+                }
+
+                else{   
+                    header.removeClass("fixed");
+                    $(".quick_menu").stop().animate({"top":"0"},500,"linear");
+					$("#side").stop().animate({"top":"0"},500,"linear");
+                }
+
+
+                
 			});
             
 			/* 검색 추가 창 기능 */
@@ -461,9 +484,51 @@
 				$(".quick_menu").animate({"top":"0"});
 					now = true;
 			});
-			
 
-            
+			/*## 높이값 떨어지기 ##*/
+
+			$(".bk").bind("click focus",function(){
+				var bk = $("#bk").offset().top;
+                bk = bk-headerH;
+                console.log(bk);
+				$("body,html").animate({scrollTop:bk},300);
+			});
+
+			$(".cm").bind("click focus",function(){
+				var cm = $("#cm").offset().top;
+                cm = cm-headerH;
+				$("body,html").animate({scrollTop:cm},300);
+			});
+
+			$(".pp").bind("click focus",function(){
+				var pp = $("#pp").offset().top;
+                pp = pp-headerH;
+				$("body,html").animate({scrollTop:pp},300);
+			});
+
+			$(".detail").bind("click focus",function(){
+				var detail = $("#detail_img h3").offset().top;
+                detail = detail-headerH;
+				$("body,html").animate({scrollTop:detail},300);
+			});
+			
+			$(".review").bind("click focus",function(){
+				var review = $("#review").offset().top;
+                review = review-headerH
+				$("body,html").animate({scrollTop:review},300);
+			});
+
+			$(".qa").bind("click focus",function(){
+				var qa = $("#qa").offset().top;
+                qa = qa-headerH
+				$("body,html").animate({scrollTop:qa},300);
+			});
+
+			$(".quick_top").bind("click focus",function(){
+				var top = $("#container").offset().top;
+                top = top-headerH
+				$("body,html").animate({scrollTop:top},300);
+			});
 		});
 		
 	
@@ -550,7 +615,7 @@
 		function minus(){
 			var quantity = document.getElementById("quantity");
 
-			console.log(quantity);
+			//console.log(quantity);
 
 			if(quantity.value == 1 ){
 				alert("최소 수량은 1개 입니다.")
@@ -570,7 +635,7 @@
 			//console.log(typeof(quantity.value));
 
 			var pices = parseInt(quantity.value);
-			console.log(typeof(pices));
+			//console.log(typeof(pices));
 
 			quantity.value = pices +=1;
 
@@ -733,33 +798,38 @@
 					<div id="image">
 						<ul class="quick_menu">
 							<li class="bk color">
-								<a href="#bk" title="bk">
+								<a href="#none" title="bk">
 									black
 								</a>
 							</li>
 							<li class="cm color">
-								<a href="#cm" title="cm">
+								<a href="#none" title="cm">
 									cream
 								</a>
 							</li>
 							<li class="pp color">
-								<a href="#pp" title="pp">
+								<a href="#none" title="pp">
 									purple
 								</a>
 							</li>
-							<li class="quick">
-								<a href="#detail_img" title="detail">
+							<li class="detail">
+								<a href="#none" title="detail">
 									detail
 								</a>
 							</li>
-							<li class="quick">
-								<a href="#review" title="review">
+							<li class="review">
+								<a href="#none" title="review">
 									review
 								</a>
 							</li>
-							<li class="quick">
-								<a href="#qa" title="qa">
+							<li class="qa">
+								<a href="#none" title="qa">
 									q&amp;a
+								</a>
+							</li>
+							<li class="quick_top">
+								<a href="#none" title="top">
+									top
 								</a>
 							</li>
 						</ul>
@@ -1248,11 +1318,6 @@
 								</dl>
 							</div>
 						</div>
-					</div>
-					<div id="top">
-						<a href="#headerWrap" title="top">
-							▲	top ▲
-						</a>
 					</div>
 				</div>
 			</section>
