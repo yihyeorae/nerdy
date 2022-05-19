@@ -157,15 +157,14 @@
 			#roulette li img{width:100%; border-radius:150px;}
 			
 			#roulette .no0{left:0; top:140px;}
-			#roulette .no1{left:140px; top:0;}
+			#roulette .no1{left:140px; top:280px;}
+			#roulette .no3{left:140px; top:0px;}
 			#roulette .no2{left:280px; top:140px;}
-			#roulette .no3{left:140px; top:280px;}
 			
-			#roulette p{width:20px; height:20px; position:absolute;}
+			#roulette p{width:32px; height:32px; position:absolute; left:200px; bottom:200px;}
 			#roulette p a{display:block; width:100%;}
 			#roulette p a img{width:100%;}
-			#roulette .left{left:170px; top:200px;}
-			#roulette .right{left:240px; top:200px;}
+
 			
 			#map{width:100%; height:560px; overflow:hidden; background-color:#f1f1f1;}
 			#map p{display:none; width:1280px; height:460px; margin:50px auto;}
@@ -238,46 +237,124 @@
 	<script>
 		$(document).ready(function(){
 			$("#desc .seoul , #map .seoul").show();
+            
 
-			/*작은 이미지 룰렛 왼쪽 버튼*/
-			$("#roulette .left").click(function(){
-				$("#roulette ul").css({"transform":"rotate3d(0,0,1,0deg)"});
-				$("#roulette ul li").css({"transform":"rotate3d(0,0,1,0deg)"});
+            var plus = 0;
+            var minus = 0;
+			var count = 0;
+			var now = true;
+
+			var images = document.getElementById("image");
+			var film = images.getElementsByTagName("ul");
+
+			var desc = document.getElementById("desc");
+			var text = desc.getElementsByTagName("div");
+
+			var maps = document.getElementById("map");
+			var map = maps.getElementsByTagName("p");
+			console.log(map);
+
+			$(film[0]).prepend($(film[0]).find("li:last"));
+			$(film[0]).css({"marginLeft":"-660px"});
+			$(film[1]).prepend($(film[1]).find("li:last"));
+			$(film[1]).css({"marginLeft":"-660px"});
+			$(film[2]).prepend($(film[2]).find("li:last"));
+			$(film[2]).css({"marginLeft":"-660px"});
+			$(film[3]).prepend($(film[3]).find("li:last"));
+			$(film[3]).css({"marginLeft":"-660px"});
+
+            
+			/*작은 이미지 룰렛 버튼*/
+			$("#roulette .circle").click(function(){
+                plus +=90;
+                minus -=90;
+				
+               
+				$("#roulette ul").css({"transform":"rotateZ("+plus+"deg)"});
+				$("#roulette ul li").css({"transform":"rotateZ("+minus+"deg)"});
 				$("#desc .text , #map p").hide();
 				$("#image .store").hide();
+				
+				count++;
+				
+				if(count == 4){
+					count = 0;
+				}
+				//alert(count);
 
-				/* 지역명으로 공통 태그를 작성해서 한줄로 작성 가능하나 , 각기 다른 effect를 주기위해 개별작업*/
-				$(".image_inn ul").css({"marginLeft":"0"});
-				$(".image_inn .seoul").show(500);
-				$("#desc .seoul").fadeIn(1000);
-				$("#map .seoul").slideDown(1000,"easeOutBounce");
+	
+				//$(film[count]).prepend($(film[count]).find("li:last"));
+				//$(film[count]).prepend($(film[count]).find("li:last"));
+				//$(film[count]).css({"marginLeft":"-660px"});
+				$(film[count]).show(500)
+				$(text[count]).fadeIn(1000);
+				$(map[count]).slideDown(1000,"easeOutBounce");
+					
+				
+
+				/*
+				 지역명으로 공통 태그를 작성해서 한줄로 작성 가능하나 , 각기 다른 effect를 주기위해 개별작업
+					
+				 	$(".image_inn ul").css({"marginLeft":"0"});
+					$(".image_inn .seoul").show(500);
+					$("#desc .seoul").fadeIn(1000);
+					$("#map .seoul").slideDown(1000,"easeOutBounce");
+				
+				*/
 			});
 
 			/*작은 이미지 룰렛 오른쪽 버튼*/
-			$("#roulette .right").click(function(){
-				$("#roulette ul").css({"transform":"rotate3d(0,0,1,90deg)"});
-				$("#roulette ul li").css({"transform":"rotate3d(0,0,1,-90deg)"});
-				$("#desc .text , #map p").hide();
-				$("#image .store").hide();
+			/*
+				$("#roulette .right").click(function(){
 
-				/* 지역명으로 공통 태그를 작성해서 한줄로 작성 가능하나 , 각기 다른 effect를 주기위해 개별작업*/
-				$(".image_inn ul").css({"marginLeft":"0"});
-				$(".image_inn .busan").show(500);
-				$("#desc .busan").fadeIn(1000);
-				$("#map .busan").slideDown(1000,"easeOutBounce");
-			});
-			
+					plus +=90;
+					minus -=90;
+					$("#roulette ul").css({"transform":"rotateZ("+plus+"deg)"});
+					$("#roulette ul li").css({"transform":"rotateZ("+minus+"deg)"});
+					$("#desc .text , #map p").hide();
+					$("#image .store").hide();
+
+					지역명으로 공통 태그를 작성해서 한줄로 작성 가능하나 , 각기 다른 effect를 주기위해 개별작업
+					$(".image_inn ul").css({"marginLeft":"0"});
+					$(".image_inn .busan").show(500);
+					$("#desc .busan").fadeIn(1000);
+					$("#map .busan").slideDown(1000,"easeOutBounce");
+				});
+			*/
 			/*큰 이미지 왼쪽 버튼*/
+			//$(film[count]).prepend($(film[count]).find("li:last"));
+			//$(film[count]).css({"marginLeft":"-660px"});
+			if(count == 4){
+					count = 0;
+				}
+			
+
 			$("#image .left").click(function(){
-				$(".image_inn ul").stop().animate({"marginLeft":"-=660px"},300,"linear");
+				//alert(count);
+				$(film[count]).stop().animate({"marginLeft":"+=660px"},300,"linear",function(){
+					$(film[count]).prepend($(film[count]).find("li:last"));
+					$(film[count]).css({"marginLeft":"-660px"});
+
+				});
 			});
+
 
 			/*큰 이미지 오른쪽 버튼 */
 			$("#image .right").click(function(){
-				$(".image_inn ul").stop().animate({"marginLeft":"+=660px"},300,"linear");
-				/*$(".image_inn ul").prepend($("#image ul li:last"));*/
+				//alert(count);
+				$(film[count]).stop().animate({"marginLeft":"-=660px"},300,"linear",function(){
+					$(film[count]).append($(film[count]).find("li:eq(0)"));
+					$(film[count]).css({"marginLeft":"-660px"});
+				});
+			
 			});
 			/*
+
+				$(".imgs").stop().animate({"marginLeft":"-=1200px"},500,"swing",function(){
+					$(".imgs").append($(".imgs li:eq(0)"));
+					$(".imgs").css({"marginLeft":"-1200px"});
+				});
+
 				[이슈발생]
 
 					left, right 를 계속해서 눌렀을때, 객체를 모두 옮기면, 빈공간 나옴
@@ -295,7 +372,7 @@
 
 						$("#search_add").hide();
 
-						var now = true;
+						
 
 						$("#search").click(function(){
 
@@ -679,25 +756,20 @@
 								<ul>
 									<li class="no0">
 										<img src="img/store/seoul0.png" alt="서울스토어 메인이미지"/> 
-									</li>	
+									</li>
 									<li class="no1">
-										<img src="img/store/gj0.jpg" alt="광주스토어 메인이미지"/> 
-									</li>
-									<li class="no2">
-										<img src="img/store/dg0.jpg" alt="대구스토어 메인이미지"/> 
-									</li>
-									<li class="no3">
 										<img src="img/store/busan0.png" alt="부산스토어 메인이미지"/> 
 									</li>
+									<li class="no2">
+										<img src="img/store/gj0.jpg" alt="광주스토어 메인이미지"/> 
+									</li>
+									<li class="no3">
+										<img src="img/store/dg0.jpg" alt="대구스토어 메인이미지"/> 
+									</li>
 								</ul>
-								<p class="left">
+								<p class="circle">
 									<a href="#none" title="왼쪽버튼">
-										<img src="img/icon/small_left.png" alt="작은왼쪽버튼"/>
-									</a>
-								</p>
-								<p class="right">
-									<a href="#none" title="오른쪽버튼">
-										<img src="img/icon/small_right.png" alt="작은오른쪽버튼"/>
+										<img src="img/icon/circle.png" alt="회전화살표"/>
 									</a>
 								</p>
 							</div>
@@ -710,6 +782,12 @@
 					</p>
 					<p class="busan">
 						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1632.1475542433511!2d129.0280550105268!3d35.09934123784589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3568e96787a79cb7%3A0x68beca36f7099ba6!2z64SQ65SUIO2UjOuemOq3uOyJveyKpO2GoOyWtCDrtoDsgrA!5e0!3m2!1sko!2skr!4v1650890852487!5m2!1sko!2skr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					</p>
+					<p class="gj">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d969.9302616017522!2d126.91569688174022!3d35.14555806621477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x35718c815e54f283%3A0x5aa41ed7dc026c21!2z6rSR7KO86rSR7Jet7IucIOuPmeq1rCDshJzshJ3roZwgMjI!5e0!3m2!1sko!2skr!4v1652926153428!5m2!1sko!2skr" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+					</p>
+					<p class="dg">
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d961.2391299275831!2d128.59399485465298!3d35.86836648450457!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3565e3c3efdd38f3%3A0x6020664c8b20d601!2z64yA6rWs6rSR7Jet7IucIOykkeq1rCDrj5nshLHroZwgMTU!5e0!3m2!1sko!2skr!4v1652926199494!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 					</p>
 				</div>
 			</section>
