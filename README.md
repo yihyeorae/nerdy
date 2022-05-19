@@ -34,6 +34,10 @@ feportfolio.dothome.co.kr/nerdy
   <dt>list.html</dt>
   <dd>1.visual 영역 슬라이딩윈도우에 맞게 backgroundColor 정상작동 구현완료, 코드도 간결하게 수정</dd>
 </dl>
+<dl>
+  <dt>store.html</dt>
+  <dd>작은 룰렛 영역 회전형 화살표로 변경 및 기능구현 수정</dd>
+</dl>
 
 
 <h2>0518 update</h2>
