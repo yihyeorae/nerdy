@@ -271,7 +271,7 @@
 
 		/*## side ##*/
 		/*실험용 언제든 폐기가능 후에 기능배워서 기존 널디 페이지처럼 스크롤따라가는 기능 만들기*/
-			#side{width:350px; height:817px; background-color:rgba(255,255,255,0.3); position:absolute; left:0; top:0;}
+			#side{width:200px; height:817px; background-color:rgba(220,220,220,0.1); position:absolute; left:0; top:0;}
 			
 			#side_inn{width:100%; height:100%;}
 
@@ -333,19 +333,58 @@
 			#footer_inn .copyright .copy i{font-style:normal;}
 			
 			#footer_inn .copyright .logo:after{content:""; display:block; clear:both;}
+
+		/*## 모달팝업 view , full ##*/
+			#view{display:none; width:440px; height:640px; overflow:hidden; position:fixed; left:50%; top:50%; transform:translate(-50%,-50%); border:1px solid #fff; z-index:7;}
+			#view img{width:100%;}
+
+			#full{display:none; width:100%; height:100%; background-color:rgba(0,0,0,0.5); position:fixed; top:0; z-index:6;}
+			
 	</style>
 	<script>
 		$(document).ready(function(){
+			var now = true;
+
 			$(".srq_inn div").hide();
 			$(".rv_desc").show();
 			$(".srq_inn dl").hide();
 			$(".srq_inn .question").show();
 
 			$(".srq_inn h3").click(function(){
-				$(".underline").css({"width":"0%","backgroundColor":"rgba(0,0,0,0)"});
-				$(this).children(".underline").css({"width":"100%","backgroundColor":"rgba(156,1,255,1)"});
-				$(".srq_inn h3").next().slideUp(500,"swing");
-				$(this).next().slideDown(500,"swing");
+
+				if(now == true){
+					$(".underline").css({"width":"0%","backgroundColor":"rgba(0,0,0,0)"});
+					$(this).children(".underline").css({"width":"100%","backgroundColor":"rgba(156,1,255,1)"});
+					$(".srq_inn h3").next().slideUp(500,"swing");
+					$(this).next().slideDown(500,"swing");
+				
+					now = false;
+				}	
+
+				else if(now == false){
+					$(".underline").css({"width":"0%","backgroundColor":"rgba(0,0,0,0)"});
+					$(".srq_inn h3").next().slideUp(500,"swing");
+
+					now = true;
+				}
+				
+
+				/*
+				if(now== false){
+					$(".underline").css({"width":"0%","backgroundColor":"rgba(0,0,0,0)"});
+					$(this).children(".underline").css({"width":"100%","backgroundColor":"rgba(156,1,255,1)"});
+					$(".srq_inn h3").next().slideUp(500,"swing");
+					$(this).next().slideDown(500,"swing");
+					
+					now = true;
+				}
+
+				if(now == false){
+					$(".srq_inn h3").next().slideUp(500,"swing");
+
+					now = true;
+				}
+				*/
 			});
 
 			$("#image li").click(function(){
@@ -358,39 +397,45 @@
 			$(".pp_title li:first").siblings().hide();
 
 			$("#bk").click(function(){
-				$(".cm_title li:first").siblings().hide();
-				$(".pp_title li:first").siblings().hide();
-				$(this).parent().siblings().slideDown(500,"swing")
+				$(".cm_title li:first").siblings().hide(500);
+				$(".pp_title li:first").siblings().hide(500);
+				$(this).parent().siblings().slideDown(500,"swing");
+
 			});
 
 			$(".bk_title li:first").click(function(){
-				$(".cm_title li:first").siblings().hide();
-				$(".pp_title li:first").siblings().hide();
-				$(this).siblings().slideDown(500,"swing")
+				$(".cm_title li:first").siblings().hide(500);
+				$(".pp_title li:first").siblings().hide(500);
+				$(this).siblings().slideDown(500,"swing");
+
 			});
 
 			$("#cm").click(function(){
-				$(".bk_title li:first").siblings().hide();
-				$(".pp_title li:first").siblings().hide();
-				$(this).parent().siblings().slideDown(500,"swing")
+				$(".bk_title li:first").siblings().hide(500);
+				$(".pp_title li:first").siblings().hide(500);
+				$(this).parent().siblings().slideDown(500,"swing");
+
 			});
 
 			$(".cm_title li:first").click(function(){
-				$(".bk_title li:first").siblings().hide();
-				$(".pp_title li:first").siblings().hide();
-				$(this).siblings().slideDown(500,"swing")
+				$(".bk_title li:first").siblings().hide(500);
+				$(".pp_title li:first").siblings().hide(500);
+				$(this).siblings().slideDown(500,"swing");
+
 			});
 
 			$("#pp").click(function(){
-				$(".bk_title li:first").siblings().hide();
-				$(".cm_title li:first").siblings().hide();
-				$(this).parent().siblings().slideDown(500,"swing")
+				$(".bk_title li:first").siblings().hide(500);
+				$(".cm_title li:first").siblings().hide(500);
+				$(this).parent().siblings().slideDown(500,"swing");
+
 			});
 
 			$(".pp_title li:first").click(function(){
-				$(".bk_title li:first").siblings().hide();
-				$(".cm_title li:first").siblings().hide();
-				$(this).siblings().slideDown(500,"swing")
+				$(".bk_title li:first").siblings().hide(500);
+				$(".cm_title li:first").siblings().hide(500);
+				$(this).siblings().slideDown(500,"swing");
+
 			});
 			
 			$(".select input").click(function(){
@@ -451,8 +496,6 @@
 
 			$("#search_add").hide();
 
-			var now = true;
-
 			$("#search").click(function(){
 
 				if(now == true){
@@ -512,84 +555,130 @@
 				$("body,html").animate({scrollTop:detail},300);
 			});
 			
-			$(".review").bind("click focus",function(){
+			$(".quick_menu .review").bind("click focus",function(){
 				var review = $("#review").offset().top;
                 review = review-headerH
 				$("body,html").animate({scrollTop:review},300);
 			});
 
-			$(".qa").bind("click focus",function(){
+			$(".quick_menu .qa").bind("click focus",function(){
 				var qa = $("#qa").offset().top;
                 qa = qa-headerH
 				$("body,html").animate({scrollTop:qa},300);
 			});
 
-			$(".quick_top").bind("click focus",function(){
+			$(".quick_menu .quick_top").bind("click focus",function(){
 				var top = $("#container").offset().top;
                 top = top-headerH
 				$("body,html").animate({scrollTop:top},300);
 			});
+			/*
+			$("#pp").click(function(){
+				$(".bk_title li:first").siblings().hide(500);
+				$(".cm_title li:first").siblings().hide(500);
+				$(this).parent().siblings().slideDown(500,"swing");
+
+			});
+
+			$(".pp_title li:first").click(function(){
+				$(".bk_title li:first").siblings().hide(500);
+				$(".cm_title li:first").siblings().hide(500);
+				$(this).siblings().slideDown(500,"swing");
+
+			});
+			*/
+
+
+			
+			/*## 모달 팝업 ##*/
+			$(".rv a").click(function(){
+
+				$("#view, #full").show();
+				$("#view").html("<img src='img/review/"+$(this).attr('href')+"' title='리뷰이미지'/>");
+
+				return false;
+			});
+
+			$("#view,#full").click(function(){
+				$("#view").hide();
+				$("#full").hide();
+
+			});
 		});
+
+        function color_click(color){
+            result0.value = color;
+        }
 		
-	
-		function bk_click(){
-			result0.value = "BLACK";
-		}
-		function cm_click(){
-			result0.value = "CREAM";	
-		}
-		function pp_click(){
-			result0.value = "LIGHT PURPLE";	
-		}
+        function top_click(top_size){
+            result1.value = top_size;
+        }
 
-		function topXs_click(){
-			result1.value = "XS"
-		}
-		function topS_click(){
-			result1.value = "S"
-		}
-		function topM_click(){
-			result1.value = "M"
-		}
-		function topL_click(){
-			result1.value = "L"
-		}
-		function topXl_click(){
-			result1.value = "XL"
-		}
+        function pants_click(pants_size){
+            result2.value = pants_size;
+        }
+        function half_click(half_size){
+            result3.value = half_size;
+        }
+        /*
+            function bk_click(){
+                result0.value = "BLACK";
+            }
+            function cm_click(){
+                result0.value = "CREAM";	
+            }
+            function pp_click(){
+                result0.value = "LIGHT PURPLE";	
+            }
 
-		function pantsXs_click(){
-			result2.value = "XS"
-		}
-		function pantsS_click(){
-			result2.value = "S"
-		}
-		function pantsM_click(){
-			result2.value = "M"
-		}
-		function pantsL_click(){
-			result2.value = "L"
-		}
-		function pantsXl_click(){
-			result2.value = "XL"
-		}
+            function topXs_click(){
+                result1.value = "XS"
+            }
+            function topS_click(){
+                result1.value = "S"
+            }
+            function topM_click(){
+                result1.value = "M"
+            }
+            function topL_click(){
+                result1.value = "L"
+            }
+            function topXl_click(){
+                result1.value = "XL"
+            }
 
-		function halfXs_click(){
-			result3.value = "XS"
-		}
-		function halfS_click(){
-			result3.value = "S"
-		}
-		function halfM_click(){
-			result3.value = "M"
-		}
-		function halfL_click(){
-			result3.value = "L"
-		}
-		function halfXl_click(){
-			result3.value = "XL"
-		}
-		
+            function pantsXs_click(){
+                result2.value = "XS"
+            }
+            function pantsS_click(){
+                result2.value = "S"
+            }
+            function pantsM_click(){
+                result2.value = "M"
+            }
+            function pantsL_click(){
+                result2.value = "L"
+            }
+            function pantsXl_click(){
+                result2.value = "XL"
+            }
+
+            function halfXs_click(){
+                result3.value = "XS"
+            }
+            function halfS_click(){
+                result3.value = "S"
+            }
+            function halfM_click(){
+                result3.value = "M"
+            }
+            function halfL_click(){
+                result3.value = "L"
+            }
+            function halfXl_click(){
+                result3.value = "XL"
+            }
+		*/
 		
 
 		function cartBtn(){
@@ -625,6 +714,7 @@
 			var total = document.getElementById("total");
 
 			total.value = 245000 * quantity.value;
+
 		}
 
 		function plus(){
@@ -688,7 +778,7 @@
 							<li><a href="#none" title="전체보기">all</a></li>
 							<li><a href="#none" title="전체보기"><span>best</span></a></li>
 							<li><a href="#none" title="전체보기">promo</a></li>
-							<li><a href="#none" title="전체보기">cloth</a></li>
+							<li><a href="list.html" title="전체보기">cloth</a></li>
 							<li><a href="#none" title="전체보기">shoes</a></li>
 							<li><a href="#none" title="전체보기">bag</a></li>
 						</ul>
@@ -980,9 +1070,9 @@
 										색상
 									</p>
 									<p>
-										<input id="bkPick" type="text" value="black" title="black" onclick="bk_click();" readonly/>
-										<input id="cmPick" type="text" value="cream" title="cream" onclick="cm_click();" readonly/>
-										<input id="ppPick" type="text" value="purple" title="purple" onclick="pp_click();" readonly/>
+										<input id="bkPick" type="text" value="black" title="black" onclick="color_click('BLACK');" readonly/>
+										<input id="cmPick" type="text" value="cream" title="cream" onclick="color_click('CREAM');" readonly/>
+										<input id="ppPick" type="text" value="purple" title="purple" onclick="color_click('PURPLE');" readonly/>
 									</p>
 								</div>
 								<div class="top">
@@ -990,11 +1080,11 @@
 										트랙 탑
 									</p>
 									<p>
-										<input id="topXs" type="text" value="xs" title="topXs" onclick="topXs_click();" readonly/>
-										<input id="topS" type="text" value="s" title="topS"onclick="topS_click();" readonly/>
-										<input id="topM" type="text" value="m" title="topM" onclick="topM_click();" readonly/>
-										<input id="topL" type="text" value="l" title="topL" onclick="topL_click();" readonly/>
-										<input id="topXl" type="text" value="xl" title="topXl" onclick="topXl_click();"readonly/>
+										<input id="topXs" type="text" value="xs" title="topXs" onclick="top_click('XS');" readonly/>
+										<input id="topS" type="text" value="s" title="topS"onclick="top_click('S');" readonly/>
+										<input id="topM" type="text" value="m" title="topM" onclick="top_click('M');" readonly/>
+										<input id="topL" type="text" value="l" title="topL" onclick="top_click('L');" readonly/>
+										<input id="topXl" type="text" value="xl" title="topXl" onclick="top_click('XL');"readonly/>
 									</p>
 								</div>
 								<div class="pants">
@@ -1002,11 +1092,11 @@
 										트랙 팬츠
 									</p>
 									<p>
-										<input id="pantsXs" type="text" value="xs" title="pantsXs" onclick="pantsXs_click();" readonly/>
-										<input id="pantsS" type="text" value="s" title="pantsS" onclick="pantsS_click();" readonly/>
-										<input id="pantsM" type="text" value="m" title="pantsM" onclick="pantsM_click();" readonly/>
-										<input id="pantsL" type="text" value="l" title="pantsL" onclick="pantsL_click();" readonly/>
-										<input id="pantsXL" type="text" value="xl" title="pantsXL" onclick="pantsXl_click();" readonly/>
+										<input id="pantsXs" type="text" value="xs" title="pantsXs" onclick="pants_click('XS');" readonly/>
+										<input id="pantsS" type="text" value="s" title="pantsS" onclick="pants_click('S');" readonly/>
+										<input id="pantsM" type="text" value="m" title="pantsM" onclick="pants_click('M');" readonly/>
+										<input id="pantsL" type="text" value="l" title="pantsL" onclick="pants_click('L');" readonly/>
+										<input id="pantsXL" type="text" value="xl" title="pantsXL" onclick="pants_click('XL');" readonly/>
 									</p>
 								</div>
 								<div class="half">
@@ -1014,11 +1104,11 @@
 										하프 팬츠
 									</p>
 									<p>
-										<input id="halfXs" type="text" value="xs" title="halfXs" onclick="halfS_click();" readonly/>
-										<input id="halfS" type="text" value="s" title="halfS" onclick="halfXs_click();" readonly/>
-										<input id="halfM" type="text" value="m" title="halfM" onclick="halfM_click();" readonly/>
-										<input id="halfL" type="text" value="l" title="halfL"  onclick="halfL_click();" readonly/>
-										<input id="halfXL" type="text" value="xl" title="halfXL"  onclick="halfXl_click();" readonly/>
+										<input id="halfXs" type="text" value="xs" title="halfXs" onclick="half_click('XS');" readonly/>
+										<input id="halfS" type="text" value="s" title="halfS" onclick="half_click('S');" readonly/>
+										<input id="halfM" type="text" value="m" title="halfM" onclick="half_click('M');" readonly/>
+										<input id="halfL" type="text" value="l" title="halfL"  onclick="half_click('L');" readonly/>
+										<input id="halfXL" type="text" value="xl" title="halfXL"  onclick="half_click('XL');" readonly/>
 									</p>
 								</div>
 							</div>
@@ -1255,8 +1345,8 @@
 								</h3>
 								<div>
 									<ul class="rv_imgs">
-										<li>
-											<a href="#none" title="리뷰이미지0">
+										<li class="rv">
+											<a href="rv0.jpg" title="리뷰이미지0">
 												<img src="img/review/rv0.jpg" alt="리뷰이미지0"/>
 											</a>
 										</li>
@@ -1515,6 +1605,10 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<div id="full">
+		</div>
+		<div id="view">
 		</div>
 	</div>
  </body>

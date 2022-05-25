@@ -18,7 +18,13 @@
 				a:focus{text-decoration:none;}
 				img{border:none;}
 				h1,h2{position:absolute; left:-9999px; width:1px; height:1px; line-height:0; overflow:hidden;}
-
+		
+		
+			/*## skip_nav ##*/
+				#skip_nav{width:200px; height:40px; position:absolute; top:0; left:0; overflow:hidden; z-index:5; opacity:0;}
+				#skip_nav ul{width:100%;}
+				#skip_nav ul li{width:100%; text-align:center; background-color:#000;}
+				#skip_nav ul li a{display:inline-block; width:100%; padding:10px 0; font-size:15px; color:#fff;}
 		
 		/*전체영역*/
 			/*## wrap ##*/
@@ -33,19 +39,20 @@
 			/*## header ## */
 				#header{width:100%;}
 
-			/*## topMenu ##*/
-				#topMenu{width:100%; background-color:rgba(156,1,255,1);}
+			/*## top_menu ##*/
+				#top_menu{width:100%; background-color:rgba(156,1,255,1); transform:translatey(0px);}
 
 			/*## ul ##*/
-				#topMenu ul{width:1920px; height:40px; margin:0 auto; overflow:hidden; background-color:rgba(156,1,255,1);}
-				#topMenu li{width:100%; margin:0 auto; line-height:40px; text-align:center;}
-				#topMenu li span{font-weight:700;}
-				#topMenu li a{display:block; width:100%; font-size:14px; color:#fff;}
+				#top_menu ul{width:1920px; height:40px; margin:0 auto; overflow:hidden;}
+				#top_menu li{width:100%; margin:0 auto; line-height:40px; text-align:center;}
+				#top_menu li span{font-weight:700;}
+				#top_menu li a{display:block; width:100%; font-size:14px; color:#fff;}
+
+
 
 			/*## nav ##*/
 				#nav{width:1920px; height:100px; margin:0 auto; position:relative;}
 				#nav #btn0{display:none;}
-				#nav #btn1{display:none;}
 				
 			/*## logo ##*/
 				#logo{width:200px; height:100px; overflow:hidden; float:left;}
@@ -258,17 +265,19 @@
 				#best_inn li p{width:2px; height:2px; background-color:rgba(156,1,255,0.5); position:absolute; transition:all 0.5s linear 0.1s; opacity:0;}
 				
 			/*## li 무빙보더 기능 ##*/
+            
 				#best_inn li .box0{right:2px; top:0;}
-				#best_inn li:hover .box0{width:338px; opacity:1;}
+			/*	#best_inn li:hover .box0{width:338px; opacity:1;} */
 
 				#best_inn li .box1{right:0; top:0;}
-				#best_inn li:hover .box1{height:500px; opacity:1;}
+			/*	#best_inn li:hover .box1{height:500px; opacity:1;} */
 
 				#best_inn li .box2{left:2px; bottom:0;}
-				#best_inn li:hover .box2{width:338px; opacity:1;}
+			/*	#best_inn li:hover .box2{width:338px; opacity:1;} */
 
 				#best_inn li .box3{left:0; bottom:0;}
-				#best_inn li:hover .box3{height:500px; opacity:1;}
+			/*	#best_inn li:hover .box3{height:500px; opacity:1;} */
+            
 
 			/*## li a ##*/
 				#best_inn li a{display:block; width:100%; height:451px; overflow:hidden;}
@@ -417,7 +426,7 @@
 
 			/*## side ##*/
 			/*실험용 언제든 폐기가능 후에 기능배워서 기존 널디 페이지처럼 스크롤따라가는 기능 만들기*/
-				#side{width:350px; height:817px; background-color:rgba(255,255,255,0.3); position:absolute; left:0; top:0; transition:all 1s linear;}
+				#side{width:200px; height:817px; background-color:rgba(220,220,220,0.1); position:absolute; left:0; top:0; transition:all 0.5s linear;}
 				
 				#side_inn{width:100%; height:100%;}
 
@@ -497,10 +506,10 @@
 				}
 
 
-				/*## topMenu ##*/
-				#topMenu{box-shadow:5px 5px 20px rgba(0,0,0,0.5); border-bottom:1px solid rgba(100,100,100,0.5); background-color:rgba(0,0,0,0);}
-				#topMenu ul{width:748px; background-color:rgba(0,0,0,0);}
-				#topMenu ul li a{color:rgba(156,1,255,1);}
+				/*## top_menu ##*/
+				#top_menu{box-shadow:5px 5px 20px rgba(0,0,0,0.5); border-bottom:1px solid rgba(100,100,100,0.5); background-color:rgba(0,0,0,0);}
+				#top_menu ul{width:748px; background-color:rgba(0,0,0,0);}
+				#top_menu ul li a{color:rgba(156,1,255,1);}
 				
 
 				/*## nav ##*/
@@ -551,9 +560,6 @@
 				#gnb #btn0{height:50px; display:block; transform:rotate(0deg); transition:all 0.2s linear 0.2s;}
 				#gnb #btn0:hover{transform:rotate(180deg);}
 
-				#gnb #btn1{display:block; height:50px; transform:rotate(0deg); transition:all 0.2s linear 0.2s;}
-
-				#gnb #btn1:hover{transform:rotate(-180deg);}
 
 				#gnb:after{content:""; display:block; clear:both;}
                 #gnb ul:after{content:""; display:block; clear:both;}
@@ -649,6 +655,8 @@
 
 				/*## label ##*/
 				#event_inn .main .text .label{display:none;}
+
+                
 				
 
 				/*## sub ##*/
@@ -657,6 +665,9 @@
 				#event_inn .sub li{width:374px; height:450px; overflow:hidden; float:left;}
 				#event_inn .sub li a{display:block; width:100%; height:100%; overflow:hidden; transform:scale(1); transition:transform 0.5s linear; position:relative;}
 				#event_inn .sub li a .link{font-size:17px; line-height:450px;}
+
+                #event_inn .sub li:hover a{transform:scale(1.1);}
+				#event_inn .sub li a:hover .link{background-color:rgba(100,100,100,0.5); opacity:1;}
 
 
 
@@ -714,10 +725,10 @@
 				}
 
 
-				/*## topMenu ##*/
-				#topMenu{box-shadow:5px 5px 20px rgba(0,0,0,0.5); border-bottom:1px solid rgba(100,100,100,0.5); background-color:rgba(0,0,0,0);}
-				#topMenu ul{width:461px; background-color:rgba(0,0,0,0);}
-				#topMenu ul li a{color:rgba(156,1,255,1);}
+				/*## top_menu ##*/
+				#top_menu{box-shadow:5px 5px 20px rgba(0,0,0,0.5); border-bottom:1px solid rgba(100,100,100,0.5); background-color:rgba(0,0,0,0);}
+				#top_menu ul{width:461px; background-color:rgba(0,0,0,0);}
+				#top_menu ul li a{color:rgba(156,1,255,1);}
 				
 
 				/*## nav ##*/
@@ -767,9 +778,7 @@
 				#gnb #btn0{height:50px; display:block; transform:rotate(0deg); transition:all 0.2s linear 0.2s;}
 				#gnb #btn0:hover{transform:rotate(180deg);}
 
-				#gnb #btn1{display:block; height:50px; transform:rotate(0deg); transition:all 0.2s linear 0.2s;}
 
-				#gnb #btn1:hover{transform:rotate(-180deg);}
 
 				#gnb:after{content:""; display:block; clear:both;}
                 #gnb ul:after{content:""; display:block; clear:both;}
@@ -881,6 +890,9 @@
 				#event_inn .sub li a{display:block; width:100%; height:100%; overflow:hidden; transform:scale(1); transition:transform 0.5s linear; position:relative;}
 				#event_inn .sub li a .link{font-size:14px; line-height:288px;}
 
+                #event_inn .sub li:hover a{transform:scale(1.1);}
+				#event_inn .sub li a:hover .link{background-color:rgba(100,100,100,0.5); opacity:1;}
+
 
 				/*## footer ##*/
 				#footer{width:100%; padding:0;}
@@ -930,10 +942,10 @@
 				background-image:-o-linear-gradient(top, rgba(140,204,227,0.5) 0%, rgba(249,245,236,0.9) 20%, rgba(193,236,245,1) 45%, rgba(253,240,240,1) 55%, rgba(199,239,219,0.7) 65%, rgba(139,131,155,0.3) 80%, rgba(144,99,231,0.8) 100%);
 				}
 
-				/*## topMenu ##*/
-				#topMenu{box-shadow:5px 5px 20px rgba(0,0,0,0.5); border-bottom:1px solid rgba(100,100,100,0.5); background-color:rgba(0,0,0,0);}
-				#topMenu ul{width:300px; background-color:rgba(0,0,0,0);}
-				#topMenu ul li a{color:rgba(156,1,255,1);}
+				/*## top_menu ##*/
+				#top_menu{box-shadow:5px 5px 20px rgba(0,0,0,0.5); border-bottom:1px solid rgba(100,100,100,0.5); background-color:rgba(0,0,0,0);}
+				#top_menu ul{width:300px; background-color:rgba(0,0,0,0);}
+				#top_menu ul li a{color:rgba(156,1,255,1);}
 				
 
 				/*## nav ##*/
@@ -979,10 +991,6 @@
 
 				#gnb #btn0{height:50px; display:block; transform:rotate(0deg); transition:all 0.2s linear 0.2s;}
 				#gnb #btn0:hover{transform:rotate(180deg);}
-
-				#gnb #btn1{display:block; height:50px; transform:rotate(0deg); transition:all 0.2s linear 0.2s;}
-
-				#gnb #btn1:hover{transform:rotate(-180deg);}
 
 				#gnb:after{content:""; display:block; clear:both;}
                 #gnb ul:after{content:""; display:block; clear:both;}
@@ -1085,6 +1093,9 @@
 
 				#event_inn .sub li a .link{font-size:9px; line-height:180px;}
 
+                #event_inn .sub li:hover a{transform:scale(1.1);}
+				#event_inn .sub li a:hover .link{background-color:rgba(100,100,100,0.5); opacity:1;}
+
 				/*## footer ##*/
 				#footer{width:100%; padding:0;}
 				
@@ -1125,8 +1136,416 @@
 			}
 	</style>
 	<script>
-		
 		$(document).ready(function(){
+			/*## PC~모바일 기능 서로 충돌안되게끔 구현 ##*/
+			
+			window.onload = function(){
+					var bodyW = $("body").width();
+
+					var headerH = $("#headerWrap").height();
+					var header = $("#headerWrap");
+            
+                $(window).scroll(function(){
+                    var nowScroll = $(document).scrollTop();
+					//console.log(bodyW);
+						if(headerH <= nowScroll){
+                            $("#side").css({"top":nowScroll});
+                        }
+                        else{   
+                            $("#side").css({"top":"0"});
+                        }
+
+                        if(nowScroll > 6100){
+                            $("#side").css({"top":"6100px"});
+                        }
+                });
+
+				if(bodyW < 1008){
+					$("#btn0").next().css({"display":"none"});
+					$("#visual_inn").find(".text").css({"opacity":"1"});
+					$("#visual_inn").mouseover(function(){
+                        $(this).find(".text").css({"opacity":"1"});
+                    }).mouseleave(function(){
+                        $(this).find(".text").css({"opacity":"1"});
+                    });
+					
+					$("#lookbook").find(".link").css({"backgroundColor":"rgba(0,0,0,0)","opacity":"1"});
+					$("#lookbook").mouseover(function(){
+                        $(this).find(".link").css({"backgroundColor":"rgba(0,0,0,0)","opacity":"1"});
+                    }).mouseleave(function(){
+                        $(this).find(".link").css({"opacity":"1"});
+                    });	
+
+					$("#lookbook .link li").css({"border":"1px solid rgba(0,0,0,0.1)"});
+					$("#lookbook .link li").mouseover(function(){
+                        $(this).css({"border":"1px solid rgba(156,1,255,1)"});
+                    }).mouseleave(function(){
+                        $(this).css({"border":"1px solid rgba(0,0,0,0.1)"});
+                    });
+
+					$("#md li").find(".link").css({"backgroundColor":"rgba(0,0,0,0)","opacity":"1"});
+					$("#md li").mouseover(function(){
+                        $(this).find(".link").css({"backgroundColor":"rgba(0,0,0,0)","opacity":"1"});
+                    }).mouseleave(function(){
+                        $(this).find(".link").css({"opacity":"1"});
+                    });
+
+					$("#md .link li").css({"border":"1px solid rgba(0,0,0,0.1)"});
+					$("#md .link li").mouseover(function(){
+                        $(this).css({"border":"1px solid rgba(156,1,255,1)"});
+                    }).mouseleave(function(){
+                        $(this).css({"border":"1px solid rgba(0,0,0,0.1)"});
+                    });
+
+					$("#event_inn").find(".text").css({"opacity":"1"});
+					$("#event_inn").mouseover(function(){
+                        $(this).find(".text").css({"opacity":"1"});
+                    }).mouseleave(function(){
+                        $(this).find(".text").css({"opacity":"1"});
+                    });
+
+					$(".info h3").click(function(){
+                        $(this).next().slideDown(1000,"easeOutBounce");
+                        $(this).parent().siblings().find("ul").slideUp(500,"swing");
+                    });
+	
+				}
+				else if(bodyW >1007){
+					$("#skip_nav").focusin(function(){
+						$(this).css({"opacity":"1"});
+					}).focusout(function(){
+						$(this).css({"opacity":"0"})
+					});
+
+					$("#headerWrap").css({"position":"static"});
+					$("#visual_inn").find(".text").css({"opacity":"0"});
+					$("#visual_inn").bind("mouseenter focusin",function(){
+                        $(this).find(".text").css({"left":"650px","bottom":"100px","opacity":"1"});
+                        $(this).find(".text a .label").css({"opacity":"1"});
+                    }).bind("mouseleave focusout",function(){
+                        $(this).find(".text").css({"left":"0","bottom":"100px","opacity":"0"});
+                        $(this).find(".text a .label").css({"opacity":"0"});
+                    });
+
+					$("#lookbook").find(".link").css({"backgroundColor":"rgba(0,0,0,0)","opacity":"0"});
+					$("#lookbook").bind("mouseenter focusin",function(){
+                        $(this).find(".link").css({"backgroundColor":"rgba(100,100,100,0.5)","opacity":"1"});
+                    }).bind("mouseleave focusout",function(){
+                        $(this).find(".link").css({"backgroundColor":"rgba(0,0,0,0)","opacity":"0"});
+                    });	
+
+                    $("#lookbook .link li").bind("mouseenter focusin",function(){
+                        $(this).css({"border":"1px solid rgba(156,1,255,1)"});
+                    }).bind("mouseleave focusout",function(){
+                        $(this).css({"border":"1px solid rgba(0,0,0,0)"});
+                    });
+            
+					$("#md li").find(".link").css({"backgroundColor":"rgba(100,100,100,0.5)","opacity":"0"});
+                    $("#md li").bind("mouseenter focusin",function(){
+                        $(this).find(".link").css({"backgroundColor":"rgba(100,100,100,0.5)","opacity":"1"});
+                    }).bind("mouseleave focusout",function(){
+                        $(this).find(".link").css({"backgroundColor":"rgba(0,0,0,0)","opacity":"0"});
+                    });
+                    
+                    $("#md .link li").bind("mouseenter focusin",function(){
+                        $(this).css({"border":"1px solid rgba(156,1,255,1)"});
+                    }).bind("mouseleave focusout",function(){
+                        $(this).css({"border":"1px solid rgba(0,0,0,0)"});
+                    });
+                    
+					$("#event_inn").find(".text").css({"opacity":"0"});
+                    $("#event_inn").bind("mouseenter focusin",function(){
+                        $(this).find(".text").css({"left":"50px","opacity":"1"});
+                        $(this).find(".text .label").css({"opacity":"1"});
+                    }).bind("mouseleave focusout",function(){
+                        $(this).find(".text").css({"left":"670px","opacity":"0"});
+                        $(this).find(".text .label").css({"opacity":"0"});
+                    });
+
+                    $("#event_inn .sub li").bind("mouseenter focusin",function(){
+                        $(this).find("a").css({"transform":"scale(1.1)"});
+                        $(this).find(".link").css({"backgroundColor":"rgba(100,100,100,0.5)","opacity":"1"});
+                    }).bind("mouseleave focusout",function(){
+                        $(this).find("a").css({"transform":"scale(1)"});
+                        $(this).find(".link").css({"backgroundColor":"rgba(0,0,0,0)","opacity":"0"});
+                    });	
+
+                    $("#best_inn li").bind("mouseenter focusin",function(){
+                        $(this).find(".box0").css({"width":"338px","opacity":"1"});
+                        $(this).find(".box1").css({"height":"500px","opacity":"1"});
+                        $(this).find(".box2").css({"width":"338px","opacity":"1"});
+                        $(this).find(".box3").css({"height":"500px","opacity":"1"});
+                    }).bind("mouseleave focusout",function(){
+                        $(this).find(".box0").css({"width":"0","opacity":"0"});
+                        $(this).find(".box1").css({"height":"0","opacity":"0"});
+                        $(this).find(".box2").css({"width":"0","opacity":"0"});
+                        $(this).find(".box3").css({"height":"0","opacity":"0"});
+                    });	
+
+					$(".info h3").off("click");
+					$(".info h3").next().show();
+				}
+			}
+
+			var now = true;
+
+				$("#btn0").click(function(){
+					if(now == true){
+						$(this).next().slideDown(1000,"easeOutBounce");
+						now = false;
+					}
+
+					else if(now == false){
+						$(this).next().slideUp(1000,"easeOutBounce");
+						now = true;
+					}
+				});
+			
+			$(window).resize(function(){ 
+				var windowW = $(window).innerWidth();
+				console.log(windowW);  
+                if(window.innerWidth <1008){
+                  
+
+					$("#btn0").next().css({"display":"none"});
+					$("#visual_inn").find(".text").css({"opacity":"1"});
+					$("#visual_inn").mouseover(function(){
+                        $(this).find(".text").css({"opacity":"1"});
+                    }).mouseleave(function(){
+                        $(this).find(".text").css({"opacity":"1"});
+                    });
+					
+					$("#lookbook").find(".link").css({"backgroundColor":"rgba(0,0,0,0)","opacity":"1"});
+					$("#lookbook").mouseover(function(){
+                        $(this).find(".link").css({"backgroundColor":"rgba(0,0,0,0)","opacity":"1"});
+                    }).mouseleave(function(){
+                        $(this).find(".link").css({"opacity":"1"});
+                    });	
+
+					$("#lookbook .link li").css({"border":"1px solid rgba(0,0,0,0.1)"});
+					$("#lookbook .link li").mouseover(function(){
+                        $(this).css({"border":"1px solid rgba(156,1,255,1)"});
+                    }).mouseleave(function(){
+                        $(this).css({"border":"1px solid rgba(0,0,0,0.1)"});
+                    });
+
+					$("#md li").find(".link").css({"backgroundColor":"rgba(0,0,0,0)","opacity":"1"});
+					$("#md li").mouseover(function(){
+                        $(this).find(".link").css({"backgroundColor":"rgba(0,0,0,0)","opacity":"1"});
+                    }).mouseleave(function(){
+                        $(this).find(".link").css({"opacity":"1"});
+                    });
+
+					$("#md .link li").css({"border":"1px solid rgba(0,0,0,0.1)"});
+					$("#md .link li").mouseover(function(){
+                        $(this).css({"border":"1px solid rgba(156,1,255,1)"});
+                    }).mouseleave(function(){
+                        $(this).css({"border":"1px solid rgba(0,0,0,0.1)"});
+                    });
+
+					$("#event_inn").find(".text").css({"opacity":"1"});
+					$("#event_inn").mouseover(function(){
+                        $(this).find(".text").css({"opacity":"1"});
+                    }).mouseleave(function(){
+                        $(this).find(".text").css({"opacity":"1"});
+                    });
+
+					$(".info h3").click(function(){
+                        $(this).next().slideDown(1000,"easeOutBounce");
+                        $(this).parent().siblings().find("ul").slideUp(500,"swing");
+                    });
+                }
+                
+                else if(window.innerWidth >1007){
+					$("#skip_nav").focusin(function(){
+						$(this).css({"opacity":"1"});
+					}).focusout(function(){
+						$(this).css({"opacity":"0"})
+					});
+					$("#btn0").next().css({"display":"block"});
+
+					$("#visual_inn").find(".text").css({"opacity":"0"});
+					$("#visual_inn").bind("mouseenter focusin",function(){
+                        $(this).find(".text").css({"left":"650px","bottom":"100px","opacity":"1"});
+                        $(this).find(".text a .label").css({"opacity":"1"});
+                    }).bind("mouseleave focusout",function(){
+                        $(this).find(".text").css({"left":"0","bottom":"100px","opacity":"0"});
+                        $(this).find(".text a .label").css({"opacity":"0"});
+                    });
+
+					$("#lookbook").find(".link").css({"backgroundColor":"rgba(0,0,0,0)","opacity":"0"});
+					$("#lookbook").bind("mouseenter focusin",function(){
+                        $(this).find(".link").css({"backgroundColor":"rgba(100,100,100,0.5)","opacity":"1"});
+                    }).bind("mouseleave focusout",function(){
+                        $(this).find(".link").css({"backgroundColor":"rgba(0,0,0,0)","opacity":"0"});
+                    });	
+
+                    $("#lookbook .link li").bind("mouseenter focusin",function(){
+                        $(this).css({"border":"1px solid rgba(156,1,255,1)"});
+                    }).bind("mouseleave focusout",function(){
+                        $(this).css({"border":"1px solid rgba(0,0,0,0)"});
+                    });
+            
+					$("#md li").find(".link").css({"backgroundColor":"rgba(100,100,100,0.5)","opacity":"0"});
+                    $("#md li").bind("mouseenter focusin",function(){
+                        $(this).find(".link").css({"backgroundColor":"rgba(100,100,100,0.5)","opacity":"1"});
+                    }).bind("mouseleave focusout",function(){
+                        $(this).find(".link").css({"backgroundColor":"rgba(0,0,0,0)","opacity":"0"});
+                    });
+                    
+                    $("#md .link li").bind("mouseenter focusin",function(){
+                        $(this).css({"border":"1px solid rgba(156,1,255,1)"});
+                    }).bind("mouseleave focusout",function(){
+                        $(this).css({"border":"1px solid rgba(0,0,0,0)"});
+                    });
+                    
+					$("#event_inn").find(".text").css({"opacity":"0"});
+                    $("#event_inn").bind("mouseenter focusin",function(){
+                        $(this).find(".text").css({"left":"50px","opacity":"1"});
+                        $(this).find(".text .label").css({"opacity":"1"});
+                    }).bind("mouseleave focusout",function(){
+                        $(this).find(".text").css({"left":"670px","opacity":"0"});
+                        $(this).find(".text .label").css({"opacity":"0"});
+                    });
+
+                    $("#event_inn .sub li").bind("mouseenter focusin",function(){
+                        $(this).find("a").css({"transform":"scale(1.1)"});
+                        $(this).find(".link").css({"backgroundColor":"rgba(100,100,100,0.5)","opacity":"1"});
+                    }).bind("mouseleave focusout",function(){
+                        $(this).find("a").css({"transform":"scale(1)"});
+                        $(this).find(".link").css({"backgroundColor":"rgba(0,0,0,0)","opacity":"0"});
+                    });	
+
+                    $("#best_inn li").bind("mouseenter focusin",function(){
+                        $(this).find(".box0").css({"width":"338px","opacity":"1"});
+                        $(this).find(".box1").css({"height":"500px","opacity":"1"});
+                        $(this).find(".box2").css({"width":"338px","opacity":"1"});
+                        $(this).find(".box3").css({"height":"500px","opacity":"1"});
+                    }).bind("mouseleave focusout",function(){
+                        $(this).find(".box0").css({"width":"0","opacity":"0"});
+                        $(this).find(".box1").css({"height":"0","opacity":"0"});
+                        $(this).find(".box2").css({"width":"0","opacity":"0"});
+                        $(this).find(".box3").css({"height":"0","opacity":"0"});
+                    });	
+
+					$(".info h3").off("click");
+					$(".info h3").next().show();
+                }
+
+				
+            });
+            /*
+			## PC ~ 스마트폰 쿼리 간 기능구현이 충돌되지 않게하기위해 작업했던 기록들 ##
+
+           		window.onload = function(){
+					var bodyW = $("body").width();
+				
+					var headerH = $("#headerWrap").height();
+					var header = $("#headerWrap");
+            
+                $(window).scroll(function(){
+                    var nowScroll = $(document).scrollTop();
+					console.log(bodyW);
+						if(headerH <= nowScroll){
+                            header.addClass("fixed");
+                            $("#nav").css({"backgroundColor":"#fff"});
+                            $("#side").css({"top":nowScroll+headerH});
+                        }
+                        else{   
+                            header.removeClass("fixed");
+                            $("#side").css({"top":"0"});
+                        }
+
+                        if(nowScroll > 6100){
+                            header.addClass("fixed");
+                            $("#nav").css({"backgroundColor":"#fff"});
+                            $("#side").css({"top":"6100px"});
+                        }
+                });
+			}
+                if(bodyW > 1024){
+                    $("#visual_inn").bind("mouseenter focusin",function(){
+                        $(this).find(".text").css({"left":"650px","bottom":"100px","opacity":"1"});
+                        $(this).find(".text a .label").css({"opacity":"1"});
+                    }).bind("mouseleave focusout",function(){
+                        $(this).find(".text").css({"left":"0","bottom":"100px","opacity":"0"});
+                        $(this).find(".text a .label").css({"opacity":"0"});
+                    });
+
+                    $("#lookbook").bind("mouseenter focusin",function(){
+                        $(this).find(".link").css({"backgroundColor":"rgba(100,100,100,0.5)","opacity":"1"});
+                    }).bind("mouseleave focusout",function(){
+                        $(this).find(".link").css({"backgroundColor":"rgba(0,0,0,0)","opacity":"0"});
+                    });	
+
+                    $("#lookbook .link li").bind("mouseenter focusin",function(){
+                        $(this).css({"border":"1px solid rgba(156,1,255,1)"});
+                    }).bind("mouseleave focusout",function(){
+                        $(this).css({"border":"1px solid rgba(0,0,0,0)"});
+                    });
+            
+
+                    $("#md li").bind("mouseenter focusin",function(){
+                        $(this).find(".link").css({"backgroundColor":"rgba(100,100,100,0.5)","opacity":"1"});
+                    }).bind("mouseleave focusout",function(){
+                        $(this).find(".link").css({"backgroundColor":"rgba(0,0,0,0)","opacity":"0"});
+                    });
+                    
+                    $("#md .link li").bind("mouseenter focusin",function(){
+                        $(this).css({"border":"1px solid rgba(156,1,255,1)"});
+                    }).bind("mouseleave focusout",function(){
+                        $(this).css({"border":"1px solid rgba(0,0,0,0)"});
+                    });
+                    
+                    $("#event_inn").bind("mouseenter focusin",function(){
+                        $(this).find(".text").css({"left":"50px","opacity":"1"});
+                        $(this).find(".text .label").css({"opacity":"1"});
+                    }).bind("mouseleave focusout",function(){
+                        $(this).find(".text").css({"left":"670px","opacity":"0"});
+                        $(this).find(".text .label").css({"opacity":"0"});
+                    });
+
+                    $("#event_inn .sub li").bind("mouseenter focusin",function(){
+                        $(this).find("a").css({"transform":"scale(1.1)"});
+                        $(this).find(".link").css({"backgroundColor":"rgba(100,100,100,0.5)","opacity":"1"});
+                    }).bind("mouseleave focusout",function(){
+                        $(this).find("a").css({"transform":"scale(1)"});
+                        $(this).find(".link").css({"backgroundColor":"rgba(0,0,0,0)","opacity":"0"});
+                    });	
+
+                    $("#best_inn li").bind("mouseenter focusin",function(){
+                        $(this).find(".box0").css({"width":"338px","opacity":"1"});
+                        $(this).find(".box1").css({"height":"500px","opacity":"1"});
+                        $(this).find(".box2").css({"width":"338px","opacity":"1"});
+                        $(this).find(".box3").css({"height":"500px","opacity":"1"});
+                    }).bind("mouseleave focusout",function(){
+                        $(this).find(".box0").css({"width":"0","opacity":"0"});
+                        $(this).find(".box1").css({"height":"0","opacity":"0"});
+                        $(this).find(".box2").css({"width":"0","opacity":"0"});
+                        $(this).find(".box3").css({"height":"0","opacity":"0"});
+                    });	
+                }
+                else if(bodyW < 1025){
+                    $(".info h3").click(function(){
+                        $(this).next().slideDown(1000,"easeOutBounce");
+                        $(this).parent().siblings().find("ul").slideUp(500,"swing");
+                    });
+                }
+		    }
+				$(window).resize(function(){
+
+					console.log(bodyW);
+					if(bodyW < 1024){
+						$("#visual_inn").bind("mouseenter focusin",function(){
+							return false;
+						}).bind("mouseleave focusout",function(){
+							return false;
+						});
+					}
+				});
+            */
+
+            
 
 			/*
 				스마트폰 세로 320 버전만 기능구현 해보았고, 나머지 기기 해상도는 index 의 height값 기준으로 되어있어서 미적용	
@@ -1166,21 +1585,28 @@
 			/*## 모바일 header ## */
 			/*
 				대상 : #btn0( li태그 )
-				이벤트 : 클릭
+				이벤트\\
+				
+				: 클릭
 				이벤트핸들러 : #btn0의 다음요소 == li 태그 / slideDown
 			*/
-			$("#btn0").click(function(){
-				$(this).next().slideDown(1000,"easeOutBounce");
-			});
 			/*
-				대상 : #btn1( li태그 )
-				이벤트 : 클릭
-				이벤트핸들러 : #btn1 의 부모요소 == ul == slideUp
+			var now = true;
 
+				$("#btn0").click(function(){
+					if(now == true){
+						$(this).next().slideDown(1000,"easeOutBounce");
+						now = false;
+					}
+
+					else if(now == false){
+						$(this).next().slideUp(1000,"easeOutBounce");
+						now = true;
+					}
+				});
 			*/
-			$("#btn1").click(function(){
-				$(this).parent().slideUp(1000,"easeOutBounce");
-			});
+
+			
 			
 			
 			/*## 모바일 footer  ##*/
@@ -1191,17 +1617,16 @@
 										.info h3의 부모요소의 부모요소의 하위요소 == 이미 열려있는 ul태그
 
 			*/
-			$(".info h3").click(function(){
-				$(this).next().slideDown(1000,"easeOutBounce");
-				$(this).parent().siblings().find("ul").slideUp(500,"swing");
-			});
-			
+            /*
+                $(".info h3").click(function(){
+                    $(this).next().slideDown(1000,"easeOutBounce");
+                    $(this).parent().siblings().find("ul").slideUp(500,"swing");
+                });
+			*/
 			/*## PC visual 영역 ( 접근성을 위해 기존 css hover 기능 주석처리후 jQuery 로 기능적용 ) ##*/
 			/*## (모바일 버전과 충돌로 문제 일으켜서 잠시 주석처리 후 css 로 기능유지) 조건문으로 해결 예정##*/
 
-           
-
-		
+            /*
 				$("#visual_inn").bind("mouseenter focusin",function(){
 					$(this).find(".text").css({"left":"650px","bottom":"100px","opacity":"1"});
 					$(this).find(".text a .label").css({"opacity":"1"});
@@ -1209,8 +1634,7 @@
 					$(this).find(".text").css({"left":"0","bottom":"100px","opacity":"0"});
 					$(this).find(".text a .label").css({"opacity":"0"});
 				});	
-
-
+            */
 
 			/*## PC main 영역 ( 접근성을 위해 기존 css hover 기능 주석처리후 jQuery 로 기능적용 )## */
 			/*## (모바일 버전과 충돌로 문제 일으켜서 잠시 주석처리 후 css 로 기능유지) 조건문으로 해결 예정 ##*/
@@ -1253,7 +1677,7 @@
 				$(this).find(".text .label").css({"opacity":"0"});
 			});	
 			*/
-
+            /*
 			$("#event_inn .sub li").bind("mouseenter focusin",function(){
 				$(this).find("a").css({"transform":"scale(1.1)"});
 				$(this).find(".link").css({"backgroundColor":"rgba(100,100,100,0.5)","opacity":"1"});
@@ -1261,6 +1685,7 @@
 				$(this).find("a").css({"transform":"scale(1)"});
 				$(this).find(".link").css({"backgroundColor":"rgba(0,0,0,0)","opacity":"0"});
 			});	
+            */
 
 
 
@@ -1269,6 +1694,10 @@
 				[이슈]
 				현재 같은 클릭을 반복할 수 없기에, 좌측 클릭 / 우측 클릭 번갈아가면서는 작동하나 계속해서 한쪽방향 클릭이 어려움
 				클릭을 반복해서 받을 수 있도록 확인하여 해결 예정
+
+				[해결]
+
+				배열을 사용 및 변수를 활용한 반복클릭 적용으로 해결
 			*/
 			/*
 			$("#direction .left").bind("click focusin",function(){
@@ -1290,8 +1719,7 @@
 			});
 
 			*/
-           
-
+ 
             //var left_deg = ["rotate3d(0,0,1,-90deg)","rotate3d(0,0,1,-180deg)","rotate3d(0,0,1,-270deg)","rotate3d(0,0,1,-360deg)"];
             //var right_deg = ["rotate3d(0,0,1,90deg)","rotate3d(0,0,1,180deg)","rotate3d(0,0,1,270deg)","rotate3d(0,0,1,-360deg)"];
             
@@ -1384,47 +1812,38 @@
 				$("#insta").mouseenter(function(){
 					$("#side").css({"top":"6200px"});
 				});
-			*/
-            /* side 영역 scroll 기능으로 구현 */
-			var headerH = $("#headerWrap").height();
-            var header = $("#headerWrap");
-            
-            $(window).scroll(function(){
-                var nowScroll = $(document).scrollTop();
-                console.log(nowScroll);
-				/*
-                if(nowScroll>0 && nowScroll <6200){
-                    $("#side").stop().animate({"top":nowScroll},0,"linear");
-                }
+			
 
-                else if(nowScroll == 0){
-                    $("#side").stop().animate({"top":"0"},0,"linear");
-                }
-                else if(nowScroll == 6200){
-                    $("#side").stop().animate({"top":"6200px"},0,"linear");
-                }
-				*/
+            side 영역 scroll 기능으로 구현 
+			/*
+                var headerH = $("#headerWrap").height();
+                var header = $("#headerWrap");
+                
+                $(window).scroll(function(){
+                    var nowScroll = $(document).scrollTop();
 
-				if(headerH <= nowScroll){
-                    header.addClass("fixed");
-                    $("#nav").css({"backgroundColor":"#fff"});
-                    $("#side").stop().animate({"top":nowScroll+headerH},1,"linear");
-                    $(".quick_menu").stop().animate({"top":nowScroll+headerH},1,"linear");
-                }
+                    if(headerH <= nowScroll){
+                        header.addClass("fixed");
+                        $("#nav").css({"backgroundColor":"#fff"});
+                        $("#side").css({"top":nowScroll+headerH});
+                    }
+                    else{   
+                        header.removeClass("fixed");
+                        $("#side").css({"top":"0"});
+                    }
 
-                else{   
-                    header.removeClass("fixed");
-                    $(".quick_menu").stop().animate({"top":"0"},1,"linear");
-					$("#side").stop().animate({"top":"0"},1,"linear");
-                }
-
-            });
-
+                    if(nowScroll > 6100){
+                        header.addClass("fixed");
+                        $("#nav").css({"backgroundColor":"#fff"});
+                        $("#side").css({"top":"6100px"});
+                    }
+                });
+            */
             /* 검색 추가 창 기능 */
 
 			$("#search_add").hide();
 
-			var now = true;
+			
 
 			$("#search").click(function(){
 
@@ -1461,11 +1880,45 @@
  </head>
 
  <body>
+	<div id="skip_nav">
+		<ul>
+			<li>
+				<a href="#visual" title="visual">
+					메인 바로가기
+				</a>
+			</li>
+			<li>
+				<a href="#main" title="main">
+					MD 추천 바로가기
+				</a>
+			</li>
+			<li>
+				<a href="#event" title="event">
+					이벤트 바로가기
+				</a>
+			</li>
+			<li>
+				<a href="#best" title="best">
+					베스트 상품 바로가기
+				</a>
+			</li>
+			<li>
+				<a href="#season" title="season">
+					시즌 룩북 바로가기
+				</a>
+			</li>
+			<li>
+				<a href="#footer" title="footer">
+					가장 하단으로 바로가기
+				</a>
+			</li>
+		</ul>
+	</div>
 	<div id="wrap">
 		<div id="headerWrap">
 			<div id="header">
 				<h1>널디</h1>
-				<div id="topMenu">
+				<div id="top_menu">
 					<h2>공지사항 및 이벤트</h2>
 					<ul>
 						<li class="color0">
@@ -1528,10 +1981,9 @@
 									<li><a href="#none" title="all">all</a></li>
 									<li><a href="#none" title="best"><span>best</span></a></li>
 									<li><a href="#none" title="promo">promo</a></li>
-									<li><a href="#none" title="cloth">cloth</a></li>
+									<li><a href="list.html" title="cloth">cloth</a></li>
 									<li><a href="#none" title="shoes">shoes</a></li>
 									<li><a href="#none" title="bag">bag</a></li>
-									<li id="btn1"><a href="#none" title="direction1">▼</a></li>
 								</ul>
 							</li>
 						</ul>
@@ -1539,7 +1991,7 @@
 							<fieldset>
 								<legend>검색</legend>
 								<p class="search">
-									<input id="search" type="text" name="search" title="검색영역" placeholder="BE THE NERDY"/>
+									<input id="search" type="text" name="search" title="검색영역" placeholder="SEARCH"/>
 								</p>
 								<p class="btn">
 									<input id="btn" type="submit" title="검색" value="검색"/>
@@ -2025,6 +2477,92 @@
 					</video>
 				</div>
 			</div>
+			<div id="insta">
+				<h2>insta영역</h2>
+				<div id="insta_inn">
+					<h3><span>nerdy with influencer</span></h3>
+					<div id="insta_main">
+						<div id="insta_left">
+							<ul>
+								<li class="no0">
+									<a href="#none">
+										<span class="img">
+											<img src="img/insta/insta0.jpg" alt="인스타셀럽0">
+										</span>
+										<span class="name">
+											@rihey__
+										</span>
+									</a>
+								</li>
+								<li class="no1">
+									<a href="#none">
+										<span class="img">
+											<img src="img/insta/insta1.jpg" alt="인스타셀럽1">
+										</span>
+										<span class="name">
+											@vinvin.le
+										</span>
+									</a>
+								</li>
+								<li class="no2">
+									<a href="#none" title="celeb2">
+										<span class="img">
+											<img src="img/insta/insta2.jpg" alt="인스타셀럽1">
+										</span>
+										<span class="name">
+											@ll_42k
+										</span>
+									</a>
+								</li>
+								<li class="no3">
+									<a href="#none" title="celeb3">
+										<span class="img">
+											<img src="img/insta/insta3.jpg" alt="인스타셀럽1">
+										</span>
+										<span class="name">
+											@niong_dg
+										</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div id="insta_right">
+							<ul>
+								<li class="no0">
+									<a href="#none" title="item0">
+										<img src="img/insta/item0.png" alt="인스타아이템0">
+									</a>
+								</li>
+								<li class="no1">
+									<a href="#none" title="item1">
+										<img src="img/insta/item1.png" alt="인스타아이템1">
+									</a>
+								</li>
+								<li class="no2">
+									<a href="#none" title="item2">
+										<img src="img/insta/item2.png" alt="인스타아이템2">
+									</a>
+								</li>
+								<li class="no3">
+									<a href="#none" title="item3">
+										<img src="img/insta/item3.png" alt="인스타아이템3">
+									</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div id="direction">
+						<p class="circle">
+							<a href="#none" title="circle"><img src="img/icon/circle.png" alt="회전이미지"/></a>
+						</p>
+					</div>
+					<div class="text">
+						<p>
+							<span>널디와 함께 해준 SNS 인플루언서들의 아이템을 지금 바로 확인하세요!</span>
+						</p>
+					</div>
+				</div>
+			</div>
 			<div id="side"><!--실험용 언제든 폐기가능 후에 기능배워서 기존 널디 페이지처럼 스크롤따라가는 기능 만들기-->
 				<h2>sidemenu영역</h2>
 				<div id="side_inn">
@@ -2109,92 +2647,6 @@
 							</a>
 						</li>
 					</ul>
-				</div>
-			</div>
-			<div id="insta">
-				<h2>insta영역</h2>
-				<div id="insta_inn">
-					<h3><span>nerdy with influencer</span></h3>
-					<div id="insta_main">
-						<div id="insta_left">
-							<ul>
-								<li class="no0">
-									<a href="#none">
-										<span class="img">
-											<img src="img/insta/insta0.jpg" alt="인스타셀럽0">
-										</span>
-										<span class="name">
-											@rihey__
-										</span>
-									</a>
-								</li>
-								<li class="no1">
-									<a href="#none">
-										<span class="img">
-											<img src="img/insta/insta1.jpg" alt="인스타셀럽1">
-										</span>
-										<span class="name">
-											@vinvin.le
-										</span>
-									</a>
-								</li>
-								<li class="no2">
-									<a href="#none" title="celeb2">
-										<span class="img">
-											<img src="img/insta/insta2.jpg" alt="인스타셀럽1">
-										</span>
-										<span class="name">
-											@ll_42k
-										</span>
-									</a>
-								</li>
-								<li class="no3">
-									<a href="#none" title="celeb3">
-										<span class="img">
-											<img src="img/insta/insta3.jpg" alt="인스타셀럽1">
-										</span>
-										<span class="name">
-											@niong_dg
-										</span>
-									</a>
-								</li>
-							</ul>
-						</div>
-						<div id="insta_right">
-							<ul>
-								<li class="no0">
-									<a href="#none" title="item0">
-										<img src="img/insta/item0.png" alt="인스타아이템0">
-									</a>
-								</li>
-								<li class="no1">
-									<a href="#none" title="item1">
-										<img src="img/insta/item1.png" alt="인스타아이템1">
-									</a>
-								</li>
-								<li class="no2">
-									<a href="#none" title="item2">
-										<img src="img/insta/item2.png" alt="인스타아이템2">
-									</a>
-								</li>
-								<li class="no3">
-									<a href="#none" title="item3">
-										<img src="img/insta/item3.png" alt="인스타아이템3">
-									</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-					<div id="direction">
-						<p class="circle">
-							<a href="#none" title="circle"><img src="img/icon/circle.png"/></a>
-						</p>
-					</div>
-					<div class="text">
-						<p>
-							<span>널디와 함께 해준 SNS 인플루언서들의 아이템을 지금 바로 확인하세요!</span>
-						</p>
-					</div>
 				</div>
 			</div>
 		</div>
