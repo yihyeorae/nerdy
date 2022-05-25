@@ -26,6 +26,25 @@ feportfolio.dothome.co.kr/nerdy
 <p>모든 페이지 계속해서 디벨롭 중입니다.</p>
 <strong>방문해주셔서 감사합니다.</strong>
 
+<h2>0526 update</h2>
+<ul>
+  <li>nav 영역 검색창, 클릭 시 추가 검색창 생성</li>
+  <li>side 영역 너비가 너무 넓어서 너비 조정</li>
+</ul>
+<dl>
+  <dt>index.html</dt>
+  <dd>웹 접근성을 고려한 이벤트들 tap키로도 구현되도록 수정 및 skip_nav 구현</dd>
+</dl>
+<dl>
+  <dt>store.html</dt>
+  <dd>map 영역 옆으로 찾아오는길 간략히 추가 및 기능 구현</dd>
+</dl>
+<dl>
+  <dt>detail.html</dt>
+  <dd>옵션 선택 기능부분을 parameter를 이용하여 코드 간소화</dd>
+  <dd>review 부분 이미지 클릭 시 modal 팝업 기능 구현</dd>
+</dl>
+
 <h2>0520 update</h2>
 <ul>
   <li>페이지가 상대적으로 긴 index,detail 페이지에서 header영역 scroll 따라다니게 구현</li>
