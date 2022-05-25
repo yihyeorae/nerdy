@@ -26,6 +26,20 @@ feportfolio.dothome.co.kr/nerdy
 <p>모든 페이지 계속해서 디벨롭 중입니다.</p>
 <strong>방문해주셔서 감사합니다.</strong>
 
+<h2>0520 update</h2>
+<ul>
+  <li>페이지가 상대적으로 긴 index,detail 페이지에서 header영역 scroll 따라다니게 구현</li>
+</ul>
+<dl>
+  <dt>list.html</dt>
+  <dd>1.visual 영역 슬라이딩윈도우에 맞게 backgroundColor 정상작동 구현완료, 코드도 간결하게 수정</dd>
+</dl>
+<dl>
+  <dt>store.html</dt>
+  <dd>작은 룰렛 영역 회전형 화살표로 변경 및 기능구현 수정</dd>
+</dl>
+
+
 <h2>0518 update</h2>
 <ul>
   <li>nav 영역 form input , 기존 널디 페이지 검색경로 추가 및 클릭 시 간단한 이벤트 구현</li>
