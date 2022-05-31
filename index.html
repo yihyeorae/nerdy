@@ -347,19 +347,46 @@
 			/*## video ##*/
 				#video{width:100%;}
 
+            /*## video_bg ##*/
+                #video_bg{width:100%;  height:1300px; background-image:url("img/bg/bg0.jpg"); background-attachment:fixed; background-position:center center; overflow:hidden;}
+
 			/*## vidoe_inn ##*/
-				#video_inn{width:1920px; height:1084px; margin:0 auto;}
+				#video_inn{width:1280px; margin:100px auto;}
 
 			/*## video_title ##*/
 				#video .video_title{width:100%; line-height:100px; text-align:center; font-size:50px;}
 				#video .video_title h3{background-color:rgba(255,255,255,1); color:rgba(0,0,0,1); font-weight:700; text-transform:uppercase; transition:all 0.5s linear 0.2s; text-shadow:0px 0px 0px; box-shadow:1px 1px 5px #333;
 				display:none;}
 
-			/*## video_bg ##*/
-				#video_bg{width:100%;  height:450px; margin:0 auto; background-image:url("img/video/tvc3_vert.jpg"); background-attachment:fixed; background-position:center center;}
+                
+			
 
 			/*## video_title 기능 ##*/
 				#video:hover h3{/*background-color:rgba(143,1,255,0.8);*/ color:rgba(143,1,255,0.8); /*color:rgba(255,255,255,1);*/ text-shadow:2px 2px 10px;}
+
+			/*## video_film ##*/
+				#video_film{width:1920px; margin:0 auto; overflow:hidden;}
+				
+				#video_film .tvc0{background-image:url("img/video/tvc0.jpg");}
+				#video_film .tvc1{background-image:url("img/video/tvc1.jpg");}
+				#video_film .tvc2{background-image:url("img/video/tvc2.jpg");}
+				#video_film .tvc3{background-image:url("img/video/tvc3.jpg");}
+				#video_film .tvc4{background-image:url("img/video/tvc4.jpg");}
+				#video_film .tvc5{background-image:url("img/video/tvc5.jpg");}
+				#video_film .tvc6{background-image:url("img/video/tvc6.jpg");}
+				#video_film .tvc7{background-image:url("img/video/tvc7.jpg");}
+				#video_film .tvc8{background-image:url("img/video/tvc8.jpg");}
+
+				#video ul{width:4176px; 
+					-webkit-user-select:none;
+  					-moz-user-select:none;
+  					-ms-user-select:none;
+  					user-select:none;
+				}
+				#video ul:hover{cursor:grab;}
+                #video li{width:400px; height:260px; float:left; margin-left:64px; background-size:100% 100%; background-position:center center;}
+                /*#video li img{width:100%;}*/
+                #video ul:after{content:""; display:block; clear:both;}
 
 			/*## insta ##*/
 				#insta{width:100%; 
@@ -1431,9 +1458,18 @@
 					$(".info h3").off("click");
 					$(".info h3").next().show();
                 }
-
-				
             });
+
+            /*
+            $("#video ul").draggable({
+                containment: "parent",
+                axis: "x",
+                drag: function(){
+                    $(this).aniamte({"marginLeft":"-400px"},1000,"swing");
+                }
+            });
+            */
+
             /*
 			## PC ~ 스마트폰 쿼리 간 기능구현이 충돌되지 않게하기위해 작업했던 기록들 ##
 
@@ -1741,8 +1777,7 @@
                     if(rotate == 5){
                         rotate = 0;
                     }
-                */
-                /*
+
                     $("#insta_left").css({"transform":left_deg[rotate-1]});
                     $("#insta_left li").css({"transform":right_deg[rotate-1]});
                     $("#insta_right").css({"transform":right_deg[rotate-1]});
@@ -1768,7 +1803,6 @@
 
 
                 /* insta 가운데 모이는 이미지 확대 기능*/
-                // rotate 재활용하기
                 rotate++;
                 if(rotate==4){
                     rotate = 0;
@@ -1780,14 +1814,10 @@
                 $(left_lis[rotate]).css({"transform":"rotateZ("+plus+"deg) scale(1.3)"});
                 $(right_lis[rotate]).css({"transform":"rotateZ("+minus+"deg) scale(1.3)"});
             }); 
-           
-
-                //$("#insta_left .no1").css({"transform":"rotate3d(0,0,1,90deg) scale(1.3)"});
-                //$("#insta_right .no1").css({"transform":"rotate3d(0,0,1,-90deg) scale(1.3)"});
-
-           
-			
-			/* 
+			/*
+                $("#insta_left .no1").css({"transform":"rotate3d(0,0,1,90deg) scale(1.3)"});
+                $("#insta_right .no1").css({"transform":"rotate3d(0,0,1,-90deg) scale(1.3)"});
+	
                 ####### scroll 기능 배우기 전 side 영역 기능 ########
 
 				$("#visual").mouseenter(function(){
@@ -1813,9 +1843,7 @@
 					$("#side").css({"top":"6200px"});
 				});
 			
-
-            side 영역 scroll 기능으로 구현 
-			/*
+            	side 영역 scroll 기능으로 구현 
                 var headerH = $("#headerWrap").height();
                 var header = $("#headerWrap");
                 
@@ -1839,11 +1867,79 @@
                     }
                 });
             */
+
             /* 검색 추가 창 기능 */
 
-			$("#search_add").hide();
+			var x = null;
+			var xx = null;
+			var result = null;
+			
+			$("#video ul").mousedown(function(event){
+				$(this).css({"cursor":"grabbing"});
+				x = event.pageX;
+				
+			});
+
+			$("#video ul").mouseup(function(event){
+				xx = event.pageX;
+				$(this).css({"cursor":"grab"});
+			});
+
+			$("#video ul").click(function(){
+				
+				console.log(x);
+				console.log(xx);
+
+				result = x -xx;
+
+				if(result<0){
+					drag_next();
+				}
+				else if(result>0){
+
+					drag_prev();
+				}
+
+			});
+
+			$("#video ul").prepend($("#video ul li:last")).prepend($("#video ul li:last"));
+			$("#video ul").css({"marginLeft":"-928px"});
+
+			function drag_next(){
+				$("#video ul").stop().animate({"marginLeft":"+=928px"},500,"swing",function(){
+					$("#video ul").prepend($("#video ul li:last")).prepend($("#video ul li:last"));
+					$("#video ul").css({"marginLeft":"-928px"});
+				});
+			}
+
+			function drag_prev(){
+				$("#video ul").stop().animate({"marginLeft":"-=928px"},500,"swing",function(){
+					$("#video ul").append($("#video ul li:eq(0)")).append($("#video ul li:eq(0)"));
+					$("#video ul").css({"marginLeft":"-928px"});
+				});
+			}
+
+			/*
+			$("#video_inn").click(function(){
+				$("#video ul").stop().animate({"marginLeft":"+=928px"},500,"swing",function(){
+					$("#video ul").prepend($("#video ul li:last")).prepend($("#video ul li:last"));
+					$("#video ul").css({"marginLeft":"-928px"});
+				});
+			});
+			*/
+			/*
+			$("#video ul").click(function(){
+				$("#video ul").stop().animate({"marginLeft":"-=928px"},500,"swing",function(){
+					$("#video ul").append($("#video ul li:eq(0)")).append($("#video ul li:eq(0)"));
+					$("#video ul").css({"marginLeft":"-928px"});
+				});
+			});
+			*/
 
 			
+
+
+			$("#search_add").hide();
 
 			$("#search").click(function(){
 
@@ -2463,19 +2559,41 @@
 			<div id="video">
 				<h2>TVC영역</h2>
 				<div id="video_bg">
-					<!--
 					<div id="video_inn">
-						<video controls width="1920" height="1084" autoplay muted loop>
+						<video controls width="1280" autoplay muted loop>
 							<source src="video/tvc0.mp4" type="video/mp4"/>
 						</video>
 					</div>
-					-->
+					<div id="video_film">
+						<ul>
+							<li class="tvc0">							
+							</li>
+							<li class="tvc1">								
+							</li>
+							<li class="tvc2">							
+							</li>
+							<li class="tvc3">								
+							</li>
+							<li class="tvc4">								
+							</li>
+							<li class="tvc5">								
+							</li>
+							<li class="tvc6">								
+							</li>
+							<li class="tvc7">								
+							</li>
+							<li class="tvc8">
+							</li>
+						</ul>
+					</div>
 				</div>
+                <!--
 				<div id="video_inn">
 					<video controls width="1920" height="1084" autoplay muted loop>
 						<source src="video/tvc0.mp4" type="video/mp4"/>
 					</video>
 				</div>
+                -->
 			</div>
 			<div id="insta">
 				<h2>insta영역</h2>

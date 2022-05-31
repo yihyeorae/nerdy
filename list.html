@@ -433,49 +433,49 @@
 				}
 			    });
                 */
-
+				
 			});
 		
-			
+			var color = null;
 			/*## 컬러별 상품 이미지 변경 ##*/
 			$("#track .no0 .color_set li a").click(function(){
-				var color = $(this).attr("title").substring(0,2);	
-				console.log(color);
+				color = $(this).attr("title").substring(0,2);	
+				//console.log(color);
 
 				$("#track .no0 .img_no0").attr({"src":"img/shop/t0_"+color+".png"});
 			});
 
 			$("#track .no1 .color_set li a").click(function(){
-				var color = $(this).attr("title").substring(0,2);	
-				console.log(color);
+				color = $(this).attr("title").substring(0,2);	
+				
 
 				$("#track .no1 .img_no1").attr({"src":"img/shop/t1_"+color+".png"});
 			});
 
 			$("#track .no2 .color_set li a").click(function(){
-				var color = $(this).attr("title").substring(0,2);	
-				console.log(color);
+				color = $(this).attr("title").substring(0,2);	
+			
 
 				$("#track .no2 .img_no2").attr({"src":"img/shop/t2_"+color+".png"});
 			});
 
 			$("#outer .no0 .color_set li a").click(function(){
-				var color = $(this).attr("title").substring(0,2);	
-				console.log(color);
+				color = $(this).attr("title").substring(0,2);	
+				
 
 				$("#outer .no0 .img_no0").attr({"src":"img/shop/o0_"+color+".png"});
 			});
 
 			$("#outer .no1 .color_set li a").click(function(){
-				var color = $(this).attr("title").substring(0,2);	
-				console.log(color);
+				color = $(this).attr("title").substring(0,2);	
+			
 
 				$("#outer .no1 .img_no1").attr({"src":"img/shop/o1_"+color+".png"});
 			});
 
 			$("#outer .no2 .color_set li a").click(function(){
-				var color = $(this).attr("title").substring(0,2);	
-				console.log(color);
+				color = $(this).attr("title").substring(0,2);	
+			
 
 				$("#outer .no2 .img_no2").attr({"src":"img/shop/o2_"+color+".png"});
 			});
@@ -484,7 +484,6 @@
 				$("#cate_inn li").css({"borderColor":"rgba(204,204,204,1)"});
 				$("#cate_inn li a").css({"backgroundColor":"rgba(255,255,255,1)","color":"rgba(0,0,0,1)"});
 				$(this).css({"backgroundColor":"rgba(156,1,255,1)","color":"rgba(255,255,255,1)"});
-
 			});
 
 			//#cate_inn li:hover{background-color:rgba(156,1,255,1); border:1px solid rgba(0,0,0,1);}
