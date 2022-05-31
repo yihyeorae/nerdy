@@ -26,6 +26,15 @@ feportfolio.dothome.co.kr/nerdy
 <p>모든 페이지 계속해서 디벨롭 중입니다.</p>
 <strong>방문해주셔서 감사합니다.</strong>
 
+<h2>0531 update</h2>
+
+<dl>
+  <dt>index.html</dt>
+  <dd>video 영역 리뉴얼</dd>
+  <dd>슬라이더 기능 추가 및 next,prev 버튼이 아닌 drag 를 통해서 작동되도록 구현</dd>
+</dl>
+
+
 <h2>0526 update</h2>
 <ul>
   <li>nav 영역 검색창, 클릭 시 추가 검색창 생성</li>
