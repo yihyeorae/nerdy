@@ -15,6 +15,7 @@ feportfolio.dothome.co.kr/nerdy
   <li> detail == index 메인 페이지의 best 영역 첫번째 상품 (엔와이 그라데이션 3종 세트)</li>
   <li> showcase == index 메인 페이지의 좌측 사이드 영역 showcase</li>
   <li> store == index 메인 페이지의 좌측 사이드 영역 store</li>
+  <li> list == index 메인 페이지의 nav 영역 cloth</li>
 </ul>
 <hr/>
 <ul>
